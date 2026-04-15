@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description:
       "Where digital intelligence meets real business challenge. Free student consulting through Miami Herbert's ACE program.",
     siteName: "Herbert Digital-First Lab",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Herbert Digital-First Lab" }],
   },
 };
 

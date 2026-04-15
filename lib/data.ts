@@ -44,14 +44,127 @@ export interface Stat {
   label: string;
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  role: "director" | "coach";
+  avatar: string; // URL — i.pravatar.cc for placeholders, real headshot URLs for prod
+  bio?: string;   // optional, shown for directors only
+}
+
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
   { href: "/tracks", label: "Tracks" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
+];
+
+// ─── What Happens Next (shared between ContactForm and contact page sidebar) ──
+
+export const whatHappensNext: string[] = [
+  "Lab director reviews your submission and confirms receipt within 5 business days",
+  "Scoping call scheduled to discuss problem framing, data availability, and capability match",
+  "Project brief prepared and shared for client review and sign-off",
+  "Student team assembled and kick-off workshop scheduled",
+  "Semester-long engagement begins",
+];
+
+// ─── Team Members ─────────────────────────────────────────────────────────────
+
+export const teamMembers: TeamMember[] = [
+  // Directors
+  {
+    id: "director-1",
+    name: "Dr. Sarah Mitchell",
+    title: "Lab Director · Associate Professor of Digital Strategy",
+    role: "director",
+    avatar: "https://i.pravatar.cc/150?u=sarah-mitchell",
+    bio: "Dr. Mitchell leads the Herbert Digital-First Lab with a focus on human-centered AI and digital product strategy. Her research bridges organizational behavior and emerging technology, and she has advised over 30 partner organizations through the ACE framework.",
+  },
+  {
+    id: "director-2",
+    name: "Marcus Chen",
+    title: "Associate Director · Adjunct Professor of AI & Data",
+    role: "director",
+    avatar: "https://i.pravatar.cc/150?u=marcus-chen",
+    bio: "Marcus brings 15 years of industry experience in AI engineering and data infrastructure across fintech and healthtech. He oversees the AI Engineering and BI tracks, ensuring student teams deliver production-ready solutions.",
+  },
+  // Coaches
+  {
+    id: "coach-1",
+    name: "Alex Rivera",
+    title: "HCD & Product Design Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=alex-rivera",
+  },
+  {
+    id: "coach-2",
+    name: "Jordan Kim",
+    title: "AI Engineering Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=jordan-kim",
+  },
+  {
+    id: "coach-3",
+    name: "Taylor Brooks",
+    title: "BI & Dashboards Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=taylor-brooks",
+  },
+  {
+    id: "coach-4",
+    name: "Morgan Lee",
+    title: "Graduate Capstone Advisor",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=morgan-lee",
+  },
+  {
+    id: "coach-5",
+    name: "Casey Williams",
+    title: "UX Research Mentor",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=casey-williams",
+  },
+  {
+    id: "coach-6",
+    name: "Sam Davis",
+    title: "Data Science Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=sam-davis",
+  },
+  {
+    id: "coach-7",
+    name: "Riley Johnson",
+    title: "Digital Strategy Mentor",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=riley-johnson",
+  },
+  {
+    id: "coach-8",
+    name: "Drew Martinez",
+    title: "Frontend Development Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=drew-martinez",
+  },
+  {
+    id: "coach-9",
+    name: "Avery Thompson",
+    title: "Business Intelligence Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=avery-thompson",
+  },
+  {
+    id: "coach-10",
+    name: "Quinn Rodriguez",
+    title: "Product Management Coach",
+    role: "coach",
+    avatar: "https://i.pravatar.cc/150?u=quinn-rodriguez",
+  },
 ];
 
 // ─── Stats ───────────────────────────────────────────────────────────────────
@@ -147,6 +260,8 @@ export const capabilityTracks: CapabilityTrack[] = [
   {
     id: 4,
     symbol: "●",
+    // NOTE: filter pill value is "Capstone", NOT "Graduate Capstone" — intentional divergence.
+    // Do NOT auto-generate filter pills from capabilityTracks[].name.
     name: "Graduate Capstone",
     fullName: "Client-Centered Capstone Framing, Value Engineering & Execution Readiness",
     course: "BTE 210 / Advanced",

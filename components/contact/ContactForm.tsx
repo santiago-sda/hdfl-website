@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { whatHappensNext } from "@/lib/data";
 
 interface FormState {
   orgName: string;
@@ -31,14 +32,6 @@ const inputClass =
   "bg-card border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-black/30 focus:outline-none focus:border-um-orange/60 focus:ring-1 focus:ring-um-orange/20 transition-colors w-full";
 
 const labelClass = "block text-xs font-semibold tracking-wide text-text-muted uppercase mb-1.5";
-
-const whatHappensNext = [
-  "Lab director reviews your submission and confirms receipt within 5 business days",
-  "Scoping call scheduled to discuss problem framing, data availability, and capability match",
-  "Project brief prepared and shared for client review and sign-off",
-  "Student team assembled and kick-off workshop scheduled",
-  "Semester-long engagement begins",
-];
 
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);

@@ -33,7 +33,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <motion.article
+      layout
       variants={staggerItem}
+      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
       className="group relative bg-card border border-border rounded-2xl overflow-hidden"

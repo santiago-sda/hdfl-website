@@ -71,25 +71,6 @@ export function Footer() {
               <li>University of Miami</li>
               <li>Coral Gables, FL 33146</li>
             </ul>
-            <div className="mt-6 flex gap-3">
-              {["LinkedIn", "Twitter / X", "GitHub"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  aria-label={s}
-                  className="w-8 h-8 rounded-lg border border-border bg-card flex items-center justify-center hover:border-um-orange/50 hover:bg-um-orange/8 transition-colors duration-200"
-                >
-                  <span className="sr-only">{s}</span>
-                  <svg
-                    className="w-3.5 h-3.5 text-text-muted"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                  </svg>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 

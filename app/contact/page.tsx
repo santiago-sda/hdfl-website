@@ -1,14 +1,7 @@
 import { PageHero } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ContactForm } from "@/components/contact/ContactForm";
-
-const whatHappensNext = [
-  "Lab director reviews your submission and confirms receipt within 5 business days",
-  "Scoping call scheduled to discuss problem framing, data availability, and capability match",
-  "Project brief prepared and shared for client review and sign-off",
-  "Student team assembled and kick-off workshop scheduled",
-  "Semester-long engagement begins",
-];
+import { whatHappensNext } from "@/lib/data";
 
 export default function ContactPage() {
   return (
