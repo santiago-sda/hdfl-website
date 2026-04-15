@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #F8F9FA;
+  --color-surface: #EDEEF0;
+  --color-card: #FFFFFF;
+  --color-um-orange: #F47321;
+  --color-um-orange-dim: #c45c18;
+  --color-um-green: #005030;
+  --color-um-green-dim: #003d24;
+  --color-text-primary: #0A0A0F;
+  --color-text-muted: #5C6070;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F8F9FA;
+}
+
+body {
+  background-color: #F8F9FA;
+  color: #0A0A0F;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD0D6;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9EA6B0;
+}
+
+/* Selection */
+::selection {
+  background: rgba(244, 115, 33, 0.25);
+  color: #0A0A0F;
+}
+
+/* Gradient orb animation */
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.97); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.03); }
+  66% { transform: translate(25px, -15px) scale(1.07); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 25px) scale(1.04); }
+}
+
+.orb-1 { animation: orb-drift-1 18s ease-in-out infinite; }
+.orb-2 { animation: orb-drift-2 22s ease-in-out infinite; }
+.orb-3 { animation: orb-drift-3 15s ease-in-out infinite; }
+
+/* Dot grid subtle pulse */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.dot-grid-animate {
+  animation: dot-pulse 6s ease-in-out infinite;
+}
