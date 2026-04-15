@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { capabilityTracks } from "@/lib/data";
 
 const accentStyles = {
-  orange: { icon: "bg-um-orange/12 text-um-orange", glow: "shadow-[inset_0_0_40px_rgba(244,115,33,0.04)]" },
-  blue:   { icon: "bg-blue-500/12 text-blue-400",   glow: "shadow-[inset_0_0_40px_rgba(59,130,246,0.05)]" },
-  green:  { icon: "bg-emerald-500/12 text-emerald-400", glow: "shadow-[inset_0_0_40px_rgba(16,185,129,0.05)]" },
-  purple: { icon: "bg-purple-500/12 text-purple-400", glow: "shadow-[inset_0_0_40px_rgba(168,85,247,0.05)]" },
+  orange: { symbolColor: "text-um-orange",      glow: "shadow-[inset_0_0_40px_rgba(244,115,33,0.04)]" },
+  blue:   { symbolColor: "text-blue-400",       glow: "shadow-[inset_0_0_40px_rgba(59,130,246,0.05)]" },
+  green:  { symbolColor: "text-emerald-400",    glow: "shadow-[inset_0_0_40px_rgba(16,185,129,0.05)]" },
+  purple: { symbolColor: "text-purple-400",     glow: "shadow-[inset_0_0_40px_rgba(168,85,247,0.05)]" },
 };
 
 export function WhatWeDo() {
@@ -39,9 +39,9 @@ export function WhatWeDo() {
               >
                 {/* Symbol + level */}
                 <div className="flex items-start justify-between mb-5">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold ${styles.icon}`}>
+                  <span className={`text-3xl font-black leading-none ${styles.symbolColor}`}>
                     {track.symbol}
-                  </div>
+                  </span>
                   <span className="text-xs font-semibold text-text-muted border border-border rounded-full px-2.5 py-1">
                     {track.level}
                   </span>

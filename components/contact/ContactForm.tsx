@@ -37,6 +37,7 @@ export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -47,9 +48,15 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      await new Promise((r) => setTimeout(r, 1200));
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or email us directly at dfl@miami.edu.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -176,6 +183,12 @@ export function ContactForm() {
       <p className="text-xs text-text-muted">
         There is no cost to apply or to participate. All engagements are delivered through Miami Herbert&apos;s ACE (Applied Career Experience) framework.
       </p>
+
+      {error && (
+        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"

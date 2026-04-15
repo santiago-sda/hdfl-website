@@ -89,6 +89,8 @@ export function Navbar() {
           className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-black/5 transition-colors"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-drawer"
         >
           <motion.span
             animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
@@ -116,6 +118,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
+            id="mobile-nav-drawer"
             className="md:hidden overflow-hidden border-t border-black/8 bg-background/95 backdrop-blur-xl"
           >
             <div className="px-6 py-4 flex flex-col gap-1">

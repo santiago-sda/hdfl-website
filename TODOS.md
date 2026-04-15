@@ -2,6 +2,14 @@
 
 ## P1 — Critical
 
+### [P1] Replace team page placeholder data before launch
+**What:** Replace all fake director/coach names, titles, bios, and avatar URLs in `lib/data.ts` with real people.
+**Why:** The /team page currently shows `Dr. Sarah Chen`, `Michael Rodriguez`, and 10 fake coaches with random i.pravatar.cc photos. Sending a real partner prospect to this page will destroy credibility. This must be done before the site goes public.
+**Approach:** Update `teamMembers[]` in `lib/data.ts` with real names and titles. For avatars: either use real photos (upload to `/public/team/`) or use LinkedIn profile photos (link directly if hotlinking is permitted). Real `bio` text for directors is especially important.
+**Effort:** XS technical, but requires the actual people data
+**Blocked by:** Getting real photos + bios from the lab directors
+**Files:** `lib/data.ts` → `teamMembers[]`
+
 ### [P1] Contact form backend
 **What:** Wire `ContactForm.tsx` to an email delivery service so partner challenge submissions are actually received.
 **Why:** Every form submission is currently silently discarded. `ContactForm.tsx:57` runs a fake `setTimeout` that shows a success state but sends nothing. Real partner leads are being lost.
