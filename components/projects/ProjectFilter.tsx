@@ -31,6 +31,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
+                  aria-pressed={activeCategory === cat}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150 ${
                     activeCategory === cat
                       ? "bg-um-orange/90 text-white border-um-orange/50"
