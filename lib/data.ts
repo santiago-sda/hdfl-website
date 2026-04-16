@@ -391,7 +391,7 @@ export const projects: Project[] = [
     description:
       "VIP enterprise broker accounts at a wholesale mortgage lender experienced the same generic interface as smaller brokers, creating operational friction and an estimated $100–250K/month in unrealized revenue. Delivered user personas, journey maps, and a high-fidelity website and iPhone app prototype.",
     category: "HCD",
-    image: "https://picsum.photos/seed/mortgage-broker/800/500",
+    image: "/projects/ad-mortgage.png",
     tags: ["User Personas", "Figma Prototyping", "Journey Mapping"],
     featured: true,
   },
@@ -402,7 +402,7 @@ export const projects: Project[] = [
     description:
       "A digital health startup needed to translate a differentiated longevity concept — converting wearable biometric data into age-normalized performance scores — into a clear, testable digital product. Delivered web and mobile prototypes with a performance dashboard concept.",
     category: "HCD",
-    image: "https://picsum.photos/seed/longevity-health/800/500",
+    image: "/projects/myyouthspan.png",
     tags: ["Wearable Integration", "Health UX", "Mobile Prototype"],
     featured: true,
   },
@@ -424,7 +424,7 @@ export const projects: Project[] = [
     description:
       "An AI-powered health optimization platform lacked a targeted channel into athletic communities. Designed a freemium digital entry point to collect mental toughness assessment data and generate individual and team-level reports, with high-fidelity web and mobile prototypes.",
     category: "HCD",
-    image: "https://picsum.photos/seed/sports-health/800/500",
+    image: "/projects/fastwalker.png",
     tags: ["Sports UX", "Freemium Model", "Assessment Design"],
   },
   {
@@ -434,7 +434,7 @@ export const projects: Project[] = [
     description:
       "A commercial talent casting agency specializing in celebrity athletes and beauty talent operated through manual, fragmented workflows for booking and document collection. Delivered a redesigned website concept and workflow automation framework for booking and agent communication.",
     category: "HCD",
-    image: "https://picsum.photos/seed/talent-agency/800/500",
+    image: "/projects/powerhouse-casting.png",
     tags: ["Workflow Automation", "Multi-persona UX", "Agency Platform"],
   },
   {
@@ -444,7 +444,7 @@ export const projects: Project[] = [
     description:
       "An SEC-registered private credit investment manager with $9B+ in securitized assets lacked a differentiated digital investor experience. Designed the InvestorBridge platform concept with investor personas, journey maps, and high-fidelity prototypes delivered to GP leadership.",
     category: "Capstone",
-    image: "https://picsum.photos/seed/investor-bridge/800/500",
+    image: "/projects/imperial-fund.png",
     tags: ["Investor Experience", "HNWI UX", "Miami Method"],
   },
   {
@@ -464,7 +464,7 @@ export const projects: Project[] = [
     description:
       "A specialty food brand pivoting to experience-led fresh concession distribution at schools and events had no digital infrastructure to coordinate event logistics or build recurring consumer relationships. Designed a two-sided coordination platform with mobile and web prototypes.",
     category: "HCD",
-    image: "https://picsum.photos/seed/food-brand/800/500",
+    image: "/projects/tbm-popcorn.png",
     tags: ["Two-Sided Platform", "Event Logistics", "Consumer UX"],
   },
   {
@@ -474,7 +474,7 @@ export const projects: Project[] = [
     description:
       "A veteran-owned mobile dessert business employing justice-impacted individuals relied entirely on in-person sales with no digital infrastructure. Designed a cart-locator, loyalty rewards, push notifications, and skip-the-line ordering app with a mission storytelling framework.",
     category: "HCD",
-    image: "https://picsum.photos/seed/dessert-cart/800/500",
+    image: "/projects/screaming-ice-cream.png",
     tags: ["Social Enterprise", "Loyalty UX", "Mobile App"],
   },
 ];
