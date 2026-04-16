@@ -59,7 +59,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/team", label: "Team" },
-  { href: "/tracks", label: "Tracks" },
+  { href: "/tracks", label: "Solutions" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ];
@@ -170,7 +170,7 @@ export const teamMembers: TeamMember[] = [
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 4, suffix: "", label: "Capability Tracks" },
+  { value: 4, suffix: "", label: "Capability Solutions" },
   { value: 9, suffix: "+", label: "Engagements Delivered" },
   { value: 100, suffix: "%", label: "Free to Partner Organizations" },
   { value: 3, suffix: "", label: "Delivery Phases" },

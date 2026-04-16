@@ -6,7 +6,7 @@ import Link from "next/link";
 import { DotGrid } from "@/components/ui/DotGrid";
 import { GradientOrb } from "@/components/ui/GradientOrb";
 
-const headline = ["Where Digital Intelligence", "Meets Real", "Business Challenge."];
+const subheadline = ["Where Digital Intelligence", "Meets Real", "Business Challenge."];
 const subtext =
   "A digital-first student consulting lab connecting organizations with Miami Herbert students trained in AI engineering, data analytics, product design, and digital strategy — delivering production-ready solutions at no cost.";
 
@@ -35,40 +35,45 @@ export function Hero() {
         style={{ y: contentY, opacity: contentOpacity }}
         className="relative z-10 max-w-5xl mx-auto px-6 text-center"
       >
-        {/* Label pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-8 flex justify-center"
-        >
-          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-um-orange border border-um-orange/25 bg-um-orange/8 px-4 py-1.5 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-um-orange animate-pulse" />
-            Miami Herbert Business School · University of Miami
-          </span>
-        </motion.div>
-
-        {/* Headline */}
-        <div className="mb-7">
-          {headline.map((line, i) => (
-            <div key={i} className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "110%", opacity: 0 }}
-                animate={{ y: "0%", opacity: 1 }}
-                transition={{ duration: 0.75, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.04] text-text-primary"
-              >
-                {i === 1 ? <span className="text-um-orange">{line}</span> : line}
-              </motion.h1>
-            </div>
-          ))}
+        {/* Primary heading — center of attention */}
+        <div className="overflow-hidden mb-5">
+          <motion.h1
+            initial={{ y: "110%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[0.95] text-text-primary"
+          >
+            Digital-First Lab
+          </motion.h1>
         </div>
+
+        {/* Orange rule */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+          className="w-12 h-0.5 bg-um-orange mx-auto mb-6 origin-left"
+        />
+
+        {/* Subheadline — descriptor */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.52, ease: "easeOut" }}
+          className="mb-10"
+        >
+          {subheadline.map((line, i) => (
+            <p key={i} className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug text-text-muted">
+              {i === 1 ? <span className="text-um-orange">{line}</span> : line}
+            </p>
+          ))}
+        </motion.div>
 
         {/* Subtext */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.58, ease: "easeOut" }}
+          transition={{ duration: 0.65, delay: 0.72, ease: "easeOut" }}
           className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed mb-10"
         >
           {subtext}
@@ -78,7 +83,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.72 }}
+          transition={{ duration: 0.6, delay: 0.86 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link

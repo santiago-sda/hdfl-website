@@ -8,7 +8,7 @@ const differentiators = [
     number: "01",
     title: "Dedicated Needs Assessment Phase",
     description:
-      "Before any student team is assigned, we conduct a structured intake conversation, scope the business problem using the Miami Method, audit your data availability, and match you to the right capability track. No other university consulting program does this.",
+      "Before any student team is assigned, we conduct a structured intake conversation, scope the business problem using the Miami Method, audit your data availability, and match you to the right capability solution. No other university consulting program does this.",
   },
   {
     number: "02",
@@ -18,9 +18,9 @@ const differentiators = [
   },
   {
     number: "03",
-    title: "Four Tracks Across the Full Digital Stack",
+    title: "Four Solutions Across the Full Digital Stack",
     description:
-      "From human-centered product design through production-grade AI engineering — available at both undergraduate and graduate levels. Tracks can be engaged independently or in combination for multi-phase projects.",
+      "From human-centered product design through production-grade AI engineering — available at both undergraduate and graduate levels. Solutions can be engaged independently or in combination for multi-phase projects.",
   },
 ];
 

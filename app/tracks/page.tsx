@@ -38,9 +38,9 @@ export default function TracksPage() {
   return (
     <>
       <PageHero
-        label="Capability Tracks"
-        title="Four Digital Tracks, One Integrated Lab"
-        subtitle="Each track is taught by a dedicated faculty lead and delivered through the ACE (Applied Career Experience) framework. Tracks span undergraduate and graduate levels and can be engaged independently or in combination for multi-phase projects."
+        label="Capability Solutions"
+        title="Four Digital Solutions, One Integrated Lab"
+        subtitle="Each solution is taught by a dedicated faculty lead and delivered through the ACE (Applied Career Experience) framework. Solutions span undergraduate and graduate levels and can be engaged independently or in combination for multi-phase projects."
       />
 
       <section className="py-16 px-6 pb-32">
@@ -125,7 +125,7 @@ export default function TracksPage() {
         <AnimatedSection variant="fade-up" delay={0.3} className="max-w-5xl mx-auto mt-14">
           <div className="rounded-2xl bg-surface border border-border p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-text-primary mb-1">Not sure which track fits your challenge?</h3>
+              <h3 className="text-lg font-semibold text-text-primary mb-1">Not sure which solution fits your challenge?</h3>
               <p className="text-sm text-text-muted">Our Lab director will help you find the right match during the scoping conversation.</p>
             </div>
             <Link

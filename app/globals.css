@@ -8,7 +8,7 @@
   --color-um-orange-dim: #c45c18;
   --color-um-green: #005030;
   --color-um-green-dim: #003d24;
-  --color-text-primary: #0A0A0F;
+  --color-text-primary: #005030;
   --color-text-muted: #5C6070;
   --color-border: rgba(0, 0, 0, 0.08);
   --font-sans: var(--font-inter);
@@ -21,7 +21,7 @@ html {
 
 body {
   background-color: #F8F9FA;
-  color: #0A0A0F;
+  color: #005030;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,7 +45,7 @@ body {
 /* Selection */
 ::selection {
   background: rgba(244, 115, 33, 0.25);
-  color: #0A0A0F;
+  color: #005030;
 }
 
 /* Gradient orb animation */

@@ -24,7 +24,7 @@ export default function TeamPage() {
               Leadership
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
-              Lab Directors
+              Faculty Leaders
             </h2>
           </AnimatedSection>
 
@@ -77,7 +77,7 @@ export default function TeamPage() {
               Coaches & Mentors
             </h2>
             <p className="mt-3 text-text-muted max-w-xl">
-              Each coach brings deep industry expertise and is matched to projects based on track, domain, and skill fit.
+              Each coach brings deep industry expertise and is matched to projects based on solution area, domain, and skill fit.
             </p>
           </AnimatedSection>
 

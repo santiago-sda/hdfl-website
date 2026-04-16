@@ -150,9 +150,9 @@ export function ContactForm() {
           </select>
         </div>
         <div>
-          <label className={labelClass}>Preferred Capability Track</label>
+          <label className={labelClass}>Preferred Capability Solution</label>
           <select name="track" value={form.track} onChange={handleChange} required className={`${inputClass} appearance-none`}>
-            <option value="" disabled>Select track...</option>
+            <option value="" disabled>Select solution...</option>
             <option value="hcd">HCD & Product Design</option>
             <option value="ai">AI Engineering</option>
             <option value="bi">BI & Dashboards</option>

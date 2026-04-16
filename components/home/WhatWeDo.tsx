@@ -21,10 +21,10 @@ export function WhatWeDo() {
             What We Deliver
           </span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary">
-            Four Capability Tracks
+            Four Capability Solutions
           </h2>
           <p className="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
-            Each track is taught by a dedicated faculty lead and delivered through the ACE framework — available independently or in combination for multi-phase projects.
+            Each solution is taught by a dedicated faculty lead and delivered through the ACE framework — available independently or in combination for multi-phase projects.
           </p>
         </AnimatedSection>
 
@@ -77,7 +77,7 @@ export function WhatWeDo() {
             href="/tracks"
             className="inline-flex items-center gap-2 text-sm font-medium text-um-orange hover:text-um-orange-dim transition-colors"
           >
-            View full track details →
+            View full solution details →
           </Link>
         </AnimatedSection>
       </div>

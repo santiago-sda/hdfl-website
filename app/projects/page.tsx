@@ -8,7 +8,7 @@ export default function ProjectsPage() {
       <PageHero
         label="Client Engagement Portfolio"
         title="Projects & Research"
-        subtitle="Nine completed engagements across three courses and four digital tracks. Client details are sanitized to protect confidentiality while conveying industry context and project complexity."
+        subtitle="Nine completed engagements across three courses and four digital solutions. Client details are sanitized to protect confidentiality while conveying industry context and project complexity."
       />
       <ProjectFilter projects={projects} />
     </>
