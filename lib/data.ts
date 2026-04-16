@@ -51,6 +51,7 @@ export interface TeamMember {
   role: "director" | "coach";
   avatar: string; // URL — i.pravatar.cc for placeholders, real headshot URLs for prod
   bio?: string;   // optional, shown for directors only
+  profileUrl?: string; // optional, links to university profile page
 }
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -84,6 +85,7 @@ export const teamMembers: TeamMember[] = [
     title: "Lab Director · Academic Program Director, MS Business Technology",
     role: "director",
     avatar: "/team/korogodsky.webp",
+    profileUrl: "https://people.miami.edu/profile/d745ec0f1424c88ec80310b4b30645ad",
   },
   {
     id: "director-2",
@@ -91,6 +93,7 @@ export const teamMembers: TeamMember[] = [
     title: "Lab Director · Lecturer, Business Technology",
     role: "director",
     avatar: "/team/murphy.webp",
+    profileUrl: "https://people.miami.edu/profile/e2e14a2dfa56d4d5e0c9cca2e5000490",
   },
   // Coaches
   {

@@ -56,6 +56,17 @@ export default function TeamPage() {
                       {director.bio}
                     </p>
                   )}
+                  {director.profileUrl && (
+                    <Link
+                      href={director.profileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-um-orange hover:text-um-orange-dim transition-colors mt-auto"
+                    >
+                      View University Profile
+                      <span aria-hidden="true">↗</span>
+                    </Link>
+                  )}
                 </div>
               </AnimatedSection>
             ))}
