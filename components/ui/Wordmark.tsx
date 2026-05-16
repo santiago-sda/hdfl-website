@@ -1,27 +1,34 @@
-import { ElementType } from "react";
+import Image from "next/image";
 
 interface WordmarkProps {
   tone?: "ink" | "paper";
-  as?: "span" | "div";
   className?: string;
+  size?: number;
 }
 
-export function Wordmark({ tone = "ink", as = "div", className = "" }: WordmarkProps) {
-  const Tag = as as ElementType;
-  const dflColor = tone === "ink" ? "text-ink" : "text-paper";
+export function Wordmark({ tone = "ink", className = "", size = 32 }: WordmarkProps) {
   const captionColor = tone === "ink" ? "text-muted" : "text-paper/70";
 
   return (
-    <Tag className={`inline-flex items-baseline gap-2.5 ${className}`}>
-      <span className={`text-[18px] font-black tracking-[-0.02em] leading-none ${dflColor}`}>
-        DFL
-      </span>
-      <span className="self-center w-px h-3.5 bg-um-orange" />
+    <span
+      className={`inline-flex items-center gap-2.5 ${className}`}
+      aria-label="Herbert Digital-First Lab · Miami"
+    >
+      <Image
+        src="/hdfl-logo.png"
+        alt=""
+        width={size}
+        height={size}
+        priority
+        className={`block ${tone === "paper" ? "invert" : ""}`}
+        style={{ height: `${size}px`, width: `${size}px` }}
+      />
+      <span className="w-px h-3.5 bg-um-orange" />
       <span
         className={`font-mono text-[10.5px] font-semibold tracking-[0.18em] uppercase ${captionColor}`}
       >
         Herbert · Miami
       </span>
-    </Tag>
+    </span>
   );
 }
