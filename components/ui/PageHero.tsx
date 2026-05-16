@@ -1,68 +1,57 @@
 "use client";
 
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { GradientOrb } from "./GradientOrb";
+import { MetaStrip, MetaStripItem } from "./MetaStrip";
 
-interface PageHeroProps {
-  label?: string;
-  title: string;
+interface PageHeaderProps {
+  eyebrow: string;
+  title: ReactNode;
   subtitle?: string;
+  meta?: MetaStripItem[];
+  sidecar?: ReactNode;
 }
 
-export function PageHero({ label, title, subtitle }: PageHeroProps) {
+export function PageHeader({ eyebrow, title, subtitle, meta, sidecar }: PageHeaderProps) {
   return (
-    <section className="relative pt-40 pb-24 overflow-hidden">
-      {/* Ambient background */}
-      <GradientOrb
-        color="orange"
-        size="lg"
-        position="top-[-200px] left-[-200px]"
-        animationClass="orb-1"
-      />
-      <GradientOrb
-        color="green"
-        size="md"
-        position="bottom-[-100px] right-[-100px]"
-        animationClass="orb-2"
-      />
-
-      {/* Divider line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black/8 to-transparent" />
-
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        {label && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-4"
-          >
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-um-orange border border-um-orange/30 bg-um-orange/8 px-3 py-1 rounded-full">
-              {label}
-            </span>
-          </motion.div>
-        )}
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-[1.08]"
-        >
-          {title}
-        </motion.h1>
-
-        {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="mt-6 text-xl text-text-muted max-w-2xl leading-relaxed"
-          >
-            {subtitle}
-          </motion.p>
-        )}
+    <>
+      <div className="pt-[72px]">
+        {meta && <MetaStrip items={meta} />}
       </div>
-    </section>
+      <section className="relative px-6 md:px-10 py-16 md:py-20">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-10 lg:gap-14 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+          >
+            <div className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text mb-6 inline-flex items-baseline gap-2.5">
+              <span>{eyebrow}</span>
+            </div>
+            <h1 className="text-[60px] sm:text-[80px] md:text-[96px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.9] text-ink">
+              {title}
+            </h1>
+            {subtitle && (
+              <p className="mt-7 text-[17px] leading-[1.6] text-ink-soft max-w-[560px]">
+                {subtitle}
+              </p>
+            )}
+          </motion.div>
+
+          {sidecar && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+            >
+              {sidecar}
+            </motion.div>
+          )}
+        </div>
+      </section>
+    </>
   );
 }
+
+// Backwards-compatibility alias.
+export const PageHero = PageHeader;

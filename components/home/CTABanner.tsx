@@ -1,43 +1,52 @@
 import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { GradientOrb } from "@/components/ui/GradientOrb";
 
 export function CTABanner() {
   return (
-    <section className="relative py-28 px-6 overflow-hidden">
-      <div className="absolute inset-0 bg-surface" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black/8 to-transparent" />
+    <section className="relative overflow-hidden bg-ink text-paper px-6 md:px-10 py-16 md:py-20">
+      <div
+        aria-hidden
+        className="absolute -top-[200px] -right-[150px] w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(244,115,33,0.22) 0%, transparent 65%)" }}
+      />
 
-      <GradientOrb color="orange" size="lg" position="top-[-200px] right-[-100px]" animationClass="orb-1" />
-      <GradientOrb color="green" size="md" position="bottom-[-150px] left-[-50px]" animationClass="orb-3" />
-
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
         <AnimatedSection variant="fade-up">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-um-orange mb-6">
-            Partner With Us
-          </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.08] mb-6">
-            Have a real digital challenge?
+          <div className="inline-flex items-baseline gap-2.5 mb-6">
+            <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
+              §05
+            </span>
+            <span className="self-center w-6 h-px" style={{ backgroundColor: "#F4A36A" }} />
+            <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
+              Partner with us
+            </span>
+          </div>
+
+          <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96]">
+            Have a real digital<br />
+            challenge?{" "}
+            <span className="text-um-orange">File №26-10 is yours.</span>
           </h2>
-          <p className="text-xl text-text-muted max-w-xl mx-auto leading-relaxed mb-3">
-            We partner with organizations to design, prototype, and deploy digital products, AI systems, and data dashboards — at no cost, through Miami Herbert&apos;s ACE program.
+
+          <p className="mt-6 text-[16px] leading-[1.6] text-paper/75 max-w-[560px]">
+            Fall 2026 applications open in June. The Lab director reviews every submission personally and confirms within five business days. No fee. No retainer. No sales call.
           </p>
-          <p className="text-sm text-text-muted mb-10">
-            There is no cost to apply or to participate.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        </AnimatedSection>
+
+        <AnimatedSection variant="fade-up" delay={0.1}>
+          <div className="flex flex-col gap-4 items-start lg:items-end">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-um-orange hover:bg-um-orange-dim text-white font-semibold rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-um-orange/20"
+              className="inline-flex items-center gap-2.5 px-5 py-[15px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors"
             >
-              Submit Your Challenge
+              Submit a Challenge <span className="font-mono">↗</span>
             </Link>
-            <Link
-              href="/projects"
-              className="px-8 py-4 border border-black/12 hover:border-black/24 bg-black/5 hover:bg-black/8 text-text-primary font-semibold rounded-xl text-sm transition-all duration-200 hover:scale-[1.02]"
+            <a
+              href="mailto:dfl@miami.edu"
+              className="inline-flex items-center gap-2 text-[13px] font-medium text-paper/85 hover:text-paper transition-colors"
             >
-              See Our Portfolio
-            </Link>
+              Or email the Lab director directly <span aria-hidden="true">→</span>
+            </a>
           </div>
         </AnimatedSection>
       </div>

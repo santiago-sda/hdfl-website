@@ -1,50 +1,49 @@
 import Link from "next/link";
-import { navLinks } from "@/lib/data";
+import { Wordmark } from "@/components/ui/Wordmark";
+
+const sitemap = [
+  { href: "/", label: "Home" },
+  { href: "/tracks", label: "Solutions" },
+  { href: "/projects", label: "Archive" },
+  { href: "/team", label: "People" },
+  { href: "/about", label: "Method" },
+  { href: "/contact", label: "Submit" },
+];
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border bg-surface">
-      {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-um-orange/40 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="relative border-t border-rule bg-paper-alt">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-3">
-              <div className="w-7 h-7 rounded-md bg-um-orange flex items-center justify-center shrink-0">
-                <span className="text-white text-xs font-black">DFL</span>
-              </div>
-              <span className="font-bold text-base tracking-tight text-text-primary">
-                Herbert Digital-First Lab
-              </span>
+            <Link href="/" className="inline-block mb-4">
+              <Wordmark />
             </Link>
-            <p className="text-xs text-text-muted mb-1">Miami Herbert Business School · University of Miami</p>
-            <p className="text-xs text-text-muted mb-4">Unanue Graduate Career Advancement Center</p>
-            <p className="text-sm text-text-muted leading-relaxed max-w-xs">
-              A digital-first student consulting lab delivering production-ready AI, analytics, and product design solutions — free to qualifying partner organizations.
+            <p className="text-sm text-ink-soft leading-relaxed max-w-xs">
+              A digital-first student consulting lab at Miami Herbert Business School. Production AI, analytics, and product design — free to qualifying partner organizations through the ACE framework.
             </p>
-            <div className="mt-5 flex items-center gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-um-green" />
-              <span className="text-xs text-text-muted">
-                ACE · Applied Career Experience Framework
+            <div className="mt-5 inline-flex items-center gap-2 rounded-md bg-card border border-rule px-2.5 py-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-um-green" />
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-ink">
+                ACE · Applied Career Experience
               </span>
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Sitemap */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-4">
-              Quick Links
+            <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
+              Sitemap
             </p>
             <ul className="space-y-2.5">
-              {navLinks.map((link) => (
+              {sitemap.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors duration-200"
+                    className="text-sm text-ink-soft hover:text-ink transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -53,34 +52,45 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact info */}
+          {/* Contact */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-4">
+            <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
               Contact
             </p>
-            <ul className="space-y-2 text-sm text-text-muted">
+            <ul className="space-y-2 text-sm text-ink-soft">
               <li>
                 <a
                   href="mailto:dfl@miami.edu"
-                  className="hover:text-um-orange transition-colors duration-200"
+                  className="hover:text-um-orange-text transition-colors duration-200"
                 >
                   dfl@miami.edu
                 </a>
               </li>
-              <li>Miami Herbert Business School</li>
               <li>University of Miami</li>
               <li>Coral Gables, FL 33146</li>
+            </ul>
+          </div>
+
+          {/* Colophon */}
+          <div>
+            <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
+              Colophon
+            </p>
+            <ul className="space-y-2 text-sm text-ink-soft">
+              <li>Miami Herbert Business School</li>
+              <li>Unanue GCAC</li>
+              <li>Issue №7 · Spring 2026</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-text-muted">
-            © {year} Herbert Digital-First Lab, Miami Herbert Business School, University of Miami. All rights reserved.
+        <div className="mt-14 pt-6 border-t border-rule flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted">
+            © {year} Herbert DFL · All rights reserved
           </p>
-          <p className="text-xs text-text-muted">
-            Built with Next.js & Tailwind CSS
+          <p className="font-mono text-[10.5px] font-medium tracking-[0.14em] uppercase text-muted">
+            v2.0 · Spring 2026 · Coral Gables, FL
           </p>
         </div>
       </div>

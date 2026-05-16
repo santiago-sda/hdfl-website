@@ -1,121 +1,155 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import Link from "next/link";
-import { DotGrid } from "@/components/ui/DotGrid";
-import { GradientOrb } from "@/components/ui/GradientOrb";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { projects } from "@/lib/data";
+import { MetaStrip } from "@/components/ui/MetaStrip";
 
-const subheadline = ["Where Digital Intelligence", "Meets Real", "Business Challenge."];
-const subtext =
-  "A digital-first student consulting lab connecting organizations with Miami Herbert students trained in AI engineering, data analytics, product design, and digital strategy — delivering production-ready solutions at no cost.";
+const meta: [string, string][] = [
+  ["Established", "2023"],
+  ["Location", "Coral Gables, FL"],
+  ["Program", "ACE Framework"],
+  ["Cohort", "Spring 2026"],
+  ["Engagements", "9 shipped"],
+  ["Partner fee", "USD 0.00"],
+];
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const featured = projects[0];
 
   return (
-    <section
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      <DotGrid fadeOnScroll className="dot-grid-animate" />
+    <section className="relative overflow-hidden">
+      {/* Spacer for fixed navbar */}
+      <div className="h-[72px]" />
 
-      <GradientOrb color="orange" size="xl" position="top-[-300px] left-[-300px]" animationClass="orb-1" />
-      <GradientOrb color="green" size="lg" position="bottom-[-200px] right-[-200px]" animationClass="orb-2" />
-      <GradientOrb color="mixed" size="md" position="top-[30%] right-[10%]" animationClass="orb-3" />
+      <MetaStrip items={meta} />
 
-      <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
-      >
-        {/* Primary heading — center of attention */}
-        <div className="overflow-hidden mb-5">
-          <motion.h1
-            initial={{ y: "110%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[0.95] text-text-primary"
-          >
-            Digital-First Lab
-          </motion.h1>
-        </div>
-
-        {/* Orange rule */}
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-          className="w-12 h-0.5 bg-um-orange mx-auto mb-6 origin-left"
+      <div className="relative px-6 md:px-10 py-16 md:py-24">
+        {/* Static ambient orbs (one warm top-right, one greenish bottom-left) */}
+        <div
+          aria-hidden
+          className="absolute -top-[260px] -right-[200px] w-[640px] h-[640px] rounded-full blur-3xl pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(244,115,33,0.18), transparent 70%)" }}
+        />
+        <div
+          aria-hidden
+          className="absolute -bottom-[260px] -left-[200px] w-[560px] h-[560px] rounded-full blur-3xl pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(0,80,48,0.10), transparent 70%)" }}
         />
 
-        {/* Subheadline — descriptor */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.52, ease: "easeOut" }}
-          className="mb-10"
-        >
-          {subheadline.map((line, i) => (
-            <p key={i} className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug text-text-muted">
-              {i === 1 ? <span className="text-um-orange">{line}</span> : line}
-            </p>
-          ))}
-        </motion.div>
-
-        {/* Subtext */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.72, ease: "easeOut" }}
-          className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed mb-10"
-        >
-          {subtext}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.86 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link
-            href="/contact"
-            className="group px-7 py-3.5 bg-um-orange hover:bg-um-orange-dim text-white font-semibold rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-um-orange/20"
-          >
-            Submit a Challenge
-            <span className="ml-2 inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </Link>
-          <Link
-            href="/projects"
-            className="px-7 py-3.5 border border-black/12 hover:border-black/25 bg-black/5 hover:bg-black/8 text-text-primary font-semibold rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Explore Our Work
-          </Link>
-        </motion.div>
-
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-20 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs text-text-muted tracking-widest uppercase">Scroll</span>
+        <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-12 lg:gap-16 items-end">
+          {/* Left column */}
           <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-black/20 to-transparent"
-          />
-        </motion.div>
-      </motion.div>
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+          >
+            <div className="inline-flex items-baseline gap-2.5 mb-7">
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
+                §01
+              </span>
+              <span className="self-center w-6 h-px bg-um-orange-dim" />
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
+                Issue №7 · Spring 2026 · Coral Gables
+              </span>
+            </div>
+
+            <h1 className="text-[68px] sm:text-[92px] md:text-[108px] lg:text-[116px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
+              Digital-First<br />Lab.
+            </h1>
+
+            <div className="mt-7 flex items-center gap-3">
+              <span className="w-10 h-0.5 bg-um-orange" />
+              <span className="font-mono text-[11px] font-semibold tracking-[0.16em] uppercase text-ink">
+                Where digital meets the real world
+              </span>
+            </div>
+
+            <p className="mt-7 text-[17px] leading-[1.6] text-ink-soft max-w-[520px]">
+              A digital-first student consulting lab inside Miami Herbert Business School. We pair Herbert students with outside organizations to ship working AI systems, dashboards, and product prototypes — <span className="text-ink font-semibold">free to the partner, real software in production.</span>
+            </p>
+
+            <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-5 py-[15px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors"
+              >
+                Submit a Challenge <span className="font-mono">↗</span>
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-[13px] font-medium text-ink hover:text-um-orange-text transition-colors px-2 py-2"
+              >
+                Browse the archive — 9 engagements <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Right column — featured engagement card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+          >
+            <Link
+              href={`/engagements/${featured.slug}`}
+              className="group block bg-card border border-rule rounded-2xl overflow-hidden hover:border-ink/20 transition-colors"
+              style={{
+                boxShadow: "0 1px 0 rgba(21,17,14,0.04), 0 12px 32px -16px rgba(21,17,14,0.12)",
+              }}
+            >
+              {/* Card mono header */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-rule-soft bg-paper/60">
+                <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
+                  Featured · №{featured.code}
+                </span>
+                <span className="font-mono text-[10.5px] font-medium tracking-[0.16em] uppercase text-muted">
+                  {featured.term} · {featured.status}
+                </span>
+              </div>
+
+              <div className="relative aspect-[16/10] overflow-hidden bg-paper">
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+
+              <div className="p-5 sm:p-6">
+                <p className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
+                  {featured.industry}
+                </p>
+                <h3 className="mt-2 text-[22px] font-extrabold tracking-[-0.02em] leading-[1.15] text-ink">
+                  {featured.title}
+                </h3>
+                <p className="mt-3 text-[13.5px] leading-[1.55] text-ink-soft">
+                  iOS prototype + journey maps that recovered an estimated $100–250K/month of unrealized broker revenue at a wholesale mortgage lender.
+                </p>
+
+                <div className="mt-5 grid grid-cols-3 gap-0 border-t border-rule-soft pt-4">
+                  <div>
+                    <div className="font-mono tabular-nums text-[15px] font-bold text-ink">HCD</div>
+                    <div className="font-mono text-[9.5px] font-medium tracking-[0.16em] uppercase text-muted mt-0.5">Track</div>
+                  </div>
+                  <div className="border-l border-rule-soft pl-4">
+                    <div className="font-mono tabular-nums text-[15px] font-bold text-ink">6 wk</div>
+                    <div className="font-mono text-[9.5px] font-medium tracking-[0.16em] uppercase text-muted mt-0.5">Duration</div>
+                  </div>
+                  <div className="border-l border-rule-soft pl-4">
+                    <div className="font-mono tabular-nums text-[15px] font-bold text-ink">24</div>
+                    <div className="font-mono text-[9.5px] font-medium tracking-[0.16em] uppercase text-muted mt-0.5">Screens</div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

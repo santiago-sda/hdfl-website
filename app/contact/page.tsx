@@ -1,79 +1,99 @@
-import { PageHero } from "@/components/ui/PageHero";
+import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { whatHappensNext } from "@/lib/data";
+import type { MetaStripItem } from "@/components/ui/MetaStrip";
+
+const meta: MetaStripItem[] = [
+  ["Form", "New challenge"],
+  ["File", "№26-10"],
+  ["Cycle", "Fall 2026"],
+  ["Fields", "9 (~4 min)"],
+  ["Cost", "USD 0.00"],
+  ["Response", "5 business days"],
+];
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        label="Partner With Us"
-        title="Submit Your Challenge"
-        subtitle="Tell us about your organization and the problem you are trying to solve. Our Lab director will reach out within five business days to schedule a scoping conversation. There is no cost to apply or to participate."
+      <PageHeader
+        eyebrow="Submit a Challenge · File №26-10"
+        title={
+          <>
+            Tell us what&apos;s <span className="text-um-orange-text italic font-black">actually</span> broken.
+          </>
+        }
+        subtitle="The Lab director reviews every submission personally and replies within five business days. No fee. No sales call."
+        meta={meta}
       />
 
-      <section className="py-16 px-6 pb-32">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Form */}
-          <AnimatedSection variant="slide-left" className="lg:col-span-3">
-            <div className="bg-card border border-border rounded-2xl p-8">
-              <h2 className="text-xl font-bold text-text-primary mb-1">Project Application</h2>
-              <p className="text-sm text-text-muted mb-8">
-                All fields marked are required. We typically respond within 5 business days.
-              </p>
-              <ContactForm />
+      <section className="px-6 md:px-10 pb-24">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.7fr_1fr] gap-8">
+          {/* Form card */}
+          <AnimatedSection variant="fade-up">
+            <div className="bg-card border border-rule rounded-2xl p-6 md:p-7">
+              <div className="flex items-center justify-between pb-5 border-b border-rule-soft">
+                <h2 className="text-[22px] font-bold tracking-[-0.01em] text-ink">
+                  Project Application
+                </h2>
+                <p className="font-mono text-[10.5px] font-medium tracking-[0.16em] uppercase text-muted">
+                  9 fields · est. 4 min
+                </p>
+              </div>
+              <div className="pt-6">
+                <ContactForm />
+              </div>
             </div>
           </AnimatedSection>
 
           {/* Sidebar */}
-          <AnimatedSection variant="slide-right" delay={0.1} className="lg:col-span-2">
+          <AnimatedSection variant="fade-up" delay={0.1}>
             <div className="space-y-5">
               {/* What happens next */}
-              <div className="bg-card border border-border rounded-2xl p-6">
-                <h3 className="text-sm font-semibold text-text-primary mb-5 flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-um-orange/12 text-um-orange text-xs font-bold flex items-center justify-center">→</span>
-                  What Happens Next
-                </h3>
-                <ol className="space-y-4">
+              <div className="bg-card border border-rule rounded-2xl p-6">
+                <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
+                  What happens next
+                </p>
+                <ol className="space-y-0">
                   {whatHappensNext.map((step, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="w-5 h-5 rounded-full bg-um-orange/10 text-um-orange text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 border border-um-orange/20">
-                        {i + 1}
+                    <li
+                      key={i}
+                      className={`flex items-start gap-3 py-2.5 text-[13.5px] text-ink-soft ${
+                        i === 0 ? "border-t border-ink/15" : "border-t border-rule-soft"
+                      }`}
+                    >
+                      <span className="font-mono text-[10.5px] font-bold tabular-nums tracking-[0.06em] text-um-orange-text shrink-0 mt-0.5">
+                        {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-sm text-text-muted leading-relaxed">{step}</p>
+                      <span>{step}</span>
                     </li>
                   ))}
                 </ol>
               </div>
 
-              {/* Contact info */}
-              <div className="bg-card border border-border rounded-2xl p-6">
-                <h3 className="text-sm font-semibold text-text-primary mb-4">Contact</h3>
-                <ul className="space-y-2.5 text-sm text-text-muted">
-                  <li>
-                    <a href="mailto:dfl@miami.edu" className="text-um-orange hover:underline">
-                      dfl@miami.edu
-                    </a>
-                  </li>
-                  <li>Miami Herbert Business School</li>
-                  <li>University of Miami</li>
-                  <li>Unanue Graduate Career Advancement Center</li>
-                  <li>Coral Gables, FL 33146</li>
-                </ul>
+              {/* Direct line */}
+              <div className="bg-ink text-paper rounded-2xl p-6">
+                <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-paper/65 mb-2">
+                  Direct line
+                </p>
+                <a
+                  href="mailto:dfl@miami.edu"
+                  className="text-[22px] font-bold tracking-[-0.015em] text-paper hover:text-um-orange transition-colors"
+                >
+                  dfl@miami.edu
+                </a>
+                <p className="mt-3 text-[13px] leading-[1.55] text-paper/70">
+                  If your challenge doesn&apos;t fit the form, email the Lab director directly. We&apos;ll find a path.
+                </p>
               </div>
 
-              {/* Free badge */}
-              <div className="rounded-2xl bg-um-orange/8 border border-um-orange/20 p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-um-orange animate-pulse" />
-                  <span className="text-xs font-semibold uppercase tracking-wide text-um-orange">
-                    100% Free
-                  </span>
-                </div>
-                <p className="text-sm text-text-muted leading-relaxed">
-                  All engagements are delivered at{" "}
-                  <span className="text-text-primary font-medium">no cost</span>{" "}
-                  to qualifying partner organizations through Miami Herbert&apos;s ACE (Applied Career Experience) framework.
+              {/* 100% Free */}
+              <div className="bg-um-orange-tint border border-um-orange/25 rounded-2xl p-6">
+                <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-um-orange-text mb-2">
+                  100% Free
+                </p>
+                <p className="text-[13px] leading-[1.55] text-ink-soft">
+                  All engagements are delivered at no cost to qualifying partner organizations through Miami Herbert&apos;s ACE framework.
                 </p>
               </div>
             </div>

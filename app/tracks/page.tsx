@@ -1,141 +1,149 @@
-import { PageHero } from "@/components/ui/PageHero";
+import Link from "next/link";
+import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { capabilityTracks } from "@/lib/data";
-import Link from "next/link";
+import type { MetaStripItem } from "@/components/ui/MetaStrip";
 
-const accentStyles = {
-  orange: {
-    border: "border-um-orange/30",
-    symbol: "bg-um-orange/12 text-um-orange",
-    label: "text-um-orange",
-    bg: "bg-um-orange/8",
-    tag: "bg-um-orange/8 border-um-orange/15 text-um-orange",
-  },
-  blue: {
-    border: "border-blue-400/30",
-    symbol: "bg-blue-400/12 text-blue-400",
-    label: "text-blue-400",
-    bg: "bg-blue-400/8",
-    tag: "bg-blue-400/8 border-blue-400/15 text-blue-400",
-  },
-  green: {
-    border: "border-emerald-400/30",
-    symbol: "bg-emerald-400/12 text-emerald-400",
-    label: "text-emerald-400",
-    bg: "bg-emerald-400/8",
-    tag: "bg-emerald-400/8 border-emerald-400/15 text-emerald-400",
-  },
-  purple: {
-    border: "border-purple-400/30",
-    symbol: "bg-purple-400/12 text-purple-400",
-    label: "text-purple-400",
-    bg: "bg-purple-400/8",
-    tag: "bg-purple-400/8 border-purple-400/15 text-purple-400",
-  },
-};
+const meta: MetaStripItem[] = [
+  ["Section", "Solutions"],
+  ["Solutions", "4 capability tracks"],
+  ["Levels", "Undergrad + Grad"],
+  ["Length", "5–10 weeks"],
+  ["Partner fee", "USD 0.00"],
+];
+
+const quickFacts: [string, string][] = [
+  ["Cost to partner", "USD 0.00"],
+  ["Typical length", "5–10 weeks"],
+  ["Avg. team size", "4–6 students + 2 coaches"],
+  ["Next cohort", "Fall 2026 · applications open Jun"],
+];
+
+function QuickFacts() {
+  return (
+    <div className="bg-card border border-rule rounded-2xl p-5">
+      <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
+        Quick facts
+      </p>
+      <dl className="space-y-3">
+        {quickFacts.map(([k, v]) => (
+          <div
+            key={k}
+            className="flex items-baseline justify-between gap-3 border-t border-rule-soft first:border-t-0 pt-2.5 first:pt-0"
+          >
+            <dt className="font-mono text-[10.5px] font-medium tracking-[0.12em] uppercase text-muted">
+              {k}
+            </dt>
+            <dd className="font-mono text-[12px] font-semibold tabular-nums text-ink text-right">
+              {v}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
 
 export default function TracksPage() {
   return (
     <>
-      <PageHero
-        label="Capability Solutions"
-        title="Four Digital Solutions, One Integrated Lab"
-        subtitle="Each solution is taught by a dedicated faculty lead and delivered through the ACE (Applied Career Experience) framework. Solutions span undergraduate and graduate levels and can be engaged independently or in combination for multi-phase projects."
+      <PageHeader
+        eyebrow="Capability Solutions · Four chapters"
+        title={
+          <>
+            Four digital solutions,<br />
+            <span className="text-um-orange-text">one</span> integrated lab.
+          </>
+        }
+        subtitle="Each solution is taught by a dedicated faculty lead and delivered through the ACE framework. Engage one independently — or stack several across a multi-phase partnership."
+        meta={meta}
+        sidecar={<QuickFacts />}
       />
 
-      <section className="py-16 px-6 pb-32">
-        <div className="max-w-5xl mx-auto space-y-8">
-          {capabilityTracks.map((track, i) => {
-            const styles = accentStyles[track.accent];
-            return (
-              <AnimatedSection key={track.id} variant="fade-up" delay={i * 0.08}>
-                <div className={`rounded-2xl bg-card border ${styles.border} overflow-hidden`}>
-                  {/* Header */}
-                  <div className="p-8 pb-6 border-b border-border">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold shrink-0 ${styles.symbol}`}>
-                          {track.symbol}
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2 flex-wrap mb-1">
-                            <span className={`text-xs font-bold tracking-widest uppercase ${styles.label}`}>
-                              {track.name}
-                            </span>
-                            <span className="text-xs text-text-muted border border-border rounded-full px-2 py-0.5">
-                              {track.course}
-                            </span>
-                          </div>
-                          <h2 className="text-xl font-bold text-text-primary leading-snug">
-                            {track.fullName}
-                          </h2>
-                          <p className={`text-xs font-semibold mt-1 ${styles.label}`}>{track.level}</p>
-                        </div>
-                      </div>
+      <section className="px-6 md:px-10 py-12 md:py-16 pb-24">
+        <div className="max-w-[1200px] mx-auto space-y-6">
+          {capabilityTracks.map((track, i) => (
+            <AnimatedSection key={track.id} variant="fade-up" delay={i * 0.05}>
+              <article className="bg-card border border-rule rounded-2xl overflow-hidden">
+                {/* Header strip */}
+                <div className="bg-paper border-b border-rule px-6 md:px-7 py-6 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                  <div className="flex items-start gap-6">
+                    <span className="text-[56px] font-black tracking-[-0.045em] leading-none text-um-orange-text tabular-nums">
+                      0{i + 1}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
+                        {track.course} · {track.level} · {track.shipped} shipped
+                      </p>
+                      <h2 className="mt-2 text-[28px] md:text-[32px] font-extrabold tracking-[-0.025em] leading-[1.1] text-ink">
+                        {track.name}
+                      </h2>
+                      <p className="mt-1.5 text-[13.5px] text-muted leading-snug">
+                        {track.fullName}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Body */}
-                  <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Description */}
-                    <div>
-                      <p className="text-sm text-text-muted leading-relaxed mb-6">
-                        {track.description}
-                      </p>
-                      {/* Skills */}
-                      <p className="text-xs font-semibold uppercase tracking-widest text-text-muted mb-3">
-                        Skills & Tools
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {track.skills.map((s) => (
-                          <span
-                            key={s}
-                            className={`text-xs px-2.5 py-1 rounded-full border font-medium ${styles.tag}`}
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start whitespace-nowrap"
+                  >
+                    Inquire about {track.course} <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
 
-                    {/* Deliverables */}
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-text-muted mb-3">
-                        Typical Deliverables
-                      </p>
-                      <ul className="space-y-2.5">
-                        {track.deliverables.map((d) => (
-                          <li key={d} className="flex items-start gap-2.5 text-sm text-text-muted">
-                            <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${styles.symbol.split(" ")[1]}`}
-                              style={{ backgroundColor: 'currentColor', opacity: 0.7 }}
-                            />
-                            {d}
-                          </li>
-                        ))}
-                      </ul>
+                {/* Body grid */}
+                <div className="p-6 md:p-7 grid grid-cols-1 md:grid-cols-[1fr_1.2fr_1fr] gap-8">
+                  <div>
+                    <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-3">
+                      Overview
+                    </p>
+                    <p className="text-[14px] leading-[1.55] text-ink-soft">
+                      {track.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-3">
+                      Typical deliverables
+                    </p>
+                    <ol className="border-t border-ink/15">
+                      {track.deliverables.map((d, j) => (
+                        <li
+                          key={d}
+                          className={`py-2.5 flex items-start gap-3 ${
+                            j === 0 ? "" : "border-t border-rule-soft"
+                          }`}
+                        >
+                          <span className="font-mono text-[10.5px] font-bold tabular-nums tracking-[0.06em] text-um-orange-text shrink-0 mt-1">
+                            {String(j + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-[13.5px] leading-[1.5] text-ink-soft">{d}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-3">
+                      Skills &amp; tools
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {track.skills.map((s) => (
+                        <span
+                          key={s}
+                          className="inline-block font-mono text-[11px] font-medium tracking-[0.04em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1"
+                        >
+                          {s}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </AnimatedSection>
-            );
-          })}
+              </article>
+            </AnimatedSection>
+          ))}
         </div>
-
-        {/* CTA */}
-        <AnimatedSection variant="fade-up" delay={0.3} className="max-w-5xl mx-auto mt-14">
-          <div className="rounded-2xl bg-surface border border-border p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-text-primary mb-1">Not sure which solution fits your challenge?</h3>
-              <p className="text-sm text-text-muted">Our Lab director will help you find the right match during the scoping conversation.</p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 px-6 py-3 bg-um-orange hover:bg-um-orange-dim text-white font-semibold rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-um-orange/20"
-            >
-              Submit a Challenge
-            </Link>
-          </div>
-        </AnimatedSection>
       </section>
     </>
   );

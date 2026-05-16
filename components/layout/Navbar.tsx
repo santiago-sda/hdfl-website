@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { navLinks } from "@/lib/data";
+import { Wordmark } from "@/components/ui/Wordmark";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,60 +18,40 @@ export function Navbar() {
     return () => unsub();
   }, [scrollY]);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
       style={{
-        backgroundColor: scrolled ? "rgba(248,249,250,0.96)" : "rgba(248,249,250,0)",
-        borderBottom: scrolled ? "1px solid rgba(0,0,0,0.08)" : "1px solid transparent",
+        backgroundColor: scrolled ? "rgba(246,243,236,0.92)" : "rgba(246,243,236,0)",
+        borderBottom: scrolled ? "1px solid rgba(21,17,14,0.10)" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
       }}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-7 h-7 rounded-md bg-um-orange flex items-center justify-center">
-            <span className="text-white text-xs font-black">DFL</span>
-          </div>
-          <span className="font-bold text-base tracking-tight text-text-primary hidden sm:block">
-            Herbert Digital-First Lab
-          </span>
-          <span className="font-bold text-base tracking-tight text-text-primary sm:hidden">
-            Herbert DFL
-          </span>
+      <nav className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
+        <Link href="/" className="flex items-center group">
+          <Wordmark />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                  isActive
-                    ? "text-text-primary"
-                    : "text-text-muted hover:text-text-primary"
+                className={`relative pb-1.5 text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 ${
+                  isActive ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-lg bg-black/5"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
-                  />
-                )}
-                <span className="relative">{link.label}</span>
+                <span>{link.label}</span>
                 {isActive && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute bottom-1 left-4 right-4 h-px bg-um-orange"
+                    className="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-um-orange"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                   />
                 )}
               </Link>
@@ -78,15 +59,15 @@ export function Navbar() {
           })}
           <Link
             href="/contact"
-            className="ml-3 px-4 py-2 bg-um-orange hover:bg-um-orange-dim text-white text-sm font-semibold rounded-lg transition-colors duration-200"
+            className="ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors duration-200"
           >
-            Submit a Challenge
+            Submit a Challenge <span className="font-mono text-[12px]">↗</span>
           </Link>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-black/5 transition-colors"
+          className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-ink/5 transition-colors"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -95,22 +76,21 @@ export function Navbar() {
           <motion.span
             animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
-            className="w-5 h-px bg-text-primary block origin-center"
+            className="w-5 h-px bg-ink block origin-center"
           />
           <motion.span
             animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.15 }}
-            className="w-5 h-px bg-text-primary block"
+            className="w-5 h-px bg-ink block"
           />
           <motion.span
             animate={mobileOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
-            className="w-5 h-px bg-text-primary block origin-center"
+            className="w-5 h-px bg-ink block origin-center"
           />
         </button>
       </nav>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -119,7 +99,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
             id="mobile-nav-drawer"
-            className="md:hidden overflow-hidden border-t border-black/8 bg-background/95 backdrop-blur-xl"
+            className="md:hidden overflow-hidden border-t border-rule bg-paper/95 backdrop-blur-xl"
           >
             <div className="px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
@@ -131,10 +111,11 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={closeMobile}
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                       pathname === link.href
-                        ? "text-um-orange bg-um-orange/8"
-                        : "text-text-muted hover:text-text-primary hover:bg-black/4"
+                        ? "text-ink bg-ink/5"
+                        : "text-muted hover:text-ink hover:bg-ink/5"
                     }`}
                   >
                     {link.label}
@@ -145,13 +126,14 @@ export function Navbar() {
                 initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.06 }}
-                className="mt-3 pt-3 border-t border-black/8"
+                className="mt-3 pt-3 border-t border-rule"
               >
                 <Link
                   href="/contact"
-                  className="block px-4 py-3 bg-um-orange text-white text-sm font-semibold rounded-lg text-center"
+                  onClick={closeMobile}
+                  className="block px-4 py-3 bg-ink text-paper text-sm font-semibold rounded-xl text-center"
                 >
-                  Submit a Challenge
+                  Submit a Challenge ↗
                 </Link>
               </motion.div>
             </div>
