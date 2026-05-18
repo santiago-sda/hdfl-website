@@ -33,9 +33,12 @@ export function ArchivePreview() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start md:self-end"
+            className="group inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start md:self-end"
           >
-            View all 9 <span aria-hidden="true">→</span>
+            View all 9{" "}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </AnimatedSection>
 

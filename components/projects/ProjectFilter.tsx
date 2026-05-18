@@ -90,7 +90,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                   type="button"
                   onClick={() => setActive(f.key)}
                   aria-pressed={isActive}
-                  className={`inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-[0.08em] uppercase rounded-lg px-3 py-2 transition-colors ${
+                  className={`inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-[0.08em] uppercase rounded-lg px-3 py-2 transition-all duration-200 active:scale-[0.97] ${
                     isActive
                       ? "bg-ink text-paper border border-ink"
                       : "bg-card text-muted border border-rule hover:border-ink/40 hover:text-ink"
@@ -118,7 +118,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                 exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
-                <Link href={`/engagements/${row.slug}`} className="block">
+                <Link href={`/engagements/${row.slug}`} className="group block">
                   <LedgerRow columns={columns} isLast={i === filtered.length - 1} hover>
                     <span className="font-mono text-[12px] font-bold tabular-nums text-um-orange-text">
                       №{row.code}
@@ -133,7 +133,10 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                     <span className="text-ink font-semibold truncate pr-3">{row.title}</span>
                     <span className="text-muted text-[13px] truncate pr-3">{row.delivered}</span>
                     <span className="font-mono text-[11px] font-semibold tracking-[0.08em] uppercase text-um-orange-text text-right">
-                      Read →
+                      Read{" "}
+                      <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">
+                        →
+                      </span>
                     </span>
                   </LedgerRow>
                 </Link>

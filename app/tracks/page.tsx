@@ -64,7 +64,7 @@ export default function TracksPage() {
         <div className="max-w-[1200px] mx-auto space-y-6">
           {capabilityTracks.map((track, i) => (
             <AnimatedSection key={track.id} variant="fade-up" delay={i * 0.05}>
-              <article className="bg-card border border-rule rounded-2xl overflow-hidden">
+              <article className="bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
                 {/* Header strip */}
                 <div className="bg-paper border-b border-rule px-6 md:px-7 py-6 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                   <div className="flex items-start gap-6">
@@ -86,9 +86,12 @@ export default function TracksPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start whitespace-nowrap"
+                    className="group inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start whitespace-nowrap"
                   >
-                    Inquire about {track.course} <span aria-hidden="true">→</span>
+                    Inquire about {track.course}{" "}
+                    <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                      →
+                    </span>
                   </Link>
                 </div>
 
@@ -132,7 +135,7 @@ export default function TracksPage() {
                       {track.skills.map((s) => (
                         <span
                           key={s}
-                          className="inline-block font-mono text-[11px] font-medium tracking-[0.04em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1"
+                          className="inline-block font-mono text-[11px] font-medium tracking-[0.04em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1 transition-colors duration-200 hover:border-ink/25 hover:text-ink"
                         >
                           {s}
                         </span>

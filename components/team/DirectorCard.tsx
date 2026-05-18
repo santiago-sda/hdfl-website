@@ -12,7 +12,7 @@ export function DirectorCard({ member, index, joined = "Joined 2021" }: Director
   const fileNumber = `FAC-${String(index + 1).padStart(2, "0")}`;
 
   return (
-    <article className="bg-card border border-rule rounded-2xl overflow-hidden">
+    <article className="bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
       <div className="flex items-center justify-between px-6 py-3 border-b border-rule-soft bg-paper">
         <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
           Faculty · 0{index + 1}
@@ -72,9 +72,12 @@ export function DirectorCard({ member, index, joined = "Joined 2021" }: Director
                   href={member.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
+                  className="group inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
                 >
-                  Profile · people.miami.edu <span aria-hidden="true">↗</span>
+                  Profile · people.miami.edu{" "}
+                  <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    ↗
+                  </span>
                 </Link>
               </div>
             )}

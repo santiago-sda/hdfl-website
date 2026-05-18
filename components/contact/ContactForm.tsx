@@ -303,7 +303,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-ink hover:bg-ink-soft disabled:opacity-60 text-paper text-[13px] font-semibold rounded-xl transition-colors"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-ink hover:bg-ink-soft disabled:opacity-60 text-paper text-[13px] font-semibold rounded-xl transition-colors"
         >
           {loading ? (
             <>
@@ -315,7 +315,10 @@ export function ContactForm() {
             </>
           ) : (
             <>
-              File this challenge <span className="font-mono">↗</span>
+              File this challenge{" "}
+              <span className="font-mono transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                ↗
+              </span>
             </>
           )}
         </button>

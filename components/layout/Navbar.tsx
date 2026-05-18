@@ -30,7 +30,11 @@ export function Navbar() {
       }}
     >
       <nav className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
-        <Link href="/" className="flex items-center group">
+        <Link
+          href="/"
+          aria-label="Home — Herbert Digital-First Lab"
+          className="flex items-center transition-opacity duration-200 hover:opacity-80"
+        >
           <Wordmark />
         </Link>
 
@@ -59,9 +63,12 @@ export function Navbar() {
           })}
           <Link
             href="/contact"
-            className="ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors duration-200"
+            className="group ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors duration-200"
           >
-            Submit a Challenge <span className="font-mono text-[12px]">↗</span>
+            Submit a Challenge{" "}
+            <span className="font-mono text-[12px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              ↗
+            </span>
           </Link>
         </div>
 
@@ -131,9 +138,12 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobile}
-                  className="block px-4 py-3 bg-ink text-paper text-sm font-semibold rounded-xl text-center"
+                  className="group block px-4 py-3 bg-ink hover:bg-ink-soft text-paper text-sm font-semibold rounded-xl text-center transition-colors duration-200"
                 >
-                  Submit a Challenge ↗
+                  Submit a Challenge{" "}
+                  <span className="font-mono inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    ↗
+                  </span>
                 </Link>
               </motion.div>
             </div>

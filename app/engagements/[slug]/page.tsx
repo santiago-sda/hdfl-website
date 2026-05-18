@@ -62,9 +62,12 @@ export default async function EngagementPage({ params }: PageProps) {
             </p>
             <Link
               href="/projects"
-              className="mt-7 inline-flex items-center gap-1.5 text-[13px] font-medium text-muted hover:text-ink transition-colors"
+              className="group mt-7 inline-flex items-center gap-1.5 text-[13px] font-medium text-muted hover:text-ink transition-colors"
             >
-              <span aria-hidden="true">←</span> Back to archive
+              <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:-translate-x-0.5">
+                ←
+              </span>{" "}
+              Back to archive
             </Link>
           </div>
 
@@ -117,7 +120,7 @@ export default async function EngagementPage({ params }: PageProps) {
             { label: "Approach", body: project.approach, dot: "#15110E" },
             { label: "Outcome", body: project.outcome, dot: "#005030" },
           ].map((b) => (
-            <div key={b.label} className="bg-card border border-rule rounded-2xl p-7">
+            <div key={b.label} className="bg-card border border-rule rounded-2xl p-7 transition-colors duration-200 hover:border-ink/20">
               <div className="flex items-center gap-2.5">
                 <span
                   className="w-2 h-2 rounded-full"

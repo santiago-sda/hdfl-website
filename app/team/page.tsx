@@ -246,15 +246,21 @@ export default function TeamPage() {
             <div className="flex flex-col gap-4 items-start lg:items-end">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-5 py-[15px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors"
+                className="group inline-flex items-center gap-2.5 px-5 py-[15px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors"
               >
-                Submit a Challenge <span className="font-mono">↗</span>
+                Submit a Challenge{" "}
+                <span className="font-mono transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  ↗
+                </span>
               </Link>
               <a
                 href="mailto:dfl@miami.edu"
-                className="inline-flex items-center gap-2 text-[13px] font-medium text-paper/85 hover:text-paper transition-colors"
+                className="group inline-flex items-center gap-2 text-[13px] font-medium text-paper/85 hover:text-paper transition-colors"
               >
-                dfl@miami.edu <span aria-hidden="true">→</span>
+                dfl@miami.edu{" "}
+                <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  →
+                </span>
               </a>
             </div>
           </AnimatedSection>

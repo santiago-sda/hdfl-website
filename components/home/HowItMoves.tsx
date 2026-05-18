@@ -26,7 +26,7 @@ export function HowItMoves() {
             <motion.div
               key={phase.number}
               variants={staggerItem}
-              className="bg-card border border-rule rounded-2xl p-7 flex flex-col"
+              className="bg-card border border-rule rounded-2xl p-7 flex flex-col transition-colors duration-200 hover:border-ink/20"
             >
               <div className="flex items-start justify-between gap-3">
                 <span className="text-[60px] font-extrabold tracking-[-0.04em] leading-none text-um-orange-text tabular-nums">

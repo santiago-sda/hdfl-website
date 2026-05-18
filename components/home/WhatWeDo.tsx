@@ -34,7 +34,7 @@ export function WhatWeDo() {
             <motion.div
               key={track.id}
               variants={staggerItem}
-              className="relative bg-card border border-rule rounded-2xl overflow-hidden"
+              className="relative bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20"
             >
               {track.mostRequested && (
                 <span className="absolute top-3 right-3 z-10 inline-flex items-center font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase bg-um-orange text-white px-2 py-0.5 rounded">
@@ -68,7 +68,7 @@ export function WhatWeDo() {
                   {track.skills.slice(0, skillCount[track.name] ?? 4).map((s) => (
                     <span
                       key={s}
-                      className="inline-block font-mono text-[11px] font-medium tracking-[0.04em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1"
+                      className="inline-block font-mono text-[11px] font-medium tracking-[0.04em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1 transition-colors duration-200 hover:border-ink/25 hover:text-ink"
                     >
                       {s}
                     </span>
@@ -82,9 +82,12 @@ export function WhatWeDo() {
         <AnimatedSection variant="fade-up" delay={0.2} className="mt-8">
           <Link
             href="/tracks"
-            className="inline-flex items-center gap-2 text-[13px] font-semibold text-ink hover:text-um-orange-text transition-colors"
+            className="group inline-flex items-center gap-2 text-[13px] font-semibold text-ink hover:text-um-orange-text transition-colors"
           >
-            View all four solutions <span aria-hidden="true">→</span>
+            View all four solutions{" "}
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </AnimatedSection>
       </div>

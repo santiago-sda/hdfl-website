@@ -8,7 +8,7 @@ interface CoachCardProps {
 
 export function CoachCard({ member, index }: CoachCardProps) {
   return (
-    <article className="bg-card border border-rule rounded-2xl overflow-hidden flex flex-col">
+    <article className="bg-card border border-rule rounded-2xl overflow-hidden flex flex-col transition-colors duration-200 hover:border-ink/20">
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-rule-soft bg-paper">
         <span className="font-mono text-[10px] font-bold tabular-nums tracking-[0.06em] text-um-orange-text">
           №{String(index + 1).padStart(2, "0")}

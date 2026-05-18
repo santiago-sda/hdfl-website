@@ -19,7 +19,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link
+              href="/"
+              aria-label="Home — Herbert Digital-First Lab"
+              className="inline-block mb-4 transition-opacity duration-200 hover:opacity-80"
+            >
               <Wordmark />
             </Link>
             <p className="text-sm text-ink-soft leading-relaxed max-w-xs">
