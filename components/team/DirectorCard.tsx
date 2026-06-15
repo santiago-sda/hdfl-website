@@ -8,14 +8,16 @@ interface DirectorCardProps {
   joined?: string;
 }
 
-export function DirectorCard({ member, index, joined = "Joined 2021" }: DirectorCardProps) {
+export function DirectorCard({ member, index, joined }: DirectorCardProps) {
   const fileNumber = `FAC-${String(index + 1).padStart(2, "0")}`;
+  const headerLabel = member.leadTitle ?? "Faculty";
+  const tenure = member.joined ?? joined ?? "Joined 2021";
 
   return (
     <article className="bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
       <div className="flex items-center justify-between px-6 py-3 border-b border-rule-soft bg-paper">
         <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
-          Faculty · 0{index + 1}
+          {headerLabel} · 0{index + 1}
         </span>
         <span className="font-mono text-[10.5px] font-bold tabular-nums tracking-[0.06em] text-um-orange-text">
           №{fileNumber}
@@ -63,7 +65,7 @@ export function DirectorCard({ member, index, joined = "Joined 2021" }: Director
                 Tenure
               </dt>
               <dd className="font-mono text-[11.5px] font-semibold tracking-[0.02em] text-ink text-right">
-                {joined}
+                {tenure}
               </dd>
             </div>
             {member.profileUrl && (

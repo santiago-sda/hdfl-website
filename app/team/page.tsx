@@ -10,14 +10,14 @@ import type { MetaStripItem } from "@/components/ui/MetaStrip";
 
 const meta: MetaStripItem[] = [
   ["Section", "People"],
-  ["Faculty", "2"],
+  ["Faculty", "4"],
   ["Officers", "5"],
   ["Coaches", "5"],
   ["Cohort", "Spring 2026"],
 ];
 
 const orgStructure = [
-  { label: "Faculty leaders", count: 2, color: "#F47321" },
+  { label: "Faculty leaders", count: 4, color: "#F47321" },
   { label: "Executive coaches", count: 5, color: "#005030" },
   { label: "Student coaches", count: 5, color: "#15110E" },
   { label: "Student consultants", count: "~25/sem", color: "#C45C18" },
@@ -125,11 +125,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {directors.map((d, i) => (
               <AnimatedSection key={d.id} variant="fade-up" delay={i * 0.08}>
-                <DirectorCard
-                  member={d}
-                  index={i}
-                  joined={i === 0 ? "Joined 2019" : "Joined 2021"}
-                />
+                <DirectorCard member={d} index={i} />
               </AnimatedSection>
             ))}
           </div>

@@ -70,6 +70,8 @@ export interface TeamMember {
   title: string;
   role: "director" | "officer" | "coach";
   domain?: string; // e.g. "HCD", "AI", "BI"
+  leadTitle?: string; // director lead role, shown in the card header
+  joined?: string; // e.g. "Joined 2019"
   avatar: string;
   bio?: string;
   profileUrl?: string;
@@ -105,6 +107,8 @@ export const teamMembers: TeamMember[] = [
     title: "Lab Director · Academic Program Director, MS Business Technology",
     role: "director",
     domain: "AI Engineering · Capstone",
+    leadTitle: "Digital Platforms Lead",
+    joined: "Joined 2019",
     avatar: "/team/korogodsky.webp",
     bio: "Leads the graduate arm of the Digital-First Lab and the MS in Business Technology program at Miami Herbert. Twenty-plus years pairing applied AI with industry — financial services, logistics, sports analytics — and the architect behind the Miami Method of framing complex business problems for execution-ready delivery.",
     profileUrl: "https://people.miami.edu/profile/d745ec0f1424c88ec80310b4b30645ad",
@@ -115,9 +119,35 @@ export const teamMembers: TeamMember[] = [
     title: "Lab Director · Lecturer, Business Technology",
     role: "director",
     domain: "HCD · BI & Dashboards",
+    leadTitle: "Decision Analytics Lead",
+    joined: "Joined 2021",
     avatar: "/team/murphy.webp",
     bio: "Co-directs the Lab and teaches the foundational digital product and HCD coursework at Herbert. Background in product design, decision sciences, and bringing data-driven dashboards into healthcare and consumer operations. Mentors student teams from first interview to final executive demo.",
     profileUrl: "https://people.miami.edu/profile/e2e14a2dfa56d4d5e0c9cca2e5000490",
+  },
+  {
+    id: "director-3",
+    name: "Dr. Erotokritos Skordilis",
+    title: "Lab Director · Lecturer, Business Technology",
+    role: "director",
+    domain: "AI Software Engineering",
+    leadTitle: "AI Software Engineering Lead",
+    joined: "Joined 2026",
+    avatar: "/team/skordilis.webp",
+    bio: "Lectures in Business Technology at Miami Herbert and leads the Lab's AI software engineering work. Pairs applied machine learning and software systems with student teams, taking models and prototypes from research into production-ready delivery.",
+    profileUrl: "https://people.miami.edu/profile/b7be952fb190b6a66372000fc95d769f",
+  },
+  {
+    id: "director-4",
+    name: "Leila Pinto-Campillo",
+    title: "Lab Director · Lecturer, Finance",
+    role: "director",
+    domain: "Finance · BI",
+    leadTitle: "Finance Lead",
+    joined: "Joined 2026",
+    avatar: "/team/pinto-campillo.webp",
+    bio: "Lectures in Finance at Miami Herbert and leads the Lab's finance practice. Brings financial modeling, valuation, and analytics to engagements, helping student teams ground digital solutions in sound business and financial reasoning.",
+    profileUrl: "https://people.miami.edu/profile/925baf27533cbcc23856599d66910ce7",
   },
   // Officers (executive board)
   {
