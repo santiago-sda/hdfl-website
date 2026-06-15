@@ -193,14 +193,6 @@ export const teamMembers: TeamMember[] = [
   // Coaches
   {
     id: "coach-1",
-    name: "Taylor Dutil",
-    title: "Coach",
-    role: "coach",
-    domain: "HCD",
-    avatar: "/team/taylor.jpg",
-  },
-  {
-    id: "coach-2",
     name: "Sylvie Vu",
     title: "Coach",
     role: "coach",
@@ -208,7 +200,7 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/sylvie.jpg",
   },
   {
-    id: "coach-3",
+    id: "coach-2",
     name: "Tommaso Buoncristiano",
     title: "Coach",
     role: "coach",
@@ -216,20 +208,20 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/tommaso.jpg",
   },
   {
-    id: "coach-4",
-    name: "Michelina Hoybach",
-    title: "Coach",
-    role: "coach",
-    domain: "BI · Dashboards",
-    avatar: "/team/michelina.png",
-  },
-  {
-    id: "coach-5",
+    id: "coach-3",
     name: "Lily Belle Kahn",
     title: "Coach",
     role: "coach",
     domain: "HCD",
     avatar: "/team/lily.png",
+  },
+  {
+    id: "coach-4",
+    name: "Dominika Pindor",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "/team/dominika-pindor.png",
   },
 ];
 

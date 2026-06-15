@@ -12,14 +12,14 @@ const meta: MetaStripItem[] = [
   ["Section", "People"],
   ["Faculty", "4"],
   ["Officers", "5"],
-  ["Coaches", "5"],
+  ["Coaches", "4"],
   ["Cohort", "Spring 2026"],
 ];
 
 const orgStructure = [
   { label: "Faculty leaders", count: 4, color: "#F47321" },
   { label: "Executive coaches", count: 5, color: "#005030" },
-  { label: "Student coaches", count: 5, color: "#15110E" },
+  { label: "Student coaches", count: 4, color: "#15110E" },
   { label: "Student consultants", count: "~25/sem", color: "#C45C18" },
 ];
 
@@ -67,7 +67,7 @@ const trackCoverage = [
     code: "BTE 210",
     solution: "HCD & Product Design",
     lead: "Dr. Murphy",
-    coaches: "Rodriguez · Dave · Stebelski · Dutil · Vu · Kahn",
+    coaches: "Rodriguez · Dave · Stebelski · Vu · Kahn · Pindor",
     shipped: 6,
   },
   {
@@ -81,7 +81,7 @@ const trackCoverage = [
     code: "BUS 150",
     solution: "BI & Dashboards",
     lead: "Dr. Murphy",
-    coaches: "Meini · Hoybach",
+    coaches: "Meini",
     shipped: 1,
   },
   {
