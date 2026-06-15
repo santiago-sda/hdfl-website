@@ -85,6 +85,13 @@ const trackCoverage = [
     shipped: 1,
   },
   {
+    code: "FIN 302",
+    solution: "Finance & Valuation",
+    lead: "Pinto-Campillo",
+    coaches: "Meini",
+    shipped: 0,
+  },
+  {
     code: "BTE Adv.",
     solution: "Graduate Capstone",
     lead: "Dr. Korogodsky",
@@ -164,7 +171,7 @@ export default function TeamPage() {
               Coaches &amp; mentors.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
-              Each coach is matched to projects by solution area, domain, and skill fit. Together they cover the four DFL tracks.
+              Each coach is matched to projects by solution area, domain, and skill fit. Together they cover the five DFL tracks.
             </p>
           </AnimatedSection>
 

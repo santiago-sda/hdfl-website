@@ -10,6 +10,7 @@ const skillCount: Record<string, number> = {
   "HCD & Product Design": 4,
   "AI Engineering": 4,
   "BI & Dashboards": 4,
+  "Finance & Valuation": 4,
   "Graduate Capstone": 4,
 };
 
@@ -21,7 +22,7 @@ export function WhatWeDo() {
           <div>
             <Eyebrow n="02">What we deliver</Eyebrow>
             <h2 className="mt-4 text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
-              Four capability<br />solutions.
+              Five capability<br />solutions.
             </h2>
           </div>
           <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[420px]">
@@ -84,7 +85,7 @@ export function WhatWeDo() {
             href="/tracks"
             className="group inline-flex items-center gap-2 text-[13px] font-semibold text-ink hover:text-um-orange-text transition-colors"
           >
-            View all four solutions{" "}
+            View all five solutions{" "}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
               →
             </span>

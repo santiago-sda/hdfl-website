@@ -243,6 +243,7 @@ export function ContactForm() {
             <option value="hcd">HCD &amp; Product Design</option>
             <option value="ai">AI Engineering</option>
             <option value="bi">BI &amp; Dashboards</option>
+            <option value="finance">Finance &amp; Valuation</option>
             <option value="capstone">Graduate Capstone</option>
             <option value="not-sure">Not sure yet</option>
           </select>

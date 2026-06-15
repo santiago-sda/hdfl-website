@@ -237,7 +237,7 @@ export const teamMembers: TeamMember[] = [
 
 export const stats: Stat[] = [
   { value: 9, suffix: "", label: "Engagements shipped", sub: "2023 onward" },
-  { value: 4, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Capstone" },
+  { value: 5, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average engagement", sub: "Kickoff → handoff" },
 ];
@@ -323,6 +323,32 @@ export const capabilityTracks: CapabilityTrack[] = [
   },
   {
     id: 4,
+    name: "Finance & Valuation",
+    fullName: "Applied Finance, Valuation & Market Strategy",
+    course: "FIN 302",
+    level: "Undergraduate",
+    description:
+      "Step into the role of financial analysts to value companies, assets, and investment decisions — applying financial-statement analysis, valuation modeling, portfolio theory, and capital-structure strategy to produce evidence-based recommendations for managers, investors, lenders, and boards.",
+    deliverables: [
+      "Financial-statement & ratio analysis with peer benchmarking",
+      "NPV / DCF investment case with forecasted cash flows",
+      "Optimal portfolio & efficient-frontier construction",
+      "Bond and options valuation & strategy modeling",
+      "Corporate valuation and capital-structure recommendation",
+    ],
+    skills: [
+      "Financial-statement analysis",
+      "DCF & corporate valuation",
+      "Capital budgeting / NPV",
+      "Portfolio theory (MPT / CAPM)",
+      "Bond & options modeling",
+      "WACC & capital structure",
+      "Excel financial modeling",
+    ],
+    shipped: 0,
+  },
+  {
+    id: 5,
     name: "Graduate Capstone",
     fullName: "Client-Centered Capstone Framing, Value Engineering & Execution Readiness",
     course: "BTE Adv.",

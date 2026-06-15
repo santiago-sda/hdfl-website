@@ -11,6 +11,7 @@ interface FilterOption {
   label: string;
   count: number;
   match: (p: Project) => boolean;
+  emptyNote?: string;
 }
 
 interface ProjectFilterProps {
@@ -49,6 +50,14 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       label: "BI",
       count: projects.filter((p) => p.category === "BI & Dashboards").length,
       match: (p) => p.category === "BI & Dashboards",
+    },
+    {
+      key: "finance",
+      label: "Finance",
+      count: projects.filter((p) => p.category === "Finance & Valuation").length,
+      match: (p) => p.category === "Finance & Valuation",
+      emptyNote:
+        "The first Finance & Valuation engagements ship Fall 2026. Check back soon.",
     },
     {
       key: "capstone",
@@ -144,8 +153,19 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
             ))}
           </AnimatePresence>
           {filtered.length === 0 && (
-            <div className="px-6 py-10 text-center text-sm text-muted">
-              No engagements match this filter yet.
+            <div className="px-6 py-12 flex flex-col items-center gap-2 text-center">
+              {activeFilter.emptyNote ? (
+                <>
+                  <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-um-green bg-um-green/10 rounded px-2 py-1">
+                    New this cohort
+                  </span>
+                  <p className="mt-1 text-sm text-muted max-w-[420px] leading-relaxed">
+                    {activeFilter.emptyNote}
+                  </p>
+                </>
+              ) : (
+                <p className="text-sm text-muted">No engagements match this filter yet.</p>
+              )}
             </div>
           )}
         </Ledger>

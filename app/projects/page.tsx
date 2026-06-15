@@ -15,6 +15,7 @@ const breakdown = [
   { name: "HCD & Product Design", count: 6, color: "#F47321" },
   { name: "AI Engineering", count: 1, color: "#005030" },
   { name: "BI & Dashboards", count: 1, color: "#15110E" },
+  { name: "Finance & Valuation", count: 0, color: "#003D24" },
   { name: "Graduate Capstone", count: 1, color: "#C45C18" },
 ];
 
@@ -39,9 +40,15 @@ function Breakdown() {
               />
               <span className="text-[13px] text-ink-soft truncate">{row.name}</span>
             </div>
-            <span className="font-mono tabular-nums text-[12px] font-bold text-ink">
-              {row.count}
-            </span>
+            {row.count === 0 ? (
+              <span className="font-mono text-[9.5px] font-bold tracking-[0.12em] uppercase text-um-green bg-um-green/10 rounded px-1.5 py-0.5 whitespace-nowrap">
+                New
+              </span>
+            ) : (
+              <span className="font-mono tabular-nums text-[12px] font-bold text-ink">
+                {row.count}
+              </span>
+            )}
           </li>
         ))}
       </ul>
