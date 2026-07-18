@@ -21,10 +21,10 @@ export default function AboutPage() {
         eyebrow="Method · The Miami Three-Phase Model"
         title={
           <>
-            A different<br />kind of<br />consulting.
+            A different<br />kind of<br />experiential learning.
           </>
         }
-        subtitle="We are the only university consulting program structured around full-lifecycle delivery. Peer programs at Michigan Ross, Rutgers, and Johns Hopkins offer project-based consulting — but none of them lead with digital and AI engineering as their core proposition, and all of them end at the final presentation. We continue."
+        subtitle="We are the only university experiential learning program structured around full-lifecycle delivery. Peer programs at Michigan Ross, Rutgers, and Johns Hopkins offer project-based experiential learning — but none of them lead with digital and AI engineering as their core proposition, and all of them end at the final presentation. We continue."
         meta={meta}
       />
 

@@ -72,10 +72,10 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       match: (p) => p.termShort === "F25",
     },
     {
-      key: "s25",
-      label: "Spring 2025",
-      count: projects.filter((p) => p.termShort === "S25").length,
-      match: (p) => p.termShort === "S25",
+      key: "s26",
+      label: "Spring 2026",
+      count: projects.filter((p) => p.termShort === "S26").length,
+      match: (p) => p.termShort === "S26",
     },
   ];
 

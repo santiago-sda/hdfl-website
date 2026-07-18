@@ -20,11 +20,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Herbert Digital-First Lab | Miami Herbert Business School",
   description:
-    "Where Digital Intelligence Meets Real Business Challenge. A digital-first student consulting lab inside Miami Herbert delivering AI systems, dashboards, and product prototypes — free to qualifying partner organizations through the ACE framework.",
+    "Where Digital Intelligence Meets Real Business Challenge. A digital-first student experiential learning lab inside Miami Herbert delivering AI systems, dashboards, and product prototypes — free to qualifying partner organizations through the ACE framework.",
   openGraph: {
     title: "Herbert Digital-First Lab | Miami Herbert Business School",
     description:
-      "Where digital meets the real world. Free student consulting through Miami Herbert's ACE program.",
+      "Where digital meets the real world. Free student experiential learning through Miami Herbert's ACE program.",
     siteName: "Herbert Digital-First Lab",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Herbert Digital-First Lab" }],
   },

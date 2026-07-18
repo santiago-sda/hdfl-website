@@ -27,7 +27,7 @@ export function Footer() {
               <Wordmark />
             </Link>
             <p className="text-sm text-ink-soft leading-relaxed max-w-xs">
-              A digital-first student consulting lab at Miami Herbert Business School. Production AI, analytics, and product design — free to qualifying partner organizations through the ACE framework.
+              A digital-first student experiential learning lab at Miami Herbert Business School. Production AI, analytics, and product design — free to qualifying partner organizations through the ACE framework.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-md bg-card border border-rule px-2.5 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-um-green" />
