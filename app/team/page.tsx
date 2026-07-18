@@ -220,11 +220,22 @@ export default function TeamPage() {
       </section>
 
       {/* CTA slab */}
-      <section className="relative overflow-hidden bg-ink text-paper px-6 md:px-10 py-16 md:py-20">
+      <section className="relative overflow-hidden bg-um-green text-paper px-6 md:px-10 py-16 md:py-20">
         <div
           aria-hidden
           className="absolute -top-[200px] -right-[150px] w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(244,115,33,0.22) 0%, transparent 65%)" }}
+        />
+        <div
+          aria-hidden
+          className="absolute top-0 right-0 w-[220px] h-[180px] pointer-events-none opacity-90"
+          style={{
+            backgroundImage: "url('/brand/verts-accentpink.svg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "36px auto",
+            maskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+          }}
         />
         <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
           <AnimatedSection variant="fade-up">

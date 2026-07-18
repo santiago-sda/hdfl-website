@@ -72,7 +72,7 @@ export default function ContactPage() {
               </div>
 
               {/* Direct line */}
-              <div className="bg-ink text-paper rounded-2xl p-6">
+              <div className="bg-um-green text-paper rounded-2xl p-6">
                 <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-paper/65 mb-2">
                   Direct line
                 </p>

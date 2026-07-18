@@ -139,7 +139,7 @@ export default async function EngagementPage({ params }: PageProps) {
       {/* Outcome metrics */}
       <section className="px-6 md:px-10 pb-24">
         <div className="max-w-[1200px] mx-auto">
-          <div className="bg-ink text-paper rounded-2xl px-6 md:px-10 py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-um-green text-paper rounded-2xl px-6 md:px-10 py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.metrics.map((m, i) => (
               <div
                 key={m.label}
