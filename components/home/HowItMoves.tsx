@@ -17,7 +17,7 @@ export function HowItMoves() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[440px]">
-            We are the only university consulting program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-engagement handoff</em> after the final presentation. Peer programs end at the demo. We continue.
+            We are the only university experiential learning program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-engagement handoff</em> after the final presentation. Peer programs end at the demo. We continue.
           </p>
         </AnimatedSection>
 
