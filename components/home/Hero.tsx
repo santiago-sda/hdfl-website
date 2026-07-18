@@ -85,7 +85,22 @@ export function Hero() {
             </div>
 
             <h1 className="text-[68px] sm:text-[92px] md:text-[108px] lg:text-[116px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
-              Digital-First<br />Lab.
+              Digital-First<br />
+              <span className="relative inline-block px-1">
+                <span
+                  aria-hidden="true"
+                  className="absolute -inset-x-3 -inset-y-1 z-0 -rotate-1"
+                >
+                  <Image
+                    src="/brand/brush-accentpink-01.png"
+                    alt=""
+                    fill
+                    className="object-fill select-none pointer-events-none"
+                    sizes="400px"
+                  />
+                </span>
+                <span className="relative z-10">Lab.</span>
+              </span>
             </h1>
 
             <div className="mt-7 flex items-center gap-3">
@@ -131,7 +146,7 @@ export function Hero() {
             <div
               className="relative bg-card border border-rule rounded-2xl overflow-hidden"
               style={{
-                boxShadow: "0 1px 0 rgba(21,17,14,0.04), 0 12px 32px -16px rgba(21,17,14,0.12)",
+                boxShadow: "0 1px 0 rgba(0,0,0,0.04), 0 12px 32px -16px rgba(0,0,0,0.12)",
               }}
             >
               <AnimatePresence mode="wait" custom={direction}>

@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo, Barlow_Condensed, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Stand-in for Neulis Neue Black Italic (UM Miami Herbert campaign headline
+// font) until we have Adobe Fonts license access to the real typeface.
+const archivo = Archivo({
+  variable: "--font-display-raw",
   subsets: ["latin"],
+  weight: ["800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+// Stand-in for Pressio Condensed (campaign sub-headline/body font) until we
+// have Adobe Fonts license access to the real typeface.
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-body-raw",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -36,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full`}>
+    <html lang="en" className={`${archivo.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>

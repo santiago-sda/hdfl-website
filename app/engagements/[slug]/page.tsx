@@ -117,7 +117,7 @@ export default async function EngagementPage({ params }: PageProps) {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { label: "Brief", body: project.brief, dot: "#F47321" },
-            { label: "Approach", body: project.approach, dot: "#15110E" },
+            { label: "Approach", body: project.approach, dot: "#000000" },
             { label: "Outcome", body: project.outcome, dot: "#005030" },
           ].map((b) => (
             <div key={b.label} className="bg-card border border-rule rounded-2xl p-7 transition-colors duration-200 hover:border-ink/20">

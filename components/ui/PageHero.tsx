@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MetaStrip, MetaStripItem } from "./MetaStrip";
 
@@ -25,8 +26,22 @@ export function PageHeader({ eyebrow, title, subtitle, meta, sidecar }: PageHead
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <div className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text mb-6 inline-flex items-baseline gap-2.5">
-              <span>{eyebrow}</span>
+            <div className="relative inline-flex items-baseline gap-2.5 mb-6 px-1">
+              <span
+                aria-hidden="true"
+                className="absolute -inset-x-2 -inset-y-1.5 z-0 rotate-1"
+              >
+                <Image
+                  src="/brand/brush-accentpink-01.png"
+                  alt=""
+                  fill
+                  className="object-fill select-none pointer-events-none"
+                  sizes="200px"
+                />
+              </span>
+              <span className="relative z-10 font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-ink">
+                {eyebrow}
+              </span>
             </div>
             <h1 className="text-[60px] sm:text-[80px] md:text-[96px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.9] text-ink">
               {title}

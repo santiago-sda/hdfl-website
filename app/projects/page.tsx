@@ -14,7 +14,7 @@ const meta: MetaStripItem[] = [
 const breakdown = [
   { name: "HCD & Product Design", count: 6, color: "#F47321" },
   { name: "AI Engineering", count: 1, color: "#005030" },
-  { name: "BI & Dashboards", count: 1, color: "#15110E" },
+  { name: "BI & Dashboards", count: 1, color: "#000000" },
   { name: "Finance & Valuation", count: 0, color: "#003D24" },
   { name: "Graduate Capstone", count: 1, color: "#C45C18" },
 ];

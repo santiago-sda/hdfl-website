@@ -19,7 +19,7 @@ const meta: MetaStripItem[] = [
 const orgStructure = [
   { label: "Faculty leaders", count: 4, color: "#F47321" },
   { label: "Executive coaches", count: 5, color: "#005030" },
-  { label: "Student coaches", count: 4, color: "#15110E" },
+  { label: "Student coaches", count: 4, color: "#000000" },
   { label: "Student consultants", count: "~25/sem", color: "#C45C18" },
 ];
 
