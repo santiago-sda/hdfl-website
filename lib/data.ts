@@ -472,7 +472,7 @@ export const projects: Project[] = [
     description:
       "VIP enterprise broker accounts at a wholesale mortgage lender experienced the same generic interface as smaller brokers, creating operational friction and an estimated $100–250K/month in unrealized revenue. Delivered user personas, journey maps, and a high-fidelity website and iPhone app prototype.",
     category: "HCD",
-    image: "/projects/ad-mortgage.png",
+    image: "/projects/ad-mortgage-team.jpg",
     tags: ["User Personas", "Figma Prototyping", "Journey Mapping"],
     featured: true,
     term: "Spring 2026",
