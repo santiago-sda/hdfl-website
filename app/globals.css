@@ -13,8 +13,8 @@
 
   /* Miami Green + Miami Orange — dominant campaign colors, unchanged from UM parent brand */
   --color-um-orange: #F47321;
-  --color-um-orange-dim: #C45C18;
-  --color-um-orange-text: #C45C18;
+  --color-um-orange-dim: #F47321;
+  --color-um-orange-text: #F47321;
   --color-um-orange-tint: rgba(244, 115, 33, 0.08);
   --color-um-green: #005030;
   --color-um-green-dim: #003D24;

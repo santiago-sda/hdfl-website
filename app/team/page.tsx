@@ -19,7 +19,7 @@ const orgStructure = [
   { label: "Faculty leaders", count: 4, color: "#F47321" },
   { label: "Executive coaches", count: 5, color: "#005030" },
   { label: "Student coaches", count: 4, color: "#000000" },
-  { label: "Student consultants", count: "~25/sem", color: "#C45C18" },
+  { label: "Student teams", count: "~25/sem", color: "#E7278A" },
 ];
 
 function OrgStructure() {
@@ -67,7 +67,7 @@ export default function TeamPage() {
             The people<br />behind <span className="text-um-orange-text italic font-black">the file.</span>
           </>
         }
-        subtitle="The Herbert Digital-First Lab is led by two faculty directors and supported by a network of executive and student coaches. Every engagement is matched, by domain and skill, to the right pair of hands before a student team is assembled."
+        subtitle="The Herbert Digital-First Lab is led by two faculty directors and supported by a network of executive and student coaches. Every project is matched, by domain and skill, to the right pair of hands before a student team is assembled."
         meta={meta}
         sidecar={<OrgStructure />}
       />
@@ -101,7 +101,7 @@ export default function TeamPage() {
               Officers &amp; leads.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
-              Student officers who run the Lab&apos;s operations and coach engagements end-to-end alongside the faculty leadership.
+              Student officers who run the Lab&apos;s operations and coach projects end-to-end alongside the faculty leadership.
             </p>
           </AnimatedSection>
 

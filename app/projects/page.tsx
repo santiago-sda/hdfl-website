@@ -16,7 +16,7 @@ const breakdown = [
   { name: "AI Engineering", category: "AI Engineering", color: "#005030" },
   { name: "BI & Dashboards", category: "BI & Dashboards", color: "#000000" },
   { name: "Finance & Valuation", category: "Finance & Valuation", color: "#003D24" },
-  { name: "Graduate Capstone", category: "Capstone", color: "#C45C18" },
+  { name: "Graduate Capstone", category: "Capstone", color: "#E7278A" },
 ].map((b) => ({
   ...b,
   count: projects.filter((p) => p.category === b.category).length,
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Archive · Every engagement"
+        eyebrow="Archive · Every project"
         title={<>The archive.</>}
         subtitle="Nine real partnerships across financial services, digital health, live events, sports analytics, food & beverage, and more. Every entry shipped a working artifact to a real client — not a deck."
         meta={meta}
