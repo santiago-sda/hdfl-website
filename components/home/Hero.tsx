@@ -84,8 +84,8 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="text-[68px] sm:text-[92px] md:text-[108px] lg:text-[116px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
-              Digital-First<br />
+            <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
+              <span className="whitespace-nowrap">Digital&#8209;First</span><br />
               <span className="relative inline-block px-1">
                 <span
                   aria-hidden="true"
