@@ -3,7 +3,7 @@
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { motion } from "framer-motion";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { engagementPhases } from "@/lib/data";
+import { projectPhases } from "@/lib/data";
 
 export function HowItMoves() {
   return (
@@ -17,12 +17,12 @@ export function HowItMoves() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[440px]">
-            We are the only university experiential learning program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-engagement handoff</em> after the final presentation. Peer programs end at the demo. We continue.
+            We are the only university experiential learning program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-project handoff</em> after the final presentation. Peer programs end at the demo. We continue.
           </p>
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {engagementPhases.map((phase) => (
+          {projectPhases.map((phase) => (
             <motion.div
               key={phase.number}
               variants={staggerItem}

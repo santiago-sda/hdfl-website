@@ -35,8 +35,7 @@ export function CTABanner() {
 
           <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96]">
             Have a real digital<br />
-            challenge?{" "}
-            <span className="text-um-orange">File №26-10 is yours.</span>
+            challenge?
           </h2>
 
           <p className="mt-6 text-[16px] leading-[1.6] text-paper/75 max-w-[560px]">

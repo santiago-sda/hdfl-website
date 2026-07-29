@@ -49,7 +49,7 @@ export interface PartnerType {
   description: string;
 }
 
-export interface EngagementPhase {
+export interface ProjectPhase {
   number: string;
   title: string;
   bullets: string[];
@@ -94,7 +94,7 @@ export const whatHappensNext: string[] = [
   "Scoping call — problem framing, data, capability match.",
   "Project brief drafted and shared for sign-off.",
   "Student team assembled. Kickoff workshop scheduled.",
-  "Semester-long engagement begins.",
+  "Semester-long project begins.",
 ];
 
 // ─── Team Members ─────────────────────────────────────────────────────────────
@@ -146,7 +146,7 @@ export const teamMembers: TeamMember[] = [
     leadTitle: "Finance Lead",
     joined: "Joined 2026",
     avatar: "/team/pinto-campillo.webp",
-    bio: "Lectures in Finance at Miami Herbert and leads the Lab's finance practice. Brings financial modeling, valuation, and analytics to engagements, helping student teams ground digital solutions in sound business and financial reasoning.",
+    bio: "Lectures in Finance at Miami Herbert and leads the Lab's finance practice. Brings financial modeling, valuation, and analytics to projects, helping student teams ground digital solutions in sound business and financial reasoning.",
     profileUrl: "https://people.miami.edu/profile/925baf27533cbcc23856599d66910ce7",
   },
   // Officers (executive board)
@@ -228,10 +228,10 @@ export const teamMembers: TeamMember[] = [
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 9, suffix: "", label: "Engagements shipped", sub: "2023 onward" },
+  { value: 9, suffix: "", label: "Projects shipped", sub: "2023 onward" },
   { value: 5, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
-  { value: 12, suffix: "wk", label: "Average engagement", sub: "Kickoff → handoff" },
+  { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
 ];
 
 // ─── Capability Tracks ───────────────────────────────────────────────────────
@@ -367,9 +367,9 @@ export const capabilityTracks: CapabilityTrack[] = [
   },
 ];
 
-// ─── Engagement Phases ───────────────────────────────────────────────────────
+// ─── Project Phases ──────────────────────────────────────────────────────────
 
-export const engagementPhases: EngagementPhase[] = [
+export const projectPhases: ProjectPhase[] = [
   {
     number: "01",
     title: "Needs Assessment",
@@ -401,7 +401,7 @@ export const engagementPhases: EngagementPhase[] = [
     bullets: [
       "Implementation-ready documentation package",
       "Handoff session with client technical team",
-      "Optional follow-on Lab engagement",
+      "Optional follow-on Lab project",
       "Impact assessment and outcome measurement",
       "Alumni network connection for ongoing advisory",
     ],
@@ -413,9 +413,9 @@ export const engagementPhases: EngagementPhase[] = [
 export const annualTimeline = [
   { period: "Jun – Aug", event: "Project applications open for Fall" },
   { period: "Sep – Oct", event: "Needs assessment + scoping" },
-  { period: "Oct – Dec", event: "Fall delivery — 12-week engagement" },
+  { period: "Oct – Dec", event: "Fall delivery — 12-week project" },
   { period: "Jan", event: "Post-capstone handoff + Spring intake" },
-  { period: "Feb – Apr", event: "Spring delivery — 12-week engagement" },
+  { period: "Feb – Apr", event: "Spring delivery — 12-week project" },
   { period: "May", event: "Spring cohort post-capstone handoff" },
 ];
 
@@ -460,7 +460,7 @@ export const partnerTypes: PartnerType[] = [
   },
 ];
 
-// ─── Projects (Real ACE Engagements) ─────────────────────────────────────────
+// ─── Projects (Real ACE Partnerships) ────────────────────────────────────────
 
 export const projects: Project[] = [
   {
@@ -707,7 +707,7 @@ export const projects: Project[] = [
     approach:
       "Designed a two-sided platform — partner-side event coordination and consumer-side loyalty — and stress-tested it against the live logistics the brand was already running with spreadsheets.",
     outcome:
-      "Mobile and web prototypes, an event-coordination flow, and a consumer engagement loop handed off to the brand's operations and marketing leads.",
+      "Mobile and web prototypes, an event-coordination flow, and a consumer loyalty loop handed off to the brand's operations and marketing leads.",
     metrics: [
       { value: "2 surfaces", label: "Mobile + web prototypes" },
       { value: "2 sides", label: "Partner + consumer flows" },

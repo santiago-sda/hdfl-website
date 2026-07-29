@@ -25,7 +25,7 @@ export function ArchivePreview() {
           <div>
             <Eyebrow n="03">The archive</Eyebrow>
             <h2 className="mt-4 text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
-              Every engagement<br />we&apos;ve shipped.
+              Every project<br />we&apos;ve shipped.
             </h2>
             <p className="mt-5 text-[15px] leading-[1.6] text-ink-soft max-w-[480px]">
               Nine real partnerships across financial services, digital health, live events, sports performance, food &amp; beverage, and more.
@@ -45,7 +45,7 @@ export function ArchivePreview() {
         <AnimatedSection variant="fade-up" delay={0.1}>
           <Ledger columns={columns}>
             {rows.map((row, i) => (
-              <Link key={row.id} href={`/engagements/${row.slug}`} className="block">
+              <Link key={row.id} href={`/projects/${row.slug}`} className="block">
                 <LedgerRow columns={columns} isLast={i === rows.length - 1} hover>
                   <span className="font-mono text-[12px] font-bold tabular-nums text-um-orange-text">
                     №{row.code}

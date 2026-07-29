@@ -159,7 +159,6 @@ export function ContactForm() {
             value={form.orgName}
             onChange={handleChange}
             required
-            placeholder="Acme Corp"
             className={inputClass}
           />
         </div>
@@ -172,7 +171,6 @@ export function ContactForm() {
             value={form.industry}
             onChange={handleChange}
             required
-            placeholder="e.g. Financial Services"
             className={inputClass}
           />
         </div>
@@ -188,7 +186,6 @@ export function ContactForm() {
             value={form.contactName}
             onChange={handleChange}
             required
-            placeholder="Jane Smith, VP Operations"
             className={inputClass}
           />
         </div>
@@ -201,7 +198,6 @@ export function ContactForm() {
             value={form.email}
             onChange={handleChange}
             required
-            placeholder="jane@company.com"
             className={inputClass}
           />
         </div>
@@ -286,7 +282,7 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={2}
-          placeholder="What does a successful engagement look like 6 months out?"
+          placeholder="What does a successful project look like 6 months out?"
           className={`${inputClass} resize-none`}
         />
       </div>

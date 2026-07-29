@@ -12,7 +12,7 @@ const meta: [string, string][] = [
   ["Location", "Coral Gables, FL"],
   ["Program", "ACE Framework"],
   ["Cohort", "Spring 2026"],
-  ["Engagements", "9 shipped"],
+  ["Projects", "9 shipped"],
   ["Partner fee", "USD 0.00"],
 ];
 
@@ -128,7 +128,7 @@ export function Hero() {
                 href="/projects"
                 className="group inline-flex items-center gap-2 text-[13px] font-medium text-ink hover:text-um-orange-text transition-colors px-2 py-2"
               >
-                Browse the archive — 9 engagements{" "}
+                Browse the archive — 9 projects{" "}
                 <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   →
                 </span>
@@ -136,7 +136,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right column — engagement deck */}
+          {/* Right column — project deck */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -159,7 +159,7 @@ export function Hero() {
                   transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
                 >
                   <Link
-                    href={`/engagements/${current.slug}`}
+                    href={`/projects/${current.slug}`}
                     className="group block hover:bg-paper/30 transition-colors"
                   >
                     <div className="flex items-center justify-between px-5 py-3 border-b border-rule-soft bg-paper/60">
@@ -230,7 +230,7 @@ export function Hero() {
               <button
                 type="button"
                 onClick={prev}
-                aria-label="Previous engagement"
+                aria-label="Previous project"
                 className="group inline-flex items-center gap-2 font-mono text-[11px] font-semibold tracking-[0.16em] uppercase text-ink-soft hover:text-um-orange-text transition-colors px-2 py-1.5"
               >
                 <span
@@ -255,7 +255,7 @@ export function Hero() {
               <button
                 type="button"
                 onClick={next}
-                aria-label="Next engagement"
+                aria-label="Next project"
                 className="group inline-flex items-center gap-2 font-mono text-[11px] font-semibold tracking-[0.16em] uppercase text-ink-soft hover:text-um-orange-text transition-colors px-2 py-1.5"
               >
                 <span className="hidden sm:inline">Next</span>
