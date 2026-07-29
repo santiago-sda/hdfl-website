@@ -78,7 +78,7 @@ export function ContactForm() {
       await new Promise((r) => setTimeout(r, 1200));
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or email us directly at dfl@miami.edu.");
+      setError("Something went wrong. Please try again or email us directly at alex.korogodsky@miami.edu.");
     } finally {
       setLoading(false);
     }

@@ -187,10 +187,10 @@ export default function TeamPage() {
                 </span>
               </Link>
               <a
-                href="mailto:dfl@miami.edu"
+                href="mailto:alex.korogodsky@miami.edu"
                 className="group inline-flex items-center gap-2 text-[13px] font-medium text-paper/85 hover:text-paper transition-colors"
               >
-                dfl@miami.edu{" "}
+                alex.korogodsky@miami.edu{" "}
                 <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   →
                 </span>

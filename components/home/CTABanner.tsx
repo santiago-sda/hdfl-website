@@ -56,7 +56,7 @@ export function CTABanner() {
               </span>
             </Link>
             <a
-              href="mailto:dfl@miami.edu"
+              href="mailto:alex.korogodsky@miami.edu"
               className="group inline-flex items-center gap-2 text-[13px] font-medium text-paper/85 hover:text-paper transition-colors"
             >
               Or email the Lab director directly{" "}

@@ -77,10 +77,10 @@ export default function ContactPage() {
                   Direct line
                 </p>
                 <a
-                  href="mailto:dfl@miami.edu"
+                  href="mailto:alex.korogodsky@miami.edu"
                   className="text-[22px] font-bold tracking-[-0.015em] text-paper hover:text-um-orange transition-colors"
                 >
-                  dfl@miami.edu
+                  alex.korogodsky@miami.edu
                 </a>
                 <p className="mt-3 text-[13px] leading-[1.55] text-paper/70">
                   If your challenge doesn&apos;t fit the form, email the Lab director directly. We&apos;ll find a path.

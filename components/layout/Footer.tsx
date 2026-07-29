@@ -64,10 +64,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-ink-soft">
               <li>
                 <a
-                  href="mailto:dfl@miami.edu"
+                  href="mailto:alex.korogodsky@miami.edu"
                   className="hover:text-um-orange-text transition-colors duration-200"
                 >
-                  dfl@miami.edu
+                  alex.korogodsky@miami.edu
                 </a>
               </li>
               <li>University of Miami</li>
