@@ -190,6 +190,14 @@ export const teamMembers: TeamMember[] = [
     domain: "Finance · BI",
     avatar: "/team/brunella-meini.jpg",
   },
+  {
+    id: "officer-6",
+    name: "Dominika Pindor",
+    title: "VP of Partnerships · Coach",
+    role: "officer",
+    domain: "Partnerships · HCD",
+    avatar: "/team/dominika-pindor.png",
+  },
   // Coaches
   {
     id: "coach-1",
@@ -217,11 +225,35 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "coach-4",
-    name: "Dominika Pindor",
+    name: "Taylor Dutil",
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "/team/dominika-pindor.png",
+    avatar: "https://i.pravatar.cc/150?u=taylor-dutil",
+  },
+  {
+    id: "coach-5",
+    name: "Michelina Hoybach",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "https://i.pravatar.cc/150?u=michelina-hoybach",
+  },
+  {
+    id: "coach-6",
+    name: "Rosa Correa",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "https://i.pravatar.cc/150?u=rosa-correa",
+  },
+  {
+    id: "coach-7",
+    name: "Kieran Marcus",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "https://i.pravatar.cc/150?u=kieran-marcus",
   },
 ];
 

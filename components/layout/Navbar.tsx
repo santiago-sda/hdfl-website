@@ -63,7 +63,7 @@ export function Navbar() {
           })}
           <Link
             href="/contact"
-            className="group ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors duration-200"
+            className="group ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors duration-200"
           >
             Submit a Challenge{" "}
             <span className="font-mono text-[12px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -138,7 +138,7 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobile}
-                  className="group block px-4 py-3 bg-ink hover:bg-ink-soft text-paper text-sm font-semibold rounded-xl text-center transition-colors duration-200"
+                  className="group block px-4 py-3 bg-um-orange hover:bg-um-orange-dim text-white text-sm font-semibold rounded-xl text-center transition-colors duration-200"
                 >
                   Submit a Challenge{" "}
                   <span className="font-mono inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

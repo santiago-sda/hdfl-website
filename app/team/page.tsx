@@ -7,18 +7,22 @@ import { DirectorCard } from "@/components/team/DirectorCard";
 import { CoachCard } from "@/components/team/CoachCard";
 import type { MetaStripItem } from "@/components/ui/MetaStrip";
 
+const facultyCount = teamMembers.filter((m) => m.role === "director").length;
+const officerCount = teamMembers.filter((m) => m.role === "officer").length;
+const coachCount = teamMembers.filter((m) => m.role === "coach").length;
+
 const meta: MetaStripItem[] = [
   ["Section", "People"],
-  ["Faculty", "4"],
-  ["Officers", "5"],
-  ["Coaches", "4"],
+  ["Faculty", String(facultyCount)],
+  ["Officers", String(officerCount)],
+  ["Coaches", String(coachCount)],
   ["Cohort", "Spring 2026"],
 ];
 
 const orgStructure = [
-  { label: "Faculty leaders", count: 4, color: "#F47321" },
-  { label: "Executive coaches", count: 5, color: "#005030" },
-  { label: "Student coaches", count: 4, color: "#000000" },
+  { label: "Faculty leaders", count: facultyCount, color: "#F47321" },
+  { label: "Executive coaches", count: officerCount, color: "#005030" },
+  { label: "Student coaches", count: coachCount, color: "#000000" },
   { label: "Student teams", count: "~25/sem", color: "#E7278A" },
 ];
 

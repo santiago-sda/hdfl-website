@@ -58,6 +58,8 @@ function NumberedLabel({ number, htmlFor, children }: NumberedLabelProps) {
   );
 }
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
+
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -75,7 +77,13 @@ export function ContactForm() {
     setLoading(true);
     setError(null);
     try {
-      await new Promise((r) => setTimeout(r, 1200));
+      if (!FORMSPREE_ENDPOINT) throw new Error("Formspree endpoint not configured");
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Formspree submission failed");
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or email us directly at alex.korogodsky@miami.edu.");
@@ -300,7 +308,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="group inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-ink hover:bg-ink-soft disabled:opacity-60 text-paper text-[13px] font-semibold rounded-xl transition-colors"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-um-orange hover:bg-um-orange-dim disabled:opacity-60 text-white text-[13px] font-semibold rounded-xl transition-colors"
         >
           {loading ? (
             <>
