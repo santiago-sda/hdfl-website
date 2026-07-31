@@ -75,15 +75,32 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Colophon */}
+          {/* Follow */}
           <div>
             <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
-              Colophon
+              Follow
             </p>
             <ul className="space-y-2 text-sm text-ink-soft">
-              <li>Miami Herbert Business School</li>
-              <li>Unanue GCAC</li>
-              <li>Issue №7 · Spring 2026</li>
+              <li>
+                <a
+                  href="https://www.instagram.com/herbertdigitalfirst"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-um-orange-text transition-colors duration-200"
+                >
+                  Instagram · @herbertdigitalfirst
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/herbertdigitalfirstlab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-um-orange-text transition-colors duration-200"
+                >
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>

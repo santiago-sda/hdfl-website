@@ -4,7 +4,6 @@ import Link from "next/link";
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { motion } from "framer-motion";
 import { capabilityTracks } from "@/lib/data";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const skillCount: Record<string, number> = {
   "HCD & Product Design": 4,
@@ -18,14 +17,8 @@ export function WhatWeDo() {
   return (
     <section className="relative px-6 md:px-10 py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto">
-        <AnimatedSection variant="fade-up" className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <Eyebrow n="02">What we deliver</Eyebrow>
-            <h2 className="mt-4 text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
-              Five capability<br />solutions.
-            </h2>
-          </div>
-          <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[420px]">
+        <AnimatedSection variant="fade-up" className="mb-12">
+          <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[560px]">
             Each solution is taught by a dedicated faculty lead and delivered through the Applied Career Experience (ACE) framework. Engage one independently, or chain several across a multi-phase partnership that moves from research to ship.
           </p>
         </AnimatedSection>
