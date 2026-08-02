@@ -58,11 +58,6 @@ export function Hero() {
       <div className="relative px-6 md:px-10 py-16 md:py-24">
         <div
           aria-hidden
-          className="absolute -top-[260px] -right-[200px] w-[640px] h-[640px] rounded-full blur-3xl pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(244,115,33,0.18), transparent 70%)" }}
-        />
-        <div
-          aria-hidden
           className="absolute -bottom-[260px] -left-[200px] w-[560px] h-[560px] rounded-full blur-3xl pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(0,80,48,0.10), transparent 70%)" }}
         />
@@ -74,16 +69,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <div className="inline-flex items-baseline gap-2.5 mb-7">
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
-                §01
-              </span>
-              <span className="self-center w-6 h-px bg-um-orange-dim" />
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
-                Issue №7 · Spring 2026 · Coral Gables
-              </span>
-            </div>
-
             <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
               <span className="whitespace-nowrap">Digital&#8209;First</span><br />
               <span className="relative inline-block px-1">
@@ -117,7 +102,7 @@ export function Hero() {
             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2.5 px-5 py-[15px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors"
+                className="group inline-flex items-center gap-2.5 px-5 py-[15px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors"
               >
                 Submit a Challenge{" "}
                 <span className="font-mono transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

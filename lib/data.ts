@@ -229,7 +229,7 @@ export const teamMembers: TeamMember[] = [
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "https://i.pravatar.cc/150?u=taylor-dutil",
+    avatar: "/team/taylor-dutil.jpeg",
   },
   {
     id: "coach-5",
@@ -237,7 +237,7 @@ export const teamMembers: TeamMember[] = [
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "https://i.pravatar.cc/150?u=michelina-hoybach",
+    avatar: "/team/michelina-hoybach.png",
   },
   {
     id: "coach-6",

@@ -11,35 +11,24 @@ export function CTABanner() {
       />
       <div
         aria-hidden
-        className="absolute top-0 right-0 w-[220px] h-[180px] pointer-events-none opacity-90"
+        className="absolute top-0 right-0 w-[300px] h-[110px] pointer-events-none"
         style={{
           backgroundImage: "url('/brand/verts-accentpink.svg')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "36px auto",
-          maskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+          backgroundRepeat: "repeat-x",
+          backgroundPosition: "top right",
+          backgroundSize: "22px 110px",
         }}
       />
 
       <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
         <AnimatedSection variant="fade-up">
-          <div className="inline-flex items-baseline gap-2.5 mb-6">
-            <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
-              §05
-            </span>
-            <span className="self-center w-6 h-px" style={{ backgroundColor: "#F4A36A" }} />
-            <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
-              Partner with us
-            </span>
-          </div>
-
           <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96]">
             Have a real digital<br />
             challenge?
           </h2>
 
           <p className="mt-6 text-[16px] leading-[1.6] text-paper/75 max-w-[560px]">
-            Fall 2026 applications open in June. The Lab director reviews every submission personally and confirms within five business days. No fee. No retainer. No sales call.
+            Fall 2026 applications are now closed. Spring 2027 submissions are open, and we look forward to reviewing your application. The Lab director personally reviews every submission and responds within five business days. No fee. No retainer. No sales call.
           </p>
         </AnimatedSection>
 

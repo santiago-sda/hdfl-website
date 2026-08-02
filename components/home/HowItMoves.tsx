@@ -2,7 +2,6 @@
 
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { motion } from "framer-motion";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { projectPhases } from "@/lib/data";
 
 export function HowItMoves() {
@@ -11,8 +10,7 @@ export function HowItMoves() {
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection variant="fade-up" className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <Eyebrow n="04">How a project moves</Eyebrow>
-            <h2 className="mt-4 text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
+            <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
               Three phases,<br />one partnership.
             </h2>
           </div>
