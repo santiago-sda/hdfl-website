@@ -62,14 +62,14 @@ export function Hero() {
           style={{ background: "radial-gradient(circle, rgba(0,80,48,0.10), transparent 70%)" }}
         />
 
-        <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-12 lg:gap-16 items-end">
+        <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-12 lg:gap-16 items-center">
           {/* Left column */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
+            <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[108px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
               <span className="whitespace-nowrap">Digital&#8209;First</span><br />
               <span className="relative inline-block px-1">
                 <span
@@ -88,18 +88,18 @@ export function Hero() {
               </span>
             </h1>
 
-            <div className="mt-7 flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-3">
               <span className="w-10 h-0.5 bg-um-orange" />
               <span className="font-mono text-[11px] font-semibold tracking-[0.16em] uppercase text-ink">
                 Where digital meets the real world
               </span>
             </div>
 
-            <p className="mt-7 text-[17px] leading-[1.6] text-ink-soft max-w-[520px]">
+            <p className="mt-8 text-[18px] leading-[1.65] text-ink-soft max-w-[540px]">
               A digital-first student experiential learning lab inside Miami Herbert Business School. We pair Herbert students with outside organizations to ship working AI systems, dashboards, and product prototypes — <span className="text-ink font-semibold">free to the partner, real software in production.</span>
             </p>
 
-            <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
+            <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center">
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-2.5 px-5 py-[15px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors"

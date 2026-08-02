@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export function CTABanner() {
@@ -9,16 +10,15 @@ export function CTABanner() {
         className="absolute -top-[200px] -right-[150px] w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(244,115,33,0.22) 0%, transparent 65%)" }}
       />
-      <div
-        aria-hidden
-        className="absolute top-0 right-0 w-[300px] h-[110px] pointer-events-none"
-        style={{
-          backgroundImage: "url('/brand/verts-accentpink.svg')",
-          backgroundRepeat: "repeat-x",
-          backgroundPosition: "top right",
-          backgroundSize: "22px 110px",
-        }}
-      />
+      <div aria-hidden className="absolute top-0 right-0 w-[300px] h-[157px] pointer-events-none">
+        <Image
+          src="/um-stripes.png"
+          alt=""
+          fill
+          className="object-contain object-right-top select-none"
+          sizes="300px"
+        />
+      </div>
 
       <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
         <AnimatedSection variant="fade-up">

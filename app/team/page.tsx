@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { teamMembers } from "@/lib/data";
 import { DirectorCard } from "@/components/team/DirectorCard";
 import { CoachCard } from "@/components/team/CoachCard";
@@ -80,8 +80,7 @@ export default function TeamPage() {
       <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
-            <Eyebrow n="01">Faculty leaders</Eyebrow>
-            <h2 className="mt-4 text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
+            <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
               Lab directors.
             </h2>
           </AnimatedSection>
@@ -100,8 +99,7 @@ export default function TeamPage() {
       <section className="px-6 md:px-10 py-12 md:py-16 bg-paper-alt border-y border-rule">
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
-            <Eyebrow n="02">Executive board</Eyebrow>
-            <h2 className="mt-4 text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
+            <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
               Officers &amp; leads.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
@@ -112,7 +110,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {officers.map((m, i) => (
               <AnimatedSection key={m.id} variant="scale-in" delay={i * 0.04}>
-                <CoachCard member={m} index={i} />
+                <CoachCard member={m} />
               </AnimatedSection>
             ))}
           </div>
@@ -123,8 +121,7 @@ export default function TeamPage() {
       <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
-            <Eyebrow n="03">Coaching roster</Eyebrow>
-            <h2 className="mt-4 text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
+            <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
               Coaches &amp; mentors.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
@@ -135,7 +132,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {coaches.map((m, i) => (
               <AnimatedSection key={m.id} variant="scale-in" delay={i * 0.04}>
-                <CoachCard member={m} index={i + officers.length} />
+                <CoachCard member={m} />
               </AnimatedSection>
             ))}
           </div>
@@ -149,28 +146,17 @@ export default function TeamPage() {
           className="absolute -top-[200px] -right-[150px] w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(244,115,33,0.22) 0%, transparent 65%)" }}
         />
-        <div
-          aria-hidden
-          className="absolute top-0 right-0 w-[220px] h-[180px] pointer-events-none opacity-90"
-          style={{
-            backgroundImage: "url('/brand/verts-accentpink.svg')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "36px auto",
-            maskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
-          }}
-        />
+        <div aria-hidden className="absolute top-0 right-0 w-[300px] h-[157px] pointer-events-none">
+          <Image
+            src="/um-stripes.png"
+            alt=""
+            fill
+            className="object-contain object-right-top select-none"
+            sizes="300px"
+          />
+        </div>
         <div className="relative max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
           <AnimatedSection variant="fade-up">
-            <div className="inline-flex items-baseline gap-2.5 mb-5">
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
-                §04
-              </span>
-              <span className="self-center w-6 h-px" style={{ backgroundColor: "#F4A36A" }} />
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#F4A36A" }}>
-                Work with this team
-              </span>
-            </div>
             <h2 className="text-[40px] md:text-[56px] font-extrabold tracking-[-0.035em] leading-[0.98]">
               Ready to partner with us?
             </h2>
