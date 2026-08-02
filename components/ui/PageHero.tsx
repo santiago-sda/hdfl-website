@@ -20,7 +20,11 @@ export function PageHeader({ eyebrow, title, subtitle, meta, sidecar }: PageHead
         {meta && <MetaStrip items={meta} />}
       </div>
       <section className="relative px-6 md:px-10 py-16 md:py-20">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-10 lg:gap-14 items-end">
+        <div
+          className={`max-w-[1200px] mx-auto grid grid-cols-1 gap-10 lg:gap-14 items-end ${
+            sidecar ? "lg:grid-cols-[1.55fr_1fr]" : ""
+          }`}
+        >
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
