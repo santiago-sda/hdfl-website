@@ -245,15 +245,15 @@ export const teamMembers: TeamMember[] = [
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "https://i.pravatar.cc/150?u=rosa-correa",
+    avatar: "/team/rosa-correa.jpeg",
   },
   {
     id: "coach-7",
-    name: "Kieran Marcus",
+    name: "Kiran Reynolds",
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "https://i.pravatar.cc/150?u=kieran-marcus",
+    avatar: "/team/kiran-reynolds.png",
   },
 ];
 

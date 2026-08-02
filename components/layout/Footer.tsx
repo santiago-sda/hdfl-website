@@ -19,22 +19,13 @@ function LinkedInIcon() {
   );
 }
 
-const sitemap = [
-  { href: "/", label: "Home" },
-  { href: "/tracks", label: "Solutions" },
-  { href: "/projects", label: "Archive" },
-  { href: "/team", label: "People" },
-  { href: "/about", label: "Method" },
-  { href: "/contact", label: "Submit" },
-];
-
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-rule bg-paper-alt">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link
@@ -53,25 +44,6 @@ export function Footer() {
                 ACE · Applied Career Experience
               </span>
             </div>
-          </div>
-
-          {/* Sitemap */}
-          <div>
-            <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
-              Sitemap
-            </p>
-            <ul className="space-y-2.5">
-              {sitemap.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-ink-soft hover:text-ink transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Contact */}
