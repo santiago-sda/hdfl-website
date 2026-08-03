@@ -263,7 +263,6 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={3}
-          placeholder="What business problem are you trying to solve? Current state and desired outcome."
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -276,7 +275,6 @@ export function ContactForm() {
           value={form.dataAvailable}
           onChange={handleChange}
           rows={2}
-          placeholder="What can the student team touch — CRM, API, dashboards, spreadsheets?"
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -290,7 +288,6 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={2}
-          placeholder="What does a successful project look like 6 months out?"
           className={`${inputClass} resize-none`}
         />
       </div>
