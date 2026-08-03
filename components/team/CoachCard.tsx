@@ -14,7 +14,7 @@ export function CoachCard({ member }: CoachCardProps) {
             src={member.avatar}
             alt={member.name}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="64px"
           />
         </div>

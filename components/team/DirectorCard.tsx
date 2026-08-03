@@ -30,7 +30,7 @@ export function DirectorCard({ member, index, joined }: DirectorCardProps) {
             src={member.avatar}
             alt={member.name}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="128px"
           />
         </div>
