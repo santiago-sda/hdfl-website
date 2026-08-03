@@ -49,6 +49,7 @@ export default function TracksPage() {
     <>
       <PageHeader
         eyebrow="Capability Solutions · Five chapters"
+        titleColor="green"
         title={
           <span className="block text-[40px] sm:text-[54px] md:text-[64px] lg:text-[66px]">
             Five digital solutions,<br />

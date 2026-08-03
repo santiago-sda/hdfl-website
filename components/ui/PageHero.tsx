@@ -8,12 +8,13 @@ import { MetaStrip, MetaStripItem } from "./MetaStrip";
 interface PageHeaderProps {
   eyebrow: string;
   title: ReactNode;
+  titleColor?: "ink" | "green";
   subtitle?: string;
   meta?: MetaStripItem[];
   sidecar?: ReactNode;
 }
 
-export function PageHeader({ eyebrow, title, subtitle, meta, sidecar }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, titleColor = "ink", subtitle, meta, sidecar }: PageHeaderProps) {
   return (
     <>
       <div className="pt-[72px]">
@@ -47,7 +48,11 @@ export function PageHeader({ eyebrow, title, subtitle, meta, sidecar }: PageHead
                 {eyebrow}
               </span>
             </div>
-            <h1 className="text-[60px] sm:text-[80px] md:text-[96px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.9] text-ink">
+            <h1
+              className={`text-[60px] sm:text-[80px] md:text-[96px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.9] ${
+                titleColor === "green" ? "text-um-green" : "text-ink"
+              }`}
+            >
               {title}
             </h1>
             {subtitle && (

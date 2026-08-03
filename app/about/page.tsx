@@ -19,6 +19,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="Method · The Miami Three-Phase Model"
+        titleColor="green"
         title={
           <>
             A different kind of<br />experiential learning.

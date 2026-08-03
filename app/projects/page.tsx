@@ -64,6 +64,7 @@ export default function ProjectsPage() {
     <>
       <PageHeader
         eyebrow="Archive · Every project"
+        titleColor="green"
         title={<>The archive.</>}
         subtitle="Nine real partnerships across financial services, digital health, live events, sports analytics, food & beverage, and more. Every entry shipped a working artifact to a real client — not a deck."
         meta={meta}

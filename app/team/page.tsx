@@ -66,6 +66,7 @@ export default function TeamPage() {
     <>
       <PageHeader
         eyebrow="People · Directors & Coaches"
+        titleColor="green"
         title={
           <>
             The people<br />behind <span className="text-um-orange-text italic font-black">the file.</span>
