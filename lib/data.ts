@@ -73,6 +73,7 @@ export interface TeamMember {
   leadTitle?: string; // director lead role, shown in the card header
   joined?: string; // e.g. "Joined 2019"
   avatar: string;
+  avatarPosition?: string; // CSS object-position; overrides the default top-anchored crop
   bio?: string;
   profileUrl?: string;
 }
@@ -157,6 +158,7 @@ export const teamMembers: TeamMember[] = [
     role: "officer",
     domain: "Strategy · HCD",
     avatar: "/team/matthew-rodriguez.jpg",
+    avatarPosition: "center",
   },
   {
     id: "officer-2",
