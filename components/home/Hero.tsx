@@ -69,7 +69,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[108px] font-black tracking-[-0.045em] leading-[0.92] text-ink">
+            <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[108px] font-black tracking-[-0.045em] leading-[0.92] text-um-green">
               <span className="whitespace-nowrap">Digital&#8209;First</span><br />
               <span className="relative inline-block px-1">
                 <span

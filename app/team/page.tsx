@@ -88,7 +88,7 @@ export default function TeamPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {directors.map((d, i) => (
-              <AnimatedSection key={d.id} variant="fade-up" delay={i * 0.08}>
+              <AnimatedSection key={d.id} variant="fade-up" delay={i * 0.08} className="h-full">
                 <DirectorCard member={d} index={i} />
               </AnimatedSection>
             ))}
