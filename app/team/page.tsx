@@ -72,7 +72,7 @@ export default function TeamPage() {
             The people<br />behind <span className="text-um-orange-text italic font-black">the file.</span>
           </>
         }
-        subtitle="The Herbert Digital-First Lab is led by two faculty directors and supported by a network of executive and student coaches. Every project is matched, by domain and skill, to the right pair of hands before a student team is assembled."
+        subtitle="The Miami Digital-First Lab is led by two faculty directors and supported by a network of executive and student coaches. Every project is matched, by domain and skill, to the right pair of hands before a student team is assembled."
         meta={meta}
         sidecar={<OrgStructure />}
       />

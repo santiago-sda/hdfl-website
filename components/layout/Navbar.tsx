@@ -32,7 +32,7 @@ export function Navbar() {
       <nav className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
         <Link
           href="/"
-          aria-label="Home — Herbert Digital-First Lab"
+          aria-label="Home — Miami Digital-First Lab"
           className="flex items-center transition-opacity duration-200 hover:opacity-80"
         >
           <Wordmark />

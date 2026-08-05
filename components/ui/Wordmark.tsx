@@ -12,10 +12,10 @@ export function Wordmark({ tone = "ink", className = "", size = 32 }: WordmarkPr
   return (
     <span
       className={`inline-flex items-center gap-2.5 ${className}`}
-      aria-label="Herbert Digital-First Lab · Miami"
+      aria-label="Miami Digital-First Lab · Miami"
     >
       <Image
-        src="/hdfl-logo.png"
+        src="/mdfl-logo.png"
         alt=""
         width={size}
         height={size}
@@ -27,7 +27,7 @@ export function Wordmark({ tone = "ink", className = "", size = 32 }: WordmarkPr
       <span
         className={`font-mono text-[10.5px] font-semibold tracking-[0.18em] uppercase ${captionColor}`}
       >
-        Herbert · Miami
+        MDFL · Miami
       </span>
     </span>
   );

@@ -30,13 +30,13 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link
               href="/"
-              aria-label="Home — Herbert Digital-First Lab"
+              aria-label="Home — Miami Digital-First Lab"
               className="inline-block mb-4 transition-opacity duration-200 hover:opacity-80"
             >
               <Wordmark />
             </Link>
             <p className="text-sm text-ink-soft leading-relaxed max-w-xs">
-              A digital-first student experiential learning lab at Miami Herbert Business School. Production AI, analytics, and product design — free to qualifying partner organizations through the ACE framework.
+              A digital-first student experiential learning lab at Miami Business School. Production AI, analytics, and product design — free to qualifying partner organizations through the ACE framework.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-md bg-card border border-rule px-2.5 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-um-green" />
@@ -75,7 +75,7 @@ export function Footer() {
                 href="https://www.instagram.com/herbertdigitalfirst"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Herbert Digital-First Lab on Instagram"
+                aria-label="Miami Digital-First Lab on Instagram"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-ink-soft hover:text-um-orange-text hover:border-um-orange/40 transition-colors duration-200"
               >
                 <InstagramIcon />
@@ -84,7 +84,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/herbertdigitalfirstlab"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Herbert Digital-First Lab on LinkedIn"
+                aria-label="Miami Digital-First Lab on LinkedIn"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-rule text-ink-soft hover:text-um-orange-text hover:border-um-orange/40 transition-colors duration-200"
               >
                 <LinkedInIcon />
@@ -96,7 +96,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-rule flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted">
-            © {year} Herbert DFL · All rights reserved
+            © {year} MDFL · All rights reserved
           </p>
           <p className="font-mono text-[10.5px] font-medium tracking-[0.14em] uppercase text-muted">
             v2.0 · Spring 2026 · Coral Gables, FL

@@ -93,7 +93,7 @@ export default function ContactPage() {
                   100% Free
                 </p>
                 <p className="text-[13px] leading-[1.55] text-ink-soft">
-                  All projects are delivered at no cost to qualifying partner organizations through Miami Herbert&apos;s ACE framework.
+                  All projects are delivered at no cost to qualifying partner organizations through Miami&apos;s ACE framework.
                 </p>
               </div>
             </div>

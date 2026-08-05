@@ -96,7 +96,7 @@ export function Hero() {
             </div>
 
             <p className="mt-8 text-[18px] leading-[1.65] text-ink-soft max-w-[540px]">
-              A digital-first student experiential learning lab inside Miami Herbert Business School. We pair Herbert students with outside organizations to ship working AI systems, dashboards, and product prototypes — <span className="text-ink font-semibold">free to the partner, real software in production.</span>
+              A digital-first student experiential learning lab inside Miami Business School. We pair students with outside organizations to ship working AI systems, dashboards, and product prototypes — <span className="text-ink font-semibold">free to the partner, real software in production.</span>
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center">
