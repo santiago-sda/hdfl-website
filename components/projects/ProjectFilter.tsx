@@ -57,7 +57,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       count: projects.filter((p) => p.category === "Finance & Valuation").length,
       match: (p) => p.category === "Finance & Valuation",
       emptyNote:
-        "The first Finance & Valuation engagements ship Fall 2026. Check back soon.",
+        "The first Finance & Valuation projects ship Fall 2026. Check back soon.",
     },
     {
       key: "capstone",
@@ -72,10 +72,10 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       match: (p) => p.termShort === "F25",
     },
     {
-      key: "s25",
-      label: "Spring 2025",
-      count: projects.filter((p) => p.termShort === "S25").length,
-      match: (p) => p.termShort === "S25",
+      key: "s26",
+      label: "Spring 2026",
+      count: projects.filter((p) => p.termShort === "S26").length,
+      match: (p) => p.termShort === "S26",
     },
   ];
 
@@ -127,7 +127,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                 exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
-                <Link href={`/engagements/${row.slug}`} className="group block">
+                <Link href={`/projects/${row.slug}`} className="group block">
                   <LedgerRow columns={columns} isLast={i === filtered.length - 1} hover>
                     <span className="font-mono text-[12px] font-bold tabular-nums text-um-orange-text">
                       №{row.code}
@@ -164,7 +164,7 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
                   </p>
                 </>
               ) : (
-                <p className="text-sm text-muted">No engagements match this filter yet.</p>
+                <p className="text-sm text-muted">No projects match this filter yet.</p>
               )}
             </div>
           )}

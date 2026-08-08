@@ -49,7 +49,7 @@ export interface PartnerType {
   description: string;
 }
 
-export interface EngagementPhase {
+export interface ProjectPhase {
   number: string;
   title: string;
   bullets: string[];
@@ -73,6 +73,7 @@ export interface TeamMember {
   leadTitle?: string; // director lead role, shown in the card header
   joined?: string; // e.g. "Joined 2019"
   avatar: string;
+  avatarPosition?: string; // CSS object-position; overrides the default top-anchored crop
   bio?: string;
   profileUrl?: string;
 }
@@ -94,7 +95,7 @@ export const whatHappensNext: string[] = [
   "Scoping call — problem framing, data, capability match.",
   "Project brief drafted and shared for sign-off.",
   "Student team assembled. Kickoff workshop scheduled.",
-  "Semester-long engagement begins.",
+  "Semester-long project begins.",
 ];
 
 // ─── Team Members ─────────────────────────────────────────────────────────────
@@ -106,47 +107,47 @@ export const teamMembers: TeamMember[] = [
     name: "Dr. Alexander Korogodsky",
     title: "Lab Director · Academic Program Director, MS Business Technology",
     role: "director",
-    domain: "AI Engineering · Capstone",
-    leadTitle: "Digital Platforms Lead",
-    joined: "Joined 2019",
+    domain: "HCD · Capstone",
+    leadTitle: "Lab Director, and Director for Undergraduate Experiential Learning",
+    joined: "Joined 2025",
     avatar: "/team/korogodsky.webp",
-    bio: "Leads the graduate arm of the Digital-First Lab and the MS in Business Technology program at Miami Herbert. Twenty-plus years pairing applied AI with industry — financial services, logistics, sports analytics — and the architect behind the Miami Method of framing complex business problems for execution-ready delivery.",
+    bio: "Leads the graduate arm of the Digital-First Lab and the MS in Business Technology program at Miami. Twenty-plus years pairing applied AI with industry — financial services, logistics, sports analytics — and the architect behind the Miami Method of framing complex business problems for execution-ready delivery.",
     profileUrl: "https://people.miami.edu/profile/d745ec0f1424c88ec80310b4b30645ad",
   },
   {
     id: "director-2",
     name: "Dr. Krishna Murphy",
-    title: "Lab Director · Lecturer, Business Technology",
+    title: "Lecturer, Business Technology",
     role: "director",
-    domain: "HCD · BI & Dashboards",
-    leadTitle: "Decision Analytics Lead",
-    joined: "Joined 2021",
+    domain: "BI & Dashboards",
+    leadTitle: "Leader for BI",
+    joined: "Joined 2026",
     avatar: "/team/murphy.webp",
-    bio: "Co-directs the Lab and teaches the foundational digital product and HCD coursework at Herbert. Background in product design, decision sciences, and bringing data-driven dashboards into healthcare and consumer operations. Mentors student teams from first interview to final executive demo.",
+    bio: "Co-directs the Lab and teaches the foundational digital product and HCD coursework at Miami. Background in product design, decision sciences, and bringing data-driven dashboards into healthcare and consumer operations. Mentors student teams from first interview to final executive demo.",
     profileUrl: "https://people.miami.edu/profile/e2e14a2dfa56d4d5e0c9cca2e5000490",
   },
   {
     id: "director-3",
     name: "Dr. Erotokritos Skordilis",
-    title: "Lab Director · Lecturer, Business Technology",
+    title: "Lecturer, Business Technology",
     role: "director",
     domain: "AI Software Engineering",
-    leadTitle: "AI Software Engineering Lead",
+    leadTitle: "Leader for AI experience,",
     joined: "Joined 2026",
     avatar: "/team/skordilis.webp",
-    bio: "Lectures in Business Technology at Miami Herbert and leads the Lab's AI software engineering work. Pairs applied machine learning and software systems with student teams, taking models and prototypes from research into production-ready delivery.",
+    bio: "Lectures in Business Technology at Miami and leads the Lab's AI software engineering work. Pairs applied machine learning and software systems with student teams, taking models and prototypes from research into production-ready delivery.",
     profileUrl: "https://people.miami.edu/profile/b7be952fb190b6a66372000fc95d769f",
   },
   {
     id: "director-4",
-    name: "Leila Pinto-Campillo",
-    title: "Lab Director · Lecturer, Finance",
+    name: "Dr. Leila Pinto-Campillo",
+    title: "Lecturer, Finance",
     role: "director",
-    domain: "Finance · BI",
-    leadTitle: "Finance Lead",
+    domain: "Finance",
+    leadTitle: "Leader for Finance experience",
     joined: "Joined 2026",
     avatar: "/team/pinto-campillo.webp",
-    bio: "Lectures in Finance at Miami Herbert and leads the Lab's finance practice. Brings financial modeling, valuation, and analytics to engagements, helping student teams ground digital solutions in sound business and financial reasoning.",
+    bio: "Lectures in Finance at Miami and leads the Lab's finance practice. Brings financial modeling, valuation, and analytics to projects, helping student teams ground digital solutions in sound business and financial reasoning.",
     profileUrl: "https://people.miami.edu/profile/925baf27533cbcc23856599d66910ce7",
   },
   // Officers (executive board)
@@ -157,6 +158,7 @@ export const teamMembers: TeamMember[] = [
     role: "officer",
     domain: "Strategy · HCD",
     avatar: "/team/matthew-rodriguez.jpg",
+    avatarPosition: "center",
   },
   {
     id: "officer-2",
@@ -190,6 +192,14 @@ export const teamMembers: TeamMember[] = [
     domain: "Finance · BI",
     avatar: "/team/brunella-meini.jpg",
   },
+  {
+    id: "officer-6",
+    name: "Dominika Pindor",
+    title: "VP of Partnerships · Coach",
+    role: "officer",
+    domain: "Partnerships · HCD",
+    avatar: "/team/dominika-pindor.png",
+  },
   // Coaches
   {
     id: "coach-1",
@@ -217,21 +227,45 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "coach-4",
-    name: "Dominika Pindor",
+    name: "Taylor Dutil",
     title: "Coach",
     role: "coach",
     domain: "HCD",
-    avatar: "/team/dominika-pindor.png",
+    avatar: "/team/taylor-dutil.jpeg",
+  },
+  {
+    id: "coach-5",
+    name: "Michelina Hoybach",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "/team/michelina-hoybach.png",
+  },
+  {
+    id: "coach-6",
+    name: "Rosa Correa",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "/team/rosa-correa.jpeg",
+  },
+  {
+    id: "coach-7",
+    name: "Kiran Reynolds",
+    title: "Coach",
+    role: "coach",
+    domain: "HCD",
+    avatar: "/team/kiran-reynolds.png",
   },
 ];
 
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 9, suffix: "", label: "Engagements shipped", sub: "2023 onward" },
+  { value: 9, suffix: "", label: "Projects shipped", sub: "2023 onward" },
   { value: 5, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
-  { value: 12, suffix: "wk", label: "Average engagement", sub: "Kickoff → handoff" },
+  { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
 ];
 
 // ─── Capability Tracks ───────────────────────────────────────────────────────
@@ -367,9 +401,9 @@ export const capabilityTracks: CapabilityTrack[] = [
   },
 ];
 
-// ─── Engagement Phases ───────────────────────────────────────────────────────
+// ─── Project Phases ──────────────────────────────────────────────────────────
 
-export const engagementPhases: EngagementPhase[] = [
+export const projectPhases: ProjectPhase[] = [
   {
     number: "01",
     title: "Needs Assessment",
@@ -401,7 +435,7 @@ export const engagementPhases: EngagementPhase[] = [
     bullets: [
       "Implementation-ready documentation package",
       "Handoff session with client technical team",
-      "Optional follow-on Lab engagement",
+      "Optional follow-on Lab project",
       "Impact assessment and outcome measurement",
       "Alumni network connection for ongoing advisory",
     ],
@@ -413,9 +447,9 @@ export const engagementPhases: EngagementPhase[] = [
 export const annualTimeline = [
   { period: "Jun – Aug", event: "Project applications open for Fall" },
   { period: "Sep – Oct", event: "Needs assessment + scoping" },
-  { period: "Oct – Dec", event: "Fall delivery — 12-week engagement" },
+  { period: "Oct – Dec", event: "Fall delivery — 12-week project" },
   { period: "Jan", event: "Post-capstone handoff + Spring intake" },
-  { period: "Feb – Apr", event: "Spring delivery — 12-week engagement" },
+  { period: "Feb – Apr", event: "Spring delivery — 12-week project" },
   { period: "May", event: "Spring cohort post-capstone handoff" },
 ];
 
@@ -444,7 +478,7 @@ export const partnerTypes: PartnerType[] = [
     id: 4,
     title: "International & South Florida Businesses",
     description:
-      "Companies entering the US market or expanding regionally, leveraging Herbert's global business perspective and Miami's gateway position.",
+      "Companies entering the US market or expanding regionally, leveraging the school's global business perspective and Miami's gateway position.",
   },
   {
     id: 5,
@@ -460,7 +494,7 @@ export const partnerTypes: PartnerType[] = [
   },
 ];
 
-// ─── Projects (Real ACE Engagements) ─────────────────────────────────────────
+// ─── Projects (Real ACE Partnerships) ────────────────────────────────────────
 
 export const projects: Project[] = [
   {
@@ -472,11 +506,11 @@ export const projects: Project[] = [
     description:
       "VIP enterprise broker accounts at a wholesale mortgage lender experienced the same generic interface as smaller brokers, creating operational friction and an estimated $100–250K/month in unrealized revenue. Delivered user personas, journey maps, and a high-fidelity website and iPhone app prototype.",
     category: "HCD",
-    image: "/projects/ad-mortgage.png",
+    image: "/projects/ad-mortgage-team.jpg",
     tags: ["User Personas", "Figma Prototyping", "Journey Mapping"],
     featured: true,
-    term: "Fall 2025",
-    termShort: "F25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "6 weeks",
     delivered: "iOS prototype · journey maps",
     client: "Wholesale mortgage lender",
@@ -507,8 +541,8 @@ export const projects: Project[] = [
     image: "/projects/myyouthspan.png",
     tags: ["Wearable Integration", "Health UX", "Mobile Prototype"],
     featured: true,
-    term: "Fall 2025",
-    termShort: "F25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "6 weeks",
     delivered: "Web + mobile prototype",
     client: "Digital health startup",
@@ -539,8 +573,8 @@ export const projects: Project[] = [
     image: "https://picsum.photos/seed/venue-ai/800/500",
     tags: ["RAG Systems", "SharePoint Integration", "LLM Governance"],
     featured: true,
-    term: "Fall 2025",
-    termShort: "F25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "8 weeks",
     delivered: "SharePoint RAG · LLM governance",
     client: "Global venue technology firm",
@@ -570,8 +604,8 @@ export const projects: Project[] = [
     category: "HCD",
     image: "/projects/fastwalker.png",
     tags: ["Sports UX", "Freemium Model", "Assessment Design"],
-    term: "Fall 2025",
-    termShort: "F25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "6 weeks",
     delivered: "Freemium UX · mental toughness assessments",
     client: "AI health optimization platform",
@@ -601,8 +635,8 @@ export const projects: Project[] = [
     category: "HCD",
     image: "/projects/powerhouse-casting.png",
     tags: ["Workflow Automation", "Multi-persona UX", "Agency Platform"],
-    term: "Fall 2025",
-    termShort: "F25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "7 weeks",
     delivered: "Web concept · agent automation",
     client: "Commercial talent casting agency",
@@ -629,11 +663,11 @@ export const projects: Project[] = [
     industry: "Financial Services / Alternative Investments",
     description:
       "An SEC-registered private credit investment manager with $9B+ in securitized assets lacked a differentiated digital investor experience. Designed the InvestorBridge platform concept with investor personas, journey maps, and high-fidelity prototypes delivered to GP leadership.",
-    category: "Capstone",
+    category: "HCD",
     image: "/projects/imperial-fund.png",
     tags: ["Investor Experience", "HNWI UX", "Miami Method"],
-    term: "Spring 2025",
-    termShort: "S25",
+    term: "Fall 2025",
+    termShort: "F25",
     duration: "12 weeks",
     delivered: "HNWI UX · hi-fi prototypes",
     client: "Private credit investment manager",
@@ -663,8 +697,8 @@ export const projects: Project[] = [
     category: "BI & Dashboards",
     image: "https://picsum.photos/seed/ao-analytics/800/500",
     tags: ["Tableau", "BigQuery", "Event Analytics", "KPI Scorecards"],
-    term: "Spring 2025",
-    termShort: "S25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "10 weeks",
     delivered: "Tableau · BigQuery · KPIs",
     client: "Global venue technology firm",
@@ -694,8 +728,8 @@ export const projects: Project[] = [
     category: "HCD",
     image: "/projects/tbm-popcorn.png",
     tags: ["Two-Sided Platform", "Event Logistics", "Consumer UX"],
-    term: "Spring 2025",
-    termShort: "S25",
+    term: "Spring 2026",
+    termShort: "S26",
     duration: "8 weeks",
     delivered: "Two-sided coordination UX",
     client: "Specialty food brand",
@@ -707,7 +741,7 @@ export const projects: Project[] = [
     approach:
       "Designed a two-sided platform — partner-side event coordination and consumer-side loyalty — and stress-tested it against the live logistics the brand was already running with spreadsheets.",
     outcome:
-      "Mobile and web prototypes, an event-coordination flow, and a consumer engagement loop handed off to the brand's operations and marketing leads.",
+      "Mobile and web prototypes, an event-coordination flow, and a consumer loyalty loop handed off to the brand's operations and marketing leads.",
     metrics: [
       { value: "2 surfaces", label: "Mobile + web prototypes" },
       { value: "2 sides", label: "Partner + consumer flows" },
@@ -725,8 +759,8 @@ export const projects: Project[] = [
     category: "HCD",
     image: "/projects/screaming-ice-cream.png",
     tags: ["Social Enterprise", "Loyalty UX", "Mobile App"],
-    term: "Spring 2025",
-    termShort: "S25",
+    term: "Fall 2025",
+    termShort: "F25",
     duration: "8 weeks",
     delivered: "Cart locator · loyalty UX",
     client: "Veteran-owned social enterprise",

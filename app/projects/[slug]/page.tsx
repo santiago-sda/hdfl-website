@@ -12,13 +12,13 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function EngagementPage({ params }: PageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   const meta: MetaStripItem[] = [
-    ["Section", "Archive / Engagement"],
+    ["Section", "Archive / Project"],
     ["File", `№${project.code}`],
     ["Term", project.term],
     ["Duration", project.duration],
@@ -47,7 +47,7 @@ export default async function EngagementPage({ params }: PageProps) {
           <div>
             <div className="inline-flex items-baseline gap-2.5 mb-6">
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
-                Engagement №{project.code}
+                Project №{project.code}
               </span>
               <span className="self-center w-6 h-px bg-um-orange-dim" />
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-um-orange-text">
@@ -73,7 +73,7 @@ export default async function EngagementPage({ params }: PageProps) {
 
           <aside className="bg-card border border-rule rounded-2xl p-5">
             <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
-              Engagement facts
+              Project facts
             </p>
             <dl className="space-y-0">
               {facts.map(([k, v], i) => (
@@ -117,7 +117,7 @@ export default async function EngagementPage({ params }: PageProps) {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { label: "Brief", body: project.brief, dot: "#F47321" },
-            { label: "Approach", body: project.approach, dot: "#15110E" },
+            { label: "Approach", body: project.approach, dot: "#000000" },
             { label: "Outcome", body: project.outcome, dot: "#005030" },
           ].map((b) => (
             <div key={b.label} className="bg-card border border-rule rounded-2xl p-7 transition-colors duration-200 hover:border-ink/20">
@@ -139,7 +139,7 @@ export default async function EngagementPage({ params }: PageProps) {
       {/* Outcome metrics */}
       <section className="px-6 md:px-10 pb-24">
         <div className="max-w-[1200px] mx-auto">
-          <div className="bg-ink text-paper rounded-2xl px-6 md:px-10 py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-um-green text-paper rounded-2xl px-6 md:px-10 py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.metrics.map((m, i) => (
               <div
                 key={m.label}

@@ -24,15 +24,15 @@ export function Navbar() {
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
       style={{
-        backgroundColor: scrolled ? "rgba(246,243,236,0.92)" : "rgba(246,243,236,0)",
-        borderBottom: scrolled ? "1px solid rgba(21,17,14,0.10)" : "1px solid transparent",
+        backgroundColor: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0)",
+        borderBottom: scrolled ? "1px solid rgba(0,0,0,0.10)" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
       }}
     >
       <nav className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
         <Link
           href="/"
-          aria-label="Home — Herbert Digital-First Lab"
+          aria-label="Home — Miami Digital-First Lab"
           className="flex items-center transition-opacity duration-200 hover:opacity-80"
         >
           <Wordmark />
@@ -63,7 +63,7 @@ export function Navbar() {
           })}
           <Link
             href="/contact"
-            className="group ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-ink hover:bg-ink-soft text-paper text-[13px] font-semibold rounded-xl transition-colors duration-200"
+            className="group ml-2 inline-flex items-center gap-2 px-4 py-[10px] bg-um-orange hover:bg-um-orange-dim text-white text-[13px] font-semibold rounded-xl transition-colors duration-200"
           >
             Submit a Challenge{" "}
             <span className="font-mono text-[12px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -138,7 +138,7 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobile}
-                  className="group block px-4 py-3 bg-ink hover:bg-ink-soft text-paper text-sm font-semibold rounded-xl text-center transition-colors duration-200"
+                  className="group block px-4 py-3 bg-um-orange hover:bg-um-orange-dim text-white text-sm font-semibold rounded-xl text-center transition-colors duration-200"
                 >
                   Submit a Challenge{" "}
                   <span className="font-mono inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

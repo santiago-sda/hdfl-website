@@ -58,6 +58,8 @@ function NumberedLabel({ number, htmlFor, children }: NumberedLabelProps) {
   );
 }
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
+
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -75,10 +77,16 @@ export function ContactForm() {
     setLoading(true);
     setError(null);
     try {
-      await new Promise((r) => setTimeout(r, 1200));
+      if (!FORMSPREE_ENDPOINT) throw new Error("Formspree endpoint not configured");
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Formspree submission failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or email us directly at dfl@miami.edu.");
+      setError("Something went wrong. Please try again or email us directly at alex.korogodsky@miami.edu.");
     } finally {
       setLoading(false);
     }
@@ -159,7 +167,6 @@ export function ContactForm() {
             value={form.orgName}
             onChange={handleChange}
             required
-            placeholder="Acme Corp"
             className={inputClass}
           />
         </div>
@@ -172,7 +179,6 @@ export function ContactForm() {
             value={form.industry}
             onChange={handleChange}
             required
-            placeholder="e.g. Financial Services"
             className={inputClass}
           />
         </div>
@@ -188,7 +194,6 @@ export function ContactForm() {
             value={form.contactName}
             onChange={handleChange}
             required
-            placeholder="Jane Smith, VP Operations"
             className={inputClass}
           />
         </div>
@@ -201,7 +206,6 @@ export function ContactForm() {
             value={form.email}
             onChange={handleChange}
             required
-            placeholder="jane@company.com"
             className={inputClass}
           />
         </div>
@@ -259,7 +263,6 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={3}
-          placeholder="What business problem are you trying to solve? Current state and desired outcome."
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -272,7 +275,6 @@ export function ContactForm() {
           value={form.dataAvailable}
           onChange={handleChange}
           rows={2}
-          placeholder="What can the student team touch — CRM, API, dashboards, spreadsheets?"
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -286,7 +288,6 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={2}
-          placeholder="What does a successful engagement look like 6 months out?"
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -304,7 +305,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="group inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-ink hover:bg-ink-soft disabled:opacity-60 text-paper text-[13px] font-semibold rounded-xl transition-colors"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-[14px] bg-um-orange hover:bg-um-orange-dim disabled:opacity-60 text-white text-[13px] font-semibold rounded-xl transition-colors"
         >
           {loading ? (
             <>

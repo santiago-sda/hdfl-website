@@ -72,15 +72,15 @@ export default function ContactPage() {
               </div>
 
               {/* Direct line */}
-              <div className="bg-ink text-paper rounded-2xl p-6">
+              <div className="bg-um-green text-paper rounded-2xl p-6">
                 <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-paper/65 mb-2">
                   Direct line
                 </p>
                 <a
-                  href="mailto:dfl@miami.edu"
+                  href="mailto:alex.korogodsky@miami.edu"
                   className="text-[22px] font-bold tracking-[-0.015em] text-paper hover:text-um-orange transition-colors"
                 >
-                  dfl@miami.edu
+                  alex.korogodsky@miami.edu
                 </a>
                 <p className="mt-3 text-[13px] leading-[1.55] text-paper/70">
                   If your challenge doesn&apos;t fit the form, email the Lab director directly. We&apos;ll find a path.
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   100% Free
                 </p>
                 <p className="text-[13px] leading-[1.55] text-ink-soft">
-                  All engagements are delivered at no cost to qualifying partner organizations through Miami Herbert&apos;s ACE framework.
+                  All projects are delivered at no cost to qualifying partner organizations through Miami&apos;s ACE framework.
                 </p>
               </div>
             </div>

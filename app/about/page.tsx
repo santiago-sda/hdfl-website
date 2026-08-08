@@ -3,7 +3,7 @@
 import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { engagementPhases, annualTimeline } from "@/lib/data";
+import { projectPhases, annualTimeline } from "@/lib/data";
 import type { MetaStripItem } from "@/components/ui/MetaStrip";
 import { motion } from "framer-motion";
 
@@ -19,12 +19,13 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="Method · The Miami Three-Phase Model"
+        titleColor="green"
         title={
           <>
-            A different<br />kind of<br />consulting.
+            A different kind of<br />experiential learning.
           </>
         }
-        subtitle="We are the only university consulting program structured around full-lifecycle delivery. Peer programs at Michigan Ross, Rutgers, and Johns Hopkins offer project-based consulting — but none of them lead with digital and AI engineering as their core proposition, and all of them end at the final presentation. We continue."
+        subtitle="We are the only university experiential learning program structured around full-lifecycle delivery. Peer programs at Michigan Ross, Rutgers, and Johns Hopkins offer project-based experiential learning — but none of them lead with digital and AI engineering as their core proposition, and all of them end at the final presentation. We continue."
         meta={meta}
       />
 
@@ -34,12 +35,12 @@ export default function AboutPage() {
           <AnimatedSection variant="fade-up" className="mb-10">
             <Eyebrow n="01">Three-phase model</Eyebrow>
             <h2 className="mt-4 text-[44px] md:text-[56px] font-extrabold tracking-[-0.035em] leading-[0.98] text-ink">
-              How an engagement<br />actually unfolds.
+              How a project<br />actually unfolds.
             </h2>
           </AnimatedSection>
 
           <StaggerContainer className="space-y-5">
-            {engagementPhases.map((phase) => (
+            {projectPhases.map((phase) => (
               <motion.article
                 key={phase.number}
                 variants={staggerItem}

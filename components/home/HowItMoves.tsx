@@ -2,8 +2,7 @@
 
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { motion } from "framer-motion";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { engagementPhases } from "@/lib/data";
+import { projectPhases } from "@/lib/data";
 
 export function HowItMoves() {
   return (
@@ -11,18 +10,17 @@ export function HowItMoves() {
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection variant="fade-up" className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <Eyebrow n="04">How a project moves</Eyebrow>
-            <h2 className="mt-4 text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
+            <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold tracking-[-0.035em] leading-[0.96] text-ink">
               Three phases,<br />one partnership.
             </h2>
           </div>
           <p className="text-[15px] leading-[1.6] text-ink-soft max-w-[440px]">
-            We are the only university consulting program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-engagement handoff</em> after the final presentation. Peer programs end at the demo. We continue.
+            We are the only university experiential learning program that runs a structured <em className="not-italic font-semibold text-ink">needs assessment</em> before a team is assembled and a structured <em className="not-italic font-semibold text-ink">post-project handoff</em> after the final presentation. Peer programs end at the demo. We continue.
           </p>
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {engagementPhases.map((phase) => (
+          {projectPhases.map((phase) => (
             <motion.div
               key={phase.number}
               variants={staggerItem}

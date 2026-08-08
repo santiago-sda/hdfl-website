@@ -7,17 +7,20 @@ const meta: MetaStripItem[] = [
   ["Section", "Archive"],
   ["Total", "9 shipped"],
   ["First entry", "Fall 2023"],
-  ["Latest entry", `Fall 2025 · №${projects[0].code}`],
+  ["Latest entry", `${projects[0].term} · №${projects[0].code}`],
   ["Filtered", "Showing all"],
 ];
 
 const breakdown = [
-  { name: "HCD & Product Design", count: 6, color: "#F47321" },
-  { name: "AI Engineering", count: 1, color: "#005030" },
-  { name: "BI & Dashboards", count: 1, color: "#15110E" },
-  { name: "Finance & Valuation", count: 0, color: "#003D24" },
-  { name: "Graduate Capstone", count: 1, color: "#C45C18" },
-];
+  { name: "HCD & Product Design", category: "HCD", color: "#F47321" },
+  { name: "AI Engineering", category: "AI Engineering", color: "#005030" },
+  { name: "BI & Dashboards", category: "BI & Dashboards", color: "#000000" },
+  { name: "Finance & Valuation", category: "Finance & Valuation", color: "#003D24" },
+  { name: "Graduate Capstone", category: "Capstone", color: "#E7278A" },
+].map((b) => ({
+  ...b,
+  count: projects.filter((p) => p.category === b.category).length,
+}));
 
 function Breakdown() {
   return (
@@ -60,7 +63,8 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Archive · Every engagement"
+        eyebrow="Archive · Every project"
+        titleColor="green"
         title={<>The archive.</>}
         subtitle="Nine real partnerships across financial services, digital health, live events, sports analytics, food & beverage, and more. Every entry shipped a working artifact to a real client — not a deck."
         meta={meta}

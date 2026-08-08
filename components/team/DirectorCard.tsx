@@ -14,7 +14,7 @@ export function DirectorCard({ member, index, joined }: DirectorCardProps) {
   const tenure = member.joined ?? joined ?? "Joined 2021";
 
   return (
-    <article className="bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
+    <article className="h-full bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
       <div className="flex items-center justify-between px-6 py-3 border-b border-rule-soft bg-paper">
         <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
           {headerLabel} · 0{index + 1}
@@ -31,6 +31,7 @@ export function DirectorCard({ member, index, joined }: DirectorCardProps) {
             alt={member.name}
             fill
             className="object-cover"
+            style={{ objectPosition: member.avatarPosition ?? "top" }}
             sizes="128px"
           />
         </div>
