@@ -262,7 +262,7 @@ export const teamMembers: TeamMember[] = [
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 9, suffix: "", label: "Projects shipped", sub: "2023 onward" },
+  { value: 15, suffix: "", label: "Projects shipped", sub: "2023 onward" },
   { value: 5, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
@@ -397,7 +397,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Sports analytics",
       "KPI frameworks",
     ],
-    shipped: 1,
+    shipped: 7,
   },
 ];
 
@@ -497,6 +497,192 @@ export const partnerTypes: PartnerType[] = [
 // ─── Projects (Real ACE Partnerships) ────────────────────────────────────────
 
 export const projects: Project[] = [
+  {
+    id: 10,
+    code: "26-15",
+    slug: "wildfire-detection-mobile-platform",
+    title: "Wildfire Detection Mobile Platform",
+    industry: "Wildfire Detection / Environmental Technology",
+    description:
+      "An existing hardware-based wildfire-detection prototype needed to become a maintainable, public-facing mobile experience that keeps working when connectivity is limited. Designed a dual-track React Native architecture pairing on-device computer vision with asynchronous content delivery and local caching.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/bayes-wildfire/800/500",
+    tags: ["Computer Vision", "React Native", "Offline-First"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "React Native app · on-device CV",
+    client: "Wildfire-detection technology company",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Convert a hardware-based wildfire-detection prototype into a maintainable mobile experience that keeps operating when connectivity is limited.",
+    approach:
+      "Designed a dual-track mobile architecture using React Native, on-device computer vision, asynchronous content delivery, and local caching — so detection keeps running even when the network doesn't.",
+    outcome:
+      "Public-facing mobile application architecture with on-device wildfire detection, real-time alerts, dynamic content delivery, and offline capability delivered to the founding team.",
+    metrics: [
+      { value: "On-device", label: "Computer vision detection" },
+      { value: "Offline-first", label: "Local caching architecture" },
+      { value: "Real-time", label: "Alert delivery" },
+    ],
+  },
+  {
+    id: 11,
+    code: "26-14",
+    slug: "validation-decision-intelligence-panel",
+    title: "Validation Decision Intelligence Panel",
+    industry: "Decision Intelligence / AI-Enabled Review",
+    description:
+      "A decision-intelligence platform for reviewers showed outcomes on opportunity records but not the reasoning, confidence, or evidence behind them. Designed a Validation Decision Intelligence Panel that surfaces confidence assessments, supporting evidence, and decision rationale before a reviewer takes final action.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/runwei-decision/800/500",
+    tags: ["Decision Intelligence", "Reviewer UX", "Confidence Scoring"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "Decision panel · confidence scoring",
+    client: "Decision-intelligence review platform",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Opportunity records showed outcomes but not the reasoning, confidence, or supporting evidence behind reviewer decisions.",
+    approach:
+      "Designed a Validation Decision Intelligence Panel to surface confidence assessments, evidence, and decision rationale before final reviewer action.",
+    outcome:
+      "Decision intelligence panel with confidence scoring, validation evidence, decision rationale, and a reviewer workflow concept delivered to the product team.",
+    metrics: [
+      { value: "1 panel", label: "Validation decision intelligence UI" },
+      { value: "Confidence scoring", label: "Surfaced before final review" },
+      { value: "Evidence-backed", label: "Decision rationale" },
+    ],
+  },
+  {
+    id: 12,
+    code: "26-13",
+    slug: "ai-assisted-video-production-workflow",
+    title: "AI-Assisted Video Production Workflow",
+    industry: "Video Production / Digital Content",
+    description:
+      "A video production workflow relied on significant manual editing, and the open question was whether AI could cut production time without compromising quality, control, or security. Evaluated and hands-on tested AI-assisted video editing tools — including Descript and Quickture — and redesigned the workflow around what held up.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/lennar-video/800/500",
+    tags: ["AI Video Editing", "Workflow Redesign", "Tool Evaluation"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "AI tool evaluation · workflow redesign",
+    client: "Video production company",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Determine whether AI-assisted editing could reduce video production time without compromising quality, control, or security.",
+    approach:
+      "Evaluated and hands-on tested AI-assisted video editing technologies, including Descript and Quickture, and redesigned the potential production workflow around the tools that held up under real use.",
+    outcome:
+      "AI tool evaluation and a redesigned production workflow — with quality, control, and security tradeoffs documented — delivered to the production team.",
+    metrics: [
+      { value: "2 tools", label: "Descript · Quickture evaluated" },
+      { value: "1 workflow", label: "Redesigned production pipeline" },
+      { value: "Hands-on", label: "Head-to-head tool testing" },
+    ],
+  },
+  {
+    id: 13,
+    code: "26-12",
+    slug: "microgravity-fluid-behavior-simulation",
+    title: "Microgravity Fluid Behavior Simulation",
+    industry: "Aerospace / Engineering Simulation",
+    description:
+      "An aerospace engineering effort needed to understand how water behaves during storage, transfer, docking, and sloshing in microgravity, and to produce usable evidence for future design. Built and validated an OpenFOAM computational simulation to test fluid behavior and document findings.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/spaceocean-microgravity/800/500",
+    tags: ["OpenFOAM", "CFD Simulation", "Aerospace Engineering"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "OpenFOAM simulation · findings report",
+    client: "Aerospace engineering firm",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Determine how water behaves during storage, transfer, docking, and sloshing in microgravity and produce usable engineering evidence for future design.",
+    approach:
+      "Built and validated an OpenFOAM computational simulation, testing fluid behavior under microgravity conditions and documenting findings and future refinement needs.",
+    outcome:
+      "Validated OpenFOAM simulation of microgravity fluid behavior, with documented findings and a refinement roadmap delivered to the engineering team.",
+    metrics: [
+      { value: "OpenFOAM", label: "Validated CFD simulation" },
+      { value: "4 behaviors", label: "Storage · transfer · docking · sloshing" },
+      { value: "Documented", label: "Findings + refinement roadmap" },
+    ],
+  },
+  {
+    id: 14,
+    code: "26-11",
+    slug: "document-intelligence-auto-population-engine",
+    title: "AI Document Intelligence & Auto-Population Engine",
+    industry: "AI Document Intelligence / Pet-Health Administration",
+    description:
+      "A document-intensive process required information to be extracted from photographed receipts and populated into structured records by hand. Built a self-checking OCR pipeline across five Python modules covering image correction, dual OCR, confidence analysis, classification, and structured output.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/pethsa-ocr/800/500",
+    tags: ["OCR Pipeline", "Document Intelligence", "Python"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "OCR pipeline · structured output",
+    client: "Pet-health administration platform",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Manual extraction and entry of receipt information created an opportunity for automated, reliable document processing.",
+    approach:
+      "Built a self-checking OCR pipeline using five Python modules covering image correction, dual OCR, confidence analysis, classification, and structured output.",
+    outcome:
+      "AI-powered document intelligence and auto-population engine — OCR pipeline, confidence scoring, document classification, and structured JSON output — delivered to the product team.",
+    metrics: [
+      { value: "5 modules", label: "Python OCR pipeline" },
+      { value: "Dual OCR", label: "Cross-checked for accuracy" },
+      { value: "JSON output", label: "Structured, auto-populated records" },
+    ],
+  },
+  {
+    id: 15,
+    code: "26-10",
+    slug: "automated-loan-screening-platform",
+    title: "Automated Loan Screening Platform",
+    industry: "Lending / Financial Technology",
+    description:
+      "A loan origination process was moving from broker-dependent, manual screening toward direct-borrower intake, but preliminary screening took hours and relied on manual review. Built an end-to-end platform combining structured borrower intake, automated rules applied to public county data, and ranked deal evaluation.",
+    category: "Capstone",
+    image: "https://picsum.photos/seed/capstrat-lending/800/500",
+    tags: ["Loan Screening", "Public-Data Integration", "Ranked Dashboard"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "Intake portal · automated screening",
+    client: "Direct-to-borrower lending platform",
+    course: "BTE Adv. · Graduate",
+    team: "4 MS students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Preliminary loan screening took hours and relied on manual review, limiting speed and scalability as the process moved toward direct-borrower intake.",
+    approach:
+      "Built an end-to-end platform combining structured borrower intake, automated rules applied to public county data, and ranked deal evaluation.",
+    outcome:
+      "Loan intake portal, automated screening engine, public-data integration, and a ranked dashboard delivered — cutting preliminary screening from roughly 4 hours to minutes.",
+    metrics: [
+      { value: "~4 hrs → min", label: "Preliminary screening time" },
+      { value: "1 portal", label: "Structured borrower intake" },
+      { value: "Public data", label: "Automated county-record rules" },
+    ],
+  },
   {
     id: 1,
     code: "26-09",
