@@ -3,7 +3,8 @@
 import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/ui/AnimatedSection";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { projectPhases, annualTimeline } from "@/lib/data";
+import { projectPhases } from "@/lib/data";
+import { AnnualCycleChart } from "@/components/about/AnnualCycleChart";
 import type { MetaStripItem } from "@/components/ui/MetaStrip";
 import { motion } from "framer-motion";
 
@@ -11,7 +12,7 @@ const meta: MetaStripItem[] = [
   ["Section", "Method"],
   ["Framework", "ACE · Applied Career Experience"],
   ["Phases", "3"],
-  ["Cycle", "Annual · F + S"],
+  ["Cycle", "Annual · F + S + Su"],
 ];
 
 export default function AboutPage() {
@@ -88,35 +89,12 @@ export default function AboutPage() {
           <AnimatedSection variant="fade-up" className="mb-10">
             <Eyebrow n="02">Annual cycle</Eyebrow>
             <h2 className="mt-4 text-[44px] md:text-[56px] font-extrabold tracking-[-0.035em] leading-[0.98] text-ink">
-              One calendar,<br />two cohorts.
+              One calendar,<br />three cohorts.
             </h2>
           </AnimatedSection>
 
           <AnimatedSection variant="fade-up" delay={0.1}>
-            <div className="bg-card border border-rule rounded-2xl overflow-hidden">
-              <div className="grid grid-cols-2 md:grid-cols-6 bg-paper border-b border-rule">
-                {annualTimeline.map((row) => (
-                  <div
-                    key={row.period}
-                    className="px-4 py-3 border-r border-rule-soft last:border-r-0"
-                  >
-                    <p className="font-mono text-[10.5px] font-bold tracking-[0.16em] uppercase text-um-orange-text">
-                      {row.period}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-6">
-                {annualTimeline.map((row) => (
-                  <div
-                    key={row.period}
-                    className="px-4 py-5 border-r border-rule-soft last:border-r-0 border-t md:border-t-0 border-rule-soft"
-                  >
-                    <p className="text-[13.5px] leading-[1.55] text-ink-soft">{row.event}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <AnnualCycleChart />
           </AnimatedSection>
         </div>
       </section>

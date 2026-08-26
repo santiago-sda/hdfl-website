@@ -443,14 +443,86 @@ export const projectPhases: ProjectPhase[] = [
 ];
 
 // ─── Annual Timeline ──────────────────────────────────────────────────────────
+// Axis runs August through the following August (13 month-slots, index 0–12).
 
-export const annualTimeline = [
-  { period: "Jun – Aug", event: "Project applications open for Fall" },
-  { period: "Sep – Oct", event: "Needs assessment + scoping" },
-  { period: "Oct – Dec", event: "Fall delivery — 12-week project" },
-  { period: "Jan", event: "Post-capstone handoff + Spring intake" },
-  { period: "Feb – Apr", event: "Spring delivery — 12-week project" },
-  { period: "May", event: "Spring cohort post-capstone handoff" },
+export interface TimelinePhase {
+  monthIndex: number; // index into annualTimelineMonths
+  span: number;        // number of consecutive months this phase covers
+  label: string;
+}
+
+export interface TimelineColumn {
+  id: string;
+  cohort: "Fall" | "Spring" | "Summer";
+  track: "Execution" | "Sourcing";
+  group: "Fall semester" | "Spring semester" | "Summer";
+  phases: TimelinePhase[];
+}
+
+export const annualTimelineMonths = [
+  "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
+];
+
+export const annualTimelineColumns: TimelineColumn[] = [
+  {
+    id: "fall-execution",
+    cohort: "Fall",
+    track: "Execution",
+    group: "Fall semester",
+    phases: [
+      { monthIndex: 0, span: 1, label: "Semester begins" },
+      { monthIndex: 1, span: 1, label: "Partner & team onboarding" },
+      { monthIndex: 2, span: 2, label: "Term project execution" },
+      { monthIndex: 4, span: 1, label: "Final presentations" },
+    ],
+  },
+  {
+    id: "spring-sourcing",
+    cohort: "Spring",
+    track: "Sourcing",
+    group: "Fall semester",
+    phases: [
+      { monthIndex: 1, span: 1, label: "Begin partner selection" },
+      { monthIndex: 2, span: 1, label: "Project matching" },
+      { monthIndex: 3, span: 1, label: "Scope defined & locked" },
+      { monthIndex: 4, span: 1, label: "Agreement in place" },
+    ],
+  },
+  {
+    id: "spring-execution",
+    cohort: "Spring",
+    track: "Execution",
+    group: "Spring semester",
+    phases: [
+      { monthIndex: 5, span: 1, label: "Semester begins" },
+      { monthIndex: 6, span: 1, label: "Partner & team onboarding" },
+      { monthIndex: 7, span: 2, label: "Term project execution" },
+      { monthIndex: 9, span: 1, label: "Final presentations" },
+    ],
+  },
+  {
+    id: "summer-sourcing",
+    cohort: "Summer",
+    track: "Sourcing",
+    group: "Spring semester",
+    phases: [
+      { monthIndex: 6, span: 1, label: "Begin partner selection" },
+      { monthIndex: 7, span: 1, label: "Project matching" },
+      { monthIndex: 8, span: 1, label: "Scope defined & locked" },
+      { monthIndex: 9, span: 1, label: "Agreement in place" },
+    ],
+  },
+  {
+    id: "summer-execution",
+    cohort: "Summer",
+    track: "Execution",
+    group: "Summer",
+    phases: [
+      { monthIndex: 10, span: 1, label: "Partner & team onboarding" },
+      { monthIndex: 11, span: 1, label: "Term project execution" },
+      { monthIndex: 12, span: 1, label: "Final presentations" },
+    ],
+  },
 ];
 
 // ─── Partner Types ───────────────────────────────────────────────────────────
