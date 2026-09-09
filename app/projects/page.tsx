@@ -3,10 +3,12 @@ import { ProjectFilter } from "@/components/projects/ProjectFilter";
 import { projects } from "@/lib/data";
 import type { MetaStripItem } from "@/components/ui/MetaStrip";
 
+const shippedCount = projects.filter((p) => p.status === "Shipped").length;
+
 const meta: MetaStripItem[] = [
   ["Section", "Archive"],
-  ["Total", "9 shipped"],
-  ["First entry", "Fall 2023"],
+  ["Total", `${shippedCount} shipped · ${projects.length} in archive`],
+  ["First entry", "Fall 2025"],
   ["Latest entry", `${projects[0].term} · №${projects[0].code}`],
   ["Filtered", "Showing all"],
 ];
@@ -16,6 +18,7 @@ const breakdown = [
   { name: "AI Engineering", category: "AI Engineering", color: "#005030" },
   { name: "BI & Dashboards", category: "BI & Dashboards", color: "#000000" },
   { name: "Finance & Valuation", category: "Finance & Valuation", color: "#003D24" },
+  { name: "Digital Marketing", category: "Digital Marketing", color: "#B81F6E" },
   { name: "Graduate Capstone", category: "Capstone", color: "#E7278A" },
 ].map((b) => ({
   ...b,
@@ -66,7 +69,7 @@ export default function ProjectsPage() {
         eyebrow="Archive · Every project"
         titleColor="green"
         title={<>The archive.</>}
-        subtitle="Nine real partnerships across financial services, digital health, live events, sports analytics, food & beverage, and more. Every entry shipped a working artifact to a real client — not a deck."
+        subtitle="Real partnerships across financial services, digital health, live events, sports analytics, food & beverage, and more. Every project ships a working artifact to a real client, not a deck."
         meta={meta}
         sidecar={<Breakdown />}
       />

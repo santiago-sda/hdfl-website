@@ -56,8 +56,12 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       label: "Finance",
       count: projects.filter((p) => p.category === "Finance & Valuation").length,
       match: (p) => p.category === "Finance & Valuation",
-      emptyNote:
-        "The first Finance & Valuation projects ship Fall 2026. Check back soon.",
+    },
+    {
+      key: "marketing",
+      label: "Marketing",
+      count: projects.filter((p) => p.category === "Digital Marketing").length,
+      match: (p) => p.category === "Digital Marketing",
     },
     {
       key: "capstone",
@@ -76,6 +80,18 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       label: "Spring 2026",
       count: projects.filter((p) => p.termShort === "S26").length,
       match: (p) => p.termShort === "S26",
+    },
+    {
+      key: "su26",
+      label: "Summer 2026",
+      count: projects.filter((p) => p.termShort === "Su26").length,
+      match: (p) => p.termShort === "Su26",
+    },
+    {
+      key: "f26",
+      label: "Fall 2026",
+      count: projects.filter((p) => p.termShort === "F26").length,
+      match: (p) => p.termShort === "F26",
     },
   ];
 
