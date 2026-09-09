@@ -126,7 +126,7 @@ export default function TeamPage() {
               Coaches &amp; mentors.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
-              Each coach is matched to projects by solution area, domain, and skill fit. Together they cover the five DFL tracks.
+              Each coach is matched to projects by solution area, domain, and skill fit. Together they cover the six DFL tracks.
             </p>
           </AnimatedSection>
 

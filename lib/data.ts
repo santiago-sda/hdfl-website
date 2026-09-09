@@ -275,7 +275,7 @@ export const teamMembers: TeamMember[] = [
 
 export const stats: Stat[] = [
   { value: 15, suffix: "", label: "Projects shipped", sub: "2023 onward" },
-  { value: 5, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Capstone" },
+  { value: 6, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Marketing · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
 ];
@@ -410,6 +410,31 @@ export const capabilityTracks: CapabilityTrack[] = [
       "KPI frameworks",
     ],
     shipped: 7,
+  },
+  {
+    id: 6,
+    name: "Digital Marketing",
+    fullName: "Digital Marketing Strategy & Growth Execution",
+    course: "TBD",
+    level: "Undergraduate",
+    description:
+      "Students translate a partner's brand or growth challenge into a channel strategy, campaign concepts, and measurable go-to-market execution across paid, organic, and content channels.",
+    deliverables: [
+      "Brand and channel audit",
+      "Campaign strategy and creative concepts",
+      "Paid and organic growth plan",
+      "Content calendar and messaging framework",
+      "Executive presentation with performance projections",
+    ],
+    skills: [
+      "Channel strategy",
+      "Campaign planning",
+      "Paid & organic growth",
+      "Content strategy",
+      "Brand positioning",
+      "Marketing analytics",
+    ],
+    shipped: 0,
   },
 ];
 

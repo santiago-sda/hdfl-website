@@ -15,7 +15,7 @@ export function Wordmark({ tone = "ink", className = "", size = 32 }: WordmarkPr
       aria-label="Miami Digital-First Lab · Miami"
     >
       <Image
-        src="/mdfl-logo.png"
+        src="/mdfl_um.png"
         alt=""
         width={size}
         height={size}

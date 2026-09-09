@@ -6,7 +6,7 @@ import type { MetaStripItem } from "@/components/ui/MetaStrip";
 
 const meta: MetaStripItem[] = [
   ["Section", "Solutions"],
-  ["Solutions", "5 capability tracks"],
+  ["Solutions", "6 capability tracks"],
   ["Levels", "Undergrad + Grad"],
   ["Length", "5–10 weeks"],
   ["Partner fee", "USD 0.00"],
@@ -48,11 +48,11 @@ export default function TracksPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Capability Solutions · Five chapters"
+        eyebrow="Capability Solutions · Six chapters"
         titleColor="green"
         title={
           <span className="block text-[40px] sm:text-[54px] md:text-[64px] lg:text-[66px]">
-            Five digital solutions,<br />
+            Six digital solutions,<br />
             <span className="text-um-orange-text">one</span> integrated lab.
           </span>
         }
