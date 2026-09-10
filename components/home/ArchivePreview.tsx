@@ -26,14 +26,14 @@ export function ArchivePreview() {
               Every project<br />we&apos;ve shipped.
             </h2>
             <p className="mt-5 text-[15px] leading-[1.6] text-ink-soft max-w-[480px]">
-              Nine real partnerships across financial services, digital health, live events, sports performance, food &amp; beverage, and more.
+              Real partnerships across financial services, digital health, live events, sports performance, food &amp; beverage, and more.
             </p>
           </div>
           <Link
             href="/projects"
             className="group inline-flex items-center gap-2 px-[18px] py-[11px] bg-transparent border border-ink text-ink text-[13px] font-medium rounded-xl hover:bg-ink/5 transition-colors self-start md:self-end"
           >
-            View all 9{" "}
+            View all {projects.length}{" "}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
               →
             </span>

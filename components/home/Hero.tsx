@@ -11,8 +11,8 @@ const meta: [string, string][] = [
   ["Established", "2023"],
   ["Location", "Coral Gables, FL"],
   ["Program", "ACE Framework"],
-  ["Cohort", "Spring 2026"],
-  ["Projects", "9 shipped"],
+  ["Cohort", projects[0].term],
+  ["Projects", `${projects.filter((p) => p.status === "Shipped").length} shipped`],
   ["Partner fee", "USD 0.00"],
 ];
 
@@ -32,8 +32,13 @@ function cardStat(project: Project): { num: string; unit: string } {
   return parseStatSlot(metric.value);
 }
 
+const pinnedFeaturedIndex = Math.max(
+  0,
+  projects.findIndex((p) => p.slug === "enterprise-broker-digital-experience"),
+);
+
 export function Hero() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(pinnedFeaturedIndex);
   const [direction, setDirection] = useState(1);
   const total = projects.length;
   const current = projects[index];
@@ -113,7 +118,7 @@ export function Hero() {
                 href="/projects"
                 className="group inline-flex items-center gap-2 text-[13px] font-medium text-ink hover:text-um-orange-text transition-colors px-2 py-2"
               >
-                Browse the archive — 9 projects{" "}
+                Browse the archive — {total} projects{" "}
                 <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   →
                 </span>
