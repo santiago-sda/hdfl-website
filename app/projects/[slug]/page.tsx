@@ -32,7 +32,10 @@ export default async function ProjectPage({ params }: PageProps) {
     ["Course", project.course],
     ["Team", project.team],
     ["Term", `${project.term} · ${project.duration}`],
-    ["Status", `● ${project.status} to client`],
+    [
+      "Status",
+      `● ${project.status === "Shipped" ? "Shipped to client" : project.status}`,
+    ],
   ];
 
   return (

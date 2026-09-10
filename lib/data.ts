@@ -275,7 +275,7 @@ export const teamMembers: TeamMember[] = [
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 48, suffix: "", label: "Projects shipped", sub: "2023 onward" },
+  { value: 16, suffix: "", label: "Projects shipped", sub: "2023 onward" },
   { value: 6, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Marketing · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
@@ -307,7 +307,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Market analysis",
       "Go-to-market strategy",
     ],
-    shipped: 26,
+    shipped: 6,
     mostRequested: true,
   },
   {
@@ -333,7 +333,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Full-stack deployment",
       "Finance, legal, logistics AI",
     ],
-    shipped: 6,
+    shipped: 1,
   },
   {
     id: 3,
@@ -358,7 +358,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Cash-flow dashboards",
       "Operational KPIs",
     ],
-    shipped: 4,
+    shipped: 2,
   },
   {
     id: 4,
@@ -384,7 +384,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "WACC & capital structure",
       "Excel financial modeling",
     ],
-    shipped: 2,
+    shipped: 0,
   },
   {
     id: 5,
@@ -435,7 +435,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Customer journey mapping",
       "Marketing analytics & KPIs",
     ],
-    shipped: 3,
+    shipped: 0,
     examples: [
       "Market research and opportunity analysis",
       "Competitive and industry analysis",
@@ -642,7 +642,7 @@ export const projects: Project[] = [
     client: "Location-based social discovery startup",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Redesign a dual-sided, location-based social utility so conversational AI moves users from stated intent to relevant people, venues, and real engagement.",
     approach:
@@ -673,7 +673,7 @@ export const projects: Project[] = [
     client: "IT consulting firm repositioning for aerospace",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Reposition a generalist IT consulting firm as a specialized space-economy partner through a platform experience built around aerospace and supply-chain outcomes.",
     approach:
@@ -704,7 +704,7 @@ export const projects: Project[] = [
     client: "Event-planning workspace startup",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Define a planner-led, multi-sided event-planning workspace connecting planners, hosts, and vendors around a shared, controlled-visibility workflow.",
     approach:
@@ -735,7 +735,7 @@ export const projects: Project[] = [
     client: "Accessibility-focused identity verification startup",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Prototype a privacy-conscious access passport letting people with disabilities verify information once without exposing underlying documents.",
     approach:
@@ -766,7 +766,7 @@ export const projects: Project[] = [
     client: "Managed FX service provider",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Design an educational FX portal that helps SMB decision-makers understand pricing and engage a managed FX service with greater trust.",
     approach:
@@ -797,7 +797,7 @@ export const projects: Project[] = [
     client: "Neurodiversity support platform",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Shape a multi-sided support platform where a neurodiverse individual can plan goals, track patterns, and coordinate support with their circle.",
     approach:
@@ -828,7 +828,7 @@ export const projects: Project[] = [
     client: "Kid-safe conversational AI company",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Validate where a kid-safe conversational AI creates the strongest hospitality value and design the guest and management experiences around it.",
     approach:
@@ -859,7 +859,7 @@ export const projects: Project[] = [
     client: "AI-powered content platform",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Improve a partial AI-powered MVP that turns long-form content into multi-channel assets while reducing fragmented, tab-heavy workflows.",
     approach:
@@ -890,7 +890,7 @@ export const projects: Project[] = [
     client: "Musician-matching platform startup",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Design a matching platform for adult and senior hobbyist musicians to find compatible players and form groups based on shared goals and availability.",
     approach:
@@ -921,7 +921,7 @@ export const projects: Project[] = [
     client: "Women's health research initiative",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Identify unmet needs at the intersection of ADHD and menopause and translate public online voices into a differentiated digital-product direction.",
     approach:
@@ -952,7 +952,7 @@ export const projects: Project[] = [
     client: "Veterans memorial nonprofit",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Create a searchable, map-enabled, story-driven Veterans Memorial Museum platform connected to a partner site through cross-linking, not integration.",
     approach:
@@ -983,7 +983,7 @@ export const projects: Project[] = [
     client: "Children's wellness education program",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Design an educator-friendly digital hub for a children's breathing program, centralizing training, lesson plans, and delivery support.",
     approach:
@@ -1014,7 +1014,7 @@ export const projects: Project[] = [
     client: "Entrepreneurship network organization",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Unify a fragmented set of entrepreneurship program sites into one coherent digital ecosystem for students, founders, mentors, and investors.",
     approach:
@@ -1045,7 +1045,7 @@ export const projects: Project[] = [
     client: "Enterprise knowledge management initiative",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Build a proof of concept for capturing, structuring, validating, and reusing tacit organizational knowledge as workflows and decision paths.",
     approach:
@@ -1076,7 +1076,7 @@ export const projects: Project[] = [
     client: "AI-powered corporate training venture",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Evaluate whether an AI-powered adaptive training and certification platform has a compelling, monetizable value proposition across its three stakeholder groups.",
     approach:
@@ -1107,7 +1107,7 @@ export const projects: Project[] = [
     client: "Nutrition and grocery-planning platform",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Design a multi-sided nutrition and grocery-planning platform connecting households, dietitians, and partners around meal plans and shopping lists.",
     approach:
@@ -1138,7 +1138,7 @@ export const projects: Project[] = [
     client: "Childcare booking marketplace",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Reduce anxiety and friction in the first childcare booking while designing referral and loyalty mechanisms for parents and babysitters.",
     approach:
@@ -1169,7 +1169,7 @@ export const projects: Project[] = [
     client: "Social media agency",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Move a social-media agency from an outdated brochure site to a platform that communicates its narrowed positioning across two distinct client archetypes.",
     approach:
@@ -1200,7 +1200,7 @@ export const projects: Project[] = [
     client: "AI-proctored interview prep platform",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Optimize the end-to-end UX of an AI-proctored case-interview practice platform so assessment, scoring, and feedback are clearer and more actionable.",
     approach:
@@ -1231,7 +1231,7 @@ export const projects: Project[] = [
     client: "Elevator and field-service company",
     course: "BTE 210 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Redesign the full customer-service journey — from request through dispatch, status communication, and resolution — for a field-service company.",
     approach:
@@ -1262,7 +1262,7 @@ export const projects: Project[] = [
     client: "Commercial real estate decision-intelligence platform",
     course: "BTE 440 · Undergraduate",
     team: "5 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Build an integrable financial-analysis module that turns deal or lease inputs into broker-appropriate cash flows and scenario comparisons.",
     approach:
@@ -1293,7 +1293,7 @@ export const projects: Project[] = [
     client: "AI-native ERP platform",
     course: "BTE 440 · Undergraduate",
     team: "5 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Implement a focused increment of an AI-native ERP inventory subsystem where agents interpret state and trigger action across inventory workflows.",
     approach:
@@ -1324,7 +1324,7 @@ export const projects: Project[] = [
     client: "Menopause-focused health research program",
     course: "BTE 440 · Undergraduate",
     team: "5 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Build an interpretable predictive-modeling pilot to differentiate clinically meaningful menopause symptom-burden trajectories from longitudinal research data.",
     approach:
@@ -1355,7 +1355,7 @@ export const projects: Project[] = [
     client: "Children's music and AI wellness platform",
     course: "BTE 440 · Undergraduate",
     team: "5 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Contribute selected engineering improvements to an existing music-and-AI platform supporting children's emotional regulation and reading skills.",
     approach:
@@ -1386,7 +1386,7 @@ export const projects: Project[] = [
     client: "Game-based AI career-development platform",
     course: "BTE 440 · Undergraduate",
     team: "5 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Design and build a tangible enhancement to an AI-driven, game-based career-development platform's skill-portfolio and guidance experience.",
     approach:
@@ -1417,7 +1417,7 @@ export const projects: Project[] = [
     client: "Investment analytics platform",
     course: "BUS 150 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Translate a technically complex analyst price-target dataset into investment-facing insights, dashboards, and future agentic-AI use-case concepts.",
     approach:
@@ -1448,7 +1448,7 @@ export const projects: Project[] = [
     client: "Co-living property management company",
     course: "BUS 150 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Transform fragmented tenant, payment, and arrears data into an integrated reporting and decision-support solution for collections, legal, and operations.",
     approach:
@@ -1479,7 +1479,7 @@ export const projects: Project[] = [
     client: "Neurodiversity-focused counsellor training organization",
     course: "MKT 387 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Build a structured social and digital-marketing strategy that grows U.S. counsellor-training awareness while maintaining a coherent secondary audience presence.",
     approach:
@@ -1510,7 +1510,7 @@ export const projects: Project[] = [
     client: "Founder-led microgreens and nutrition brand",
     course: "MKT 387 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Create a practical digital path from event and social-media awareness to online purchasing, email growth, and repeat engagement for a founder-led DTC brand.",
     approach:
@@ -1541,7 +1541,7 @@ export const projects: Project[] = [
     client: "Yachting data and digital-infrastructure company",
     course: "MKT 387 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Strengthen organic-search performance, AI-search visibility, and content for one priority property within a global yachting data ecosystem.",
     approach:
@@ -1572,7 +1572,7 @@ export const projects: Project[] = [
     client: "Medtech venture preparing for investor discussions",
     course: "FIN 302 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Review and strengthen an existing financial model supporting a medtech venture's funding and investor discussions.",
     approach:
@@ -1603,7 +1603,7 @@ export const projects: Project[] = [
     client: "Medtech startup preparing for seed funding",
     course: "FIN 302 · Undergraduate",
     team: "4 students · 2 coaches",
-    status: "Shipped",
+    status: "In Progress",
     brief:
       "Build a three-year financial projection and a basic DCF valuation model for a medtech startup preparing for a seed round.",
     approach:
