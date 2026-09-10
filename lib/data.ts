@@ -41,6 +41,7 @@ export interface CapabilityTrack {
   skills: string[];
   shipped: number;
   mostRequested?: boolean;
+  examples?: string[]; // representative engagement types, shown alongside deliverables/skills
 }
 
 export interface PartnerType {
@@ -274,7 +275,7 @@ export const teamMembers: TeamMember[] = [
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 47, suffix: "", label: "Projects shipped", sub: "2023 onward" },
+  { value: 48, suffix: "", label: "Projects shipped", sub: "2023 onward" },
   { value: 6, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Marketing · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
@@ -357,7 +358,7 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Cash-flow dashboards",
       "Operational KPIs",
     ],
-    shipped: 3,
+    shipped: 4,
   },
   {
     id: 4,
@@ -435,6 +436,23 @@ export const capabilityTracks: CapabilityTrack[] = [
       "Marketing analytics & KPIs",
     ],
     shipped: 3,
+    examples: [
+      "Market research and opportunity analysis",
+      "Competitive and industry analysis",
+      "Customer research and audience segmentation",
+      "Go-to-market strategy development",
+      "Marketing strategy and campaign planning",
+      "Brand positioning and messaging strategy",
+      "Customer acquisition and retention strategy",
+      "Product or service positioning",
+      "New market or geographic expansion analysis",
+      "Digital marketing and channel strategy",
+      "Customer journey and engagement analysis",
+      "Marketing performance analysis and recommendations",
+      "Growth strategy and opportunity prioritization",
+      "New product or service launch strategy",
+      "Strategic recommendations to address a defined marketing or business challenge",
+    ],
   },
 ];
 
@@ -1596,6 +1614,37 @@ export const projects: Project[] = [
       { value: "4 weeks", label: "~80-hour engagement" },
       { value: "3-year model", label: "Projection + DCF" },
       { value: "Scenario tested", label: "Growth + sensitivity analysis" },
+    ],
+  },
+  {
+    id: 48,
+    code: "26-48",
+    slug: "manufacturing-operations-data-assessment",
+    title: "Manufacturing Operations & Data Assessment",
+    industry: "Manufacturing / Industrial Operations",
+    description:
+      "A global industrial manufacturer relied on fragmented systems and manual processes for production forecasting, work-order creation, maintenance reporting, and scheduling. The team interviewed key stakeholders, mapped existing workflows, and identified duplicate data entry and reporting inefficiencies. The engagement delivered a process effectiveness assessment, data framework, KPI recommendations, and a roadmap for future operational dashboards.",
+    category: "BI & Dashboards",
+    image: "https://picsum.photos/seed/walworth-manufacturing/800/500",
+    tags: ["Process Assessment", "Data Framework", "KPI Roadmap"],
+    term: "Summer 2026",
+    termShort: "Su26",
+    duration: "8 weeks",
+    delivered: "Operational assessment · Dashboard roadmap",
+    client: "Global industrial manufacturer",
+    course: "BUS 150 · Undergraduate",
+    team: "4 students · 2 coaches",
+    status: "Shipped",
+    brief:
+      "Identify opportunities to reduce manual work, improve data visibility, and strengthen decision-making across production, maintenance, and scheduling.",
+    approach:
+      "Interviewed stakeholders across four operational areas and mapped how information moved between internal systems, spreadsheets, and manually prepared reports. The team documented process gaps, duplicate entry, data dependencies, and opportunities for automation and dashboard development.",
+    outcome:
+      "Delivered a consolidated operational assessment with process findings, data-source mapping, KPI recommendations, and dashboard concepts presented to company leadership. The work established a foundation for future dashboards and more standardized reporting.",
+    metrics: [
+      { value: "4 areas", label: "Production · maintenance · scheduling · reporting" },
+      { value: "1 roadmap", label: "Future operational dashboards" },
+      { value: "KPI framework", label: "Standardized reporting metrics" },
     ],
   },
   {

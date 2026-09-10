@@ -144,6 +144,24 @@ export default function TracksPage() {
                     </div>
                   </div>
                 </div>
+
+                {track.examples && track.examples.length > 0 && (
+                  <div className="px-6 md:px-7 pb-6 md:pb-7 pt-1 border-t border-rule-soft">
+                    <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-3">
+                      Example engagements
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {track.examples.map((ex) => (
+                        <span
+                          key={ex}
+                          className="inline-block font-mono text-[11px] font-medium tracking-[0.02em] text-ink-soft bg-paper border border-rule rounded-md px-2.5 py-1 transition-colors duration-200 hover:border-ink/25 hover:text-ink"
+                        >
+                          {ex}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </article>
             </AnimatedSection>
           ))}
