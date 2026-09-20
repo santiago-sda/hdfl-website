@@ -359,7 +359,7 @@ export const teamMembers: TeamMember[] = [
     name: "Edmund Liew",
     title: "Coach",
     role: "coach",
-    avatar: "/team/placeholder.png",
+    avatar: "/team/edmund-liew.jpg",
   },
   {
     id: "coach-21",
@@ -373,14 +373,15 @@ export const teamMembers: TeamMember[] = [
     name: "Grisel M De Silva",
     title: "Coach",
     role: "coach",
-    avatar: "/team/placeholder.png",
+    avatar: "/team/grisel-de-silva.png",
   },
   {
     id: "coach-23",
     name: "Zidane Habib-Mitchell",
     title: "Coach",
     role: "coach",
-    avatar: "/team/placeholder.png",
+    avatar: "/team/zidane-habib-mitchell.jpeg",
+    avatarPosition: "center 40%",
   },
   {
     id: "coach-24",
