@@ -171,7 +171,7 @@ export const teamMembers: TeamMember[] = [
     domain: "HCD",
     leadTitle: "Leader for HCD & Product Design",
     joined: "Joined 2026",
-    avatar: "/team/placeholder.png",
+    avatar: "/team/robert-plant.png",
     bio: "Associate Professor at Miami, contributing to the Lab's HCD & Product Design practice.",
     profileUrl: "https://people.miami.edu/profile/5e4539893e35b6d5c0d28e91ff6e04cf",
   },
