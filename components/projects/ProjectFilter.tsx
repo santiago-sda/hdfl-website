@@ -93,6 +93,12 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
       count: projects.filter((p) => p.termShort === "F26").length,
       match: (p) => p.termShort === "F26",
     },
+    {
+      key: "s27",
+      label: "Spring 2027",
+      count: projects.filter((p) => p.termShort === "S27").length,
+      match: (p) => p.termShort === "S27",
+    },
   ];
 
   const activeFilter = filters.find((f) => f.key === active) ?? filters[0];
