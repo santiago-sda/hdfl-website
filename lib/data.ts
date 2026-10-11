@@ -116,6 +116,18 @@ export const teamMembers: TeamMember[] = [
     profileUrl: "https://people.miami.edu/profile/d745ec0f1424c88ec80310b4b30645ad",
   },
   {
+    id: "director-6",
+    name: "Dr. Robert Gregory",
+    title: "Associate Professor",
+    role: "director",
+    domain: "HCD",
+    leadTitle: "Leader for HCD & Product Design",
+    joined: "Joined 2026",
+    avatar: "/team/robert-gregory.png",
+    bio: "Associate Professor at Miami, contributing to the Lab's HCD & Product Design practice.",
+    profileUrl: "https://people.miami.edu/profile/965a1fddc1c93a4a1339e5ac5806a241",
+  },
+  {
     id: "director-2",
     name: "Dr. Krishna Murphy",
     title: "Lecturer, Business Technology",
@@ -162,18 +174,6 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/Carlos.webp",
     bio: "Lectures at Miami and leads the Lab's digital marketing practice, helping student teams turn shipped work into brand, growth, and go-to-market strategy.",
     profileUrl: "https://people.miami.edu/profile/b2a709b79fc8e1f40eb7ba543995e44c",
-  },
-  {
-    id: "director-6",
-    name: "Dr. Robert Plant",
-    title: "Associate Professor, Business Technology",
-    role: "director",
-    domain: "HCD",
-    leadTitle: "Leader for HCD & Product Design",
-    joined: "Joined 2026",
-    avatar: "/team/robert-plant.png",
-    bio: "Associate Professor at Miami, contributing to the Lab's HCD & Product Design practice.",
-    profileUrl: "https://people.miami.edu/profile/5e4539893e35b6d5c0d28e91ff6e04cf",
   },
   // Officers (executive board + heads)
   {
