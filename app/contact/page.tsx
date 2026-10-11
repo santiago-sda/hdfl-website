@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/ui/PageHero";
+import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { whatHappensNext } from "@/lib/data";
@@ -12,6 +13,14 @@ const meta: MetaStripItem[] = [
   ["Cost", "USD 0.00"],
   ["Response", "5 business days"],
 ];
+
+export const metadata: Metadata = {
+  title: "Submit a Challenge",
+  description:
+    "Bring a real business challenge to Miami Digital-First Lab. Student teams scope and deliver it at no cost to qualifying partner organizations.",
+  alternates: { canonical: "/contact" },
+};
+
 
 export default function ContactPage() {
   return (

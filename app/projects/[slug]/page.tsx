@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { projects } from "@/lib/data";
 import { MetaStrip, MetaStripItem } from "@/components/ui/MetaStrip";
 
@@ -10,6 +11,18 @@ export function generateStaticParams() {
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return {};
+
+  return {
+    title: project.title,
+    description: project.brief,
+    alternates: { canonical: `/projects/${project.slug}` },
+  };
 }
 
 export default async function ProjectPage({ params }: PageProps) {

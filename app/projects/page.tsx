@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/ui/PageHero";
+import type { Metadata } from "next";
 import { ProjectFilter } from "@/components/projects/ProjectFilter";
 import { projects } from "@/lib/data";
 import type { MetaStripItem } from "@/components/ui/MetaStrip";
@@ -61,6 +62,14 @@ function Breakdown() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Project Archive",
+  description:
+    "Every Miami Digital-First Lab project: real partnerships across financial services, digital health, events, marketing and more, each delivered by a Miami Business School student team.",
+  alternates: { canonical: "/projects" },
+};
+
 
 export default function ProjectsPage() {
   return (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { capabilityTracks } from "@/lib/data";
@@ -43,6 +44,14 @@ function QuickFacts() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Solutions",
+  description:
+    "Six capability solutions — HCD & product design, AI engineering, BI & dashboards, finance & valuation, digital marketing and graduate capstone — delivered by Miami Digital-First Lab student teams.",
+  alternates: { canonical: "/tracks" },
+};
+
 
 export default function TracksPage() {
   return (

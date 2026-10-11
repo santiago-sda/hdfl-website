@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -56,6 +57,14 @@ function OrgStructure() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "People",
+  description:
+    "The faculty directors, student officers and coaches behind Miami Digital-First Lab at Miami Business School.",
+  alternates: { canonical: "/team" },
+};
+
 
 export default function TeamPage() {
   const directors = teamMembers.filter((m) => m.role === "director");
