@@ -13,38 +13,6 @@ const meta: MetaStripItem[] = [
   ["Partner fee", "USD 0.00"],
 ];
 
-const quickFacts: [string, string][] = [
-  ["Cost to partner", "USD 0.00"],
-  ["Typical length", "5–10 weeks"],
-  ["Avg. team size", "4–6 students + 2 coaches"],
-  ["Next cohort", "Fall 2026 · applications open Jun"],
-];
-
-function QuickFacts() {
-  return (
-    <div className="bg-card border border-rule rounded-2xl p-5">
-      <p className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mb-4">
-        Quick facts
-      </p>
-      <dl className="space-y-3">
-        {quickFacts.map(([k, v]) => (
-          <div
-            key={k}
-            className="flex items-baseline justify-between gap-3 border-t border-rule-soft first:border-t-0 pt-2.5 first:pt-0"
-          >
-            <dt className="font-mono text-[10.5px] font-medium tracking-[0.12em] uppercase text-muted">
-              {k}
-            </dt>
-            <dd className="font-mono text-[12px] font-semibold tabular-nums text-ink text-right">
-              {v}
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  );
-}
-
 export const metadata: Metadata = {
   title: "Solutions",
   description:
@@ -60,14 +28,13 @@ export default function TracksPage() {
         eyebrow="Capability Solutions · Six chapters"
         titleColor="green"
         title={
-          <span className="block text-[40px] sm:text-[54px] md:text-[64px] lg:text-[66px]">
+          <>
             Six digital solutions,<br />
             <span className="text-um-orange-text">one</span> integrated lab.
-          </span>
+          </>
         }
         subtitle="Each solution is taught by a dedicated faculty lead and delivered through the ACE framework. Engage one independently — or stack several across a multi-phase partnership."
         meta={meta}
-        sidecar={<QuickFacts />}
       />
 
       <section className="px-6 md:px-10 py-12 md:py-16 pb-24">

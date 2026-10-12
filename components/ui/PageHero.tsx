@@ -49,7 +49,7 @@ export function PageHeader({ eyebrow, title, titleColor = "ink", subtitle, meta,
               </span>
             </div>
             <h1
-              className={`text-[60px] sm:text-[80px] md:text-[96px] lg:text-[100px] font-black tracking-[-0.045em] leading-[0.9] ${
+              className={`text-[40px] sm:text-[54px] md:text-[64px] lg:text-[66px] font-black tracking-[-0.045em] leading-[0.9] ${
                 titleColor === "green" ? "text-um-green" : "text-ink"
               }`}
             >

@@ -9,7 +9,7 @@ import type { MetaStripItem } from "@/components/ui/MetaStrip";
 import { motion } from "framer-motion";
 
 const meta: MetaStripItem[] = [
-  ["Section", "Method"],
+  ["Section", "Experiential Learning"],
   ["Framework", "ACE · Applied Career Experience"],
   ["Phases", "3"],
   ["Cycle", "Annual · F + S + Su"],
@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Method · The Miami Three-Phase Model"
+        eyebrow="Experiential Learning · The Miami Three-Phase Model"
         titleColor="green"
         title={
           <>

@@ -5,12 +5,27 @@ export interface OutcomeMetric {
   label: string;
 }
 
+export const sectors = [
+  "Aerospace, Marine & Industrial",
+  "Consumer & Hospitality",
+  "Education & Training",
+  "Financial Services & Fintech",
+  "Food & Beverage",
+  "Health & Life Sciences",
+  "Media, Events & Entertainment",
+  "Nonprofit & Community",
+  "Real Estate & Property",
+  "Technology & Software",
+] as const;
+export type Sector = (typeof sectors)[number];
+
 export interface Project {
   id: number;
   code: string; // e.g. "26-09" — used as the №-prefixed identifier across ledgers
   slug: string;
   title: string;
   industry: string;
+  sector: Sector;           // broad industry group, used by the Archive filter
   description: string;
   category: string;
   image: string;
@@ -87,7 +102,7 @@ export const navLinks = [
   { href: "/tracks", label: "Solutions" },
   { href: "/projects", label: "Archive" },
   { href: "/team", label: "People" },
-  { href: "/about", label: "Method" },
+  { href: "/about", label: "Experiential Learning" },
 ];
 
 // ─── What Happens Next ───────────────────────────────────────────────────────
@@ -417,10 +432,13 @@ export const teamMembers: TeamMember[] = [
   },
 ];
 
+// The cohort currently in session. Update this each semester.
+export const currentCohort = "Fall 2026";
+
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export const stats: Stat[] = [
-  { value: 16, suffix: "", label: "Projects shipped", sub: "2023 onward" },
+  { value: 16, suffix: "", label: "Projects shipped", sub: "2025 onward" },
   { value: 6, suffix: "", label: "Capability solutions", sub: "HCD · AI · BI · Finance · Marketing · Capstone" },
   { value: 100, suffix: "%", label: "Free to partners", sub: "No fee, no retainer" },
   { value: 12, suffix: "wk", label: "Average project", sub: "Kickoff → handoff" },
@@ -775,6 +793,7 @@ export const projects: Project[] = [
     slug: "flovara-social-utility-platform",
     title: "Flovara Social Utility Platform",
     industry: "Social Discovery / Consumer Mobile",
+    sector: "Consumer & Hospitality",
     description:
       "A location-based social utility using conversational AI needed a redesigned path from stated intent to relevant people, venues, and real-world engagement. Delivering personas, journey maps, and high-fidelity web and iPhone prototypes limited to UX/UI, with no backend or AI-model work in scope.",
     category: "HCD",
@@ -806,6 +825,7 @@ export const projects: Project[] = [
     slug: "surgestreams-space-economy-platform",
     title: "SurgeStreams Space-Economy Platform",
     industry: "Aerospace / IT Consulting",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "An IT consulting firm needed to reposition as a specialized space-economy partner rather than a generalist vendor. Delivering a modern platform concept centered on aerospace engineering and supply-chain pain points, with personas across engineering, supply-chain, program, and technology leadership.",
     category: "HCD",
@@ -837,6 +857,7 @@ export const projects: Project[] = [
     slug: "manuka-gathering-event-workspace",
     title: "Manuka / Gathering Event Workspace",
     industry: "Events / Multi-Sided Platform",
+    sector: "Media, Events & Entertainment",
     description:
       "A multi-sided event-planning workspace needed to connect professional planners, hosts, and vendors around tasks, timelines, communications, and controlled visibility. Delivering a Business Model Canvas, event-lifecycle journey mapping, and a 25+ screen web and iPhone prototype.",
     category: "HCD",
@@ -868,6 +889,7 @@ export const projects: Project[] = [
     slug: "enable-talent-access-passport",
     title: "Enable Talent Access Passport",
     industry: "Accessibility Tech / Identity",
+    sector: "Technology & Software",
     description:
       "A privacy-conscious 'access passport' concept needed to let people with disabilities verify information once and share accessibility requirements without exposing underlying documents. Delivering a multi-sided prototype for passport holders, verifiers, and receivers with a 25+ screen high-fidelity flow.",
     category: "HCD",
@@ -899,6 +921,7 @@ export const projects: Project[] = [
     slug: "forex-payments-education-portal",
     title: "Forex Payments Education Portal",
     industry: "Fintech / SMB Financial Services",
+    sector: "Financial Services & Fintech",
     description:
       "A managed FX service needed an educational, trust-building portal to help SMB decision-makers understand spreads and transaction costs before engaging. Delivering a Wix-ready website concept plus a 25+ screen clickable iPhone prototype.",
     category: "HCD",
@@ -930,6 +953,7 @@ export const projects: Project[] = [
     slug: "neuroflex-support-platform",
     title: "NeuroFlex Support Platform",
     industry: "Health Tech / Neurodiversity Support",
+    sector: "Health & Life Sciences",
     description:
       "A multi-sided support platform needed to let neurodiverse individuals plan goals, track patterns, receive alerts, and coordinate support with family, friends, and educators. Delivering a validated ecosystem concept and high-fidelity app and web prototypes across learner, parent, and professor personas.",
     category: "HCD",
@@ -961,6 +985,7 @@ export const projects: Project[] = [
     slug: "conversational-ai-hospitality-gtm",
     title: "Conversational AI for Hospitality GTM",
     industry: "Hospitality / Conversational AI",
+    sector: "Consumer & Hospitality",
     description:
       "A kid-safe conversational AI needed to find its strongest hospitality use case and a matching guest and hotel-management experience. Delivering a go-to-market playbook alongside guest-facing and operations-side UX prototypes.",
     category: "HCD",
@@ -992,6 +1017,7 @@ export const projects: Project[] = [
     slug: "content-repurposing-platform-ux",
     title: "Content Repurposing Platform UX",
     industry: "Content Tech / Creator Tools",
+    sector: "Technology & Software",
     description:
       "A partial AI-powered MVP that turns long-form content into multi-channel derivative assets needed reduced tab-switching and fragmented storage. Delivering updated wireframes, refined marketer personas, and feasible AI-agent and integration improvements.",
     category: "HCD",
@@ -1023,6 +1049,7 @@ export const projects: Project[] = [
     slug: "band-hub-musician-matching",
     title: "Band Hub Musician Matching",
     industry: "Consumer / Hobbyist Community",
+    sector: "Consumer & Hospitality",
     description:
       "Adult and senior hobbyist musicians lacked a way to find compatible players and form groups beyond informal networks and classifieds. Delivering a matching-platform concept and high-fidelity website and iPhone app spanning onboarding through group formation.",
     category: "HCD",
@@ -1054,6 +1081,7 @@ export const projects: Project[] = [
     slug: "womens-neurodiversity-needs-analysis",
     title: "Women's Neurodiversity Needs Analysis",
     industry: "Health Research / Digital Product Strategy",
+    sector: "Health & Life Sciences",
     description:
       "Unmet needs at the intersection of ADHD and pre-menopause/menopause needed translating from public online discourse into a differentiated digital-product direction. Delivering a structured needs-analysis report connecting public conversations to prioritized pain points and MVP direction.",
     category: "HCD",
@@ -1085,6 +1113,7 @@ export const projects: Project[] = [
     slug: "veterans-memorial-museum-platform",
     title: "Veterans Memorial Museum Platform",
     industry: "Nonprofit / Digital Heritage",
+    sector: "Nonprofit & Community",
     description:
       "A dedicated Veterans Memorial Museum needed a searchable, map-enabled, story-driven platform anchored in a KIA database, connected to a partner site through cross-linking rather than integration. Delivering a maintainable museum platform concept with search, mapping, and storytelling.",
     category: "HCD",
@@ -1116,6 +1145,7 @@ export const projects: Project[] = [
     slug: "breathing-program-educator-hub",
     title: "Breathing Program Educator Hub",
     industry: "EdTech / Children's Wellness",
+    sector: "Education & Training",
     description:
       "A children's breathing program needed an educator-friendly digital hub centralizing training materials, lesson plans, videos, and communication. Delivering a developer-handoff-ready concept with onboarding, resource access, and basic reporting views.",
     category: "HCD",
@@ -1147,6 +1177,7 @@ export const projects: Project[] = [
     slug: "tie-boston-ecosystem-platform",
     title: "TiE Boston Ecosystem Platform",
     industry: "Entrepreneurship / Nonprofit Network",
+    sector: "Nonprofit & Community",
     description:
       "A fragmented set of entrepreneurship program sites needed unifying into a coherent digital ecosystem serving students, founders, mentors, investors, and sponsors. Delivering a blueprint for a unified web and mobile presence.",
     category: "HCD",
@@ -1178,6 +1209,7 @@ export const projects: Project[] = [
     slug: "organizational-knowledge-platform-poc",
     title: "Organizational Knowledge Platform PoC",
     industry: "Enterprise Software / Knowledge Management",
+    sector: "Technology & Software",
     description:
       "An organization needed a working proof of concept for capturing, structuring, validating, and reusing tacit organizational knowledge as workflows and decision paths. Delivering a lightweight web proof of concept demonstrating capture, search, review, and versioning.",
     category: "HCD",
@@ -1209,6 +1241,7 @@ export const projects: Project[] = [
     slug: "corporate-training-platform-viability",
     title: "Corporate Training Platform Viability",
     industry: "EdTech / Corporate L&D",
+    sector: "Education & Training",
     description:
       "An AI-powered adaptive training and certification platform needed a business-viability check across learners, enterprise buyers, and content providers. Delivering a strategic opportunity assessment recommending whether and how to pursue the platform.",
     category: "HCD",
@@ -1240,6 +1273,7 @@ export const projects: Project[] = [
     slug: "getlime-nutrition-grocery-platform",
     title: "GetLime Nutrition & Grocery Platform",
     industry: "Food & Nutrition / Consumer Marketplace",
+    sector: "Food & Beverage",
     description:
       "A multi-sided nutrition and grocery-planning platform needed to connect households, dietitians, and partners around dietary needs, budgets, and meal plans. Delivering a near-production web blueprint and developer-ready mobile prototype.",
     category: "HCD",
@@ -1271,6 +1305,7 @@ export const projects: Project[] = [
     slug: "swaddle-childcare-booking-app",
     title: "Swaddle Childcare Booking App",
     industry: "Childcare / Marketplace App",
+    sector: "Consumer & Hospitality",
     description:
       "An app-centered childcare marketplace needed to reduce anxiety and friction in a family's first booking while building referral and loyalty mechanisms. Delivering clickable concepts focused on trust, first-booking conversion, and repeat engagement.",
     category: "HCD",
@@ -1302,6 +1337,7 @@ export const projects: Project[] = [
     slug: "fierce-media-platform-repositioning",
     title: "Fierce Media Platform Repositioning",
     industry: "Marketing / Social Media Agency",
+    sector: "Media, Events & Entertainment",
     description:
       "A social-media agency needed to move from an outdated brochure site to a platform concept communicating its narrowed positioning across health/wellness and automotive client archetypes. Delivering a modern website and iPhone prototype with archetype-specific pathways.",
     category: "HCD",
@@ -1333,6 +1369,7 @@ export const projects: Project[] = [
     slug: "casemaster-ai-ux-optimization",
     title: "Case Master AI UX Optimization",
     industry: "EdTech / Career Prep SaaS",
+    sector: "Education & Training",
     description:
       "An AI-proctored case-interview practice platform needed a clearer, more actionable UX around timed assessment, integrity rules, scoring, and feedback. Delivering a documented UX assessment and a clickable redesign of roughly 12–15 screens.",
     category: "HCD",
@@ -1364,6 +1401,7 @@ export const projects: Project[] = [
     slug: "connections-elevator-service-journey",
     title: "Connections Elevator Service Journey",
     industry: "Field Service / Customer Experience",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "A field-service company needed the full customer-service journey redesigned, from request through dispatch, status updates, and resolution. Delivering a recommended future-state service journey and concept prototype fit to a Salesforce Field Service Lightning environment.",
     category: "HCD",
@@ -1395,6 +1433,7 @@ export const projects: Project[] = [
     slug: "redi-financial-analysis-module",
     title: "REDI Financial Analysis Module",
     industry: "PropTech / Commercial Real Estate",
+    sector: "Real Estate & Property",
     description:
       "A commercial real-estate decision-intelligence platform needed an integrable module that ingests deal or lease inputs and produces broker-appropriate cash flows and scenario comparisons. Delivering a working web-accessible prototype with a documented Python analysis engine.",
     category: "AI Engineering",
@@ -1426,6 +1465,7 @@ export const projects: Project[] = [
     slug: "genledgeai-agentic-inventory",
     title: "GenledgeAI Agentic Inventory",
     industry: "Enterprise Software / AI-Native ERP",
+    sector: "Technology & Software",
     description:
       "An AI-native ERP platform needed a focused inventory subsystem where agents interpret system state and trigger actions across inventory, purchasing, and warehouse workflows. Delivering a near-production agentic inventory increment integrated with the existing platform.",
     category: "AI Engineering",
@@ -1457,6 +1497,7 @@ export const projects: Project[] = [
     slug: "menopause-symptom-trajectory-research-model",
     title: "Menopause Symptom-Trajectory Research Model",
     industry: "Health Research / Predictive Modeling",
+    sector: "Health & Life Sciences",
     description:
       "A women's-health research initiative needed an interpretable predictive-modeling pilot to differentiate meaningful menopause symptom-burden trajectories using public longitudinal research data. Delivering a working, interpretable reference model with documented discrimination, calibration, and limitations.",
     category: "AI Engineering",
@@ -1488,6 +1529,7 @@ export const projects: Project[] = [
     slug: "create-music-maker-ai-integration",
     title: "Create Music Maker AI Integration",
     industry: "EdTech / Children's Wellness Tech",
+    sector: "Education & Training",
     description:
       "An existing music-and-AI platform supporting children's emotional regulation and reading skills needed selected engineering contributions within its existing codebase. Delivering reviewed code contributions improving at least one agreed technical area, from audio integration to reading-related logic.",
     category: "AI Engineering",
@@ -1519,6 +1561,7 @@ export const projects: Project[] = [
     slug: "toyz-ai-career-development-feature",
     title: "Toyz AI Career Development Feature",
     industry: "EdTech / Career Development Gaming",
+    sector: "Education & Training",
     description:
       "An AI-driven, game-based career-development platform needed a tangible feature enhancement where users demonstrate skills through portfolios and receive AI-supported guidance. Delivering a testable, pilotable feature built over an Agile/Scrum five-week cycle.",
     category: "AI Engineering",
@@ -1550,6 +1593,7 @@ export const projects: Project[] = [
     slug: "analyst-price-target-analytics-dashboard",
     title: "Analyst Price-Target Analytics Dashboard",
     industry: "Financial Services / Investment Analytics",
+    sector: "Financial Services & Fintech",
     description:
       "An investment analytics platform needed a technically complex dataset of historical analyst price-targets translated into investor-facing insights, dashboards, and future AI use-case concepts. Delivering SQL-driven analysis, a prototype dashboard, and concept-level agentic-AI recommendations.",
     category: "BI & Dashboards",
@@ -1581,6 +1625,7 @@ export const projects: Project[] = [
     slug: "harrington-housing-decision-support",
     title: "Harrington Housing Decision Support",
     industry: "Property Management / Co-Living",
+    sector: "Real Estate & Property",
     description:
       "Fragmented tenant, payment, and arrears data needed to become an integrated reporting and decision-support solution for collections, legal, and operations teams. Delivering a cleaned dataset, an integrated data model, and iterative dashboard and report views.",
     category: "BI & Dashboards",
@@ -1612,6 +1657,7 @@ export const projects: Project[] = [
     slug: "neurodiversity-aware-counselling-seo",
     title: "Neurodiversity Aware Counselling SEO",
     industry: "Professional Training / Digital Marketing",
+    sector: "Education & Training",
     description:
       "A counsellor-training organization needed a structured social and digital-marketing strategy to build training awareness among U.S. counsellors, alongside a coherent secondary presence for prospective clients. Delivering a positioning framework, SEO/AI-visibility diagnostic, and a prioritized social-channel strategy.",
     category: "Digital Marketing",
@@ -1643,6 +1689,7 @@ export const projects: Project[] = [
     slug: "greens4u-digital-marketing-strategy",
     title: "Greens4U Digital Marketing Strategy",
     industry: "Food & Nutrition / DTC E-commerce",
+    sector: "Food & Beverage",
     description:
       "A founder-led microgreens and nutrition business needed a practical digital path from event and social awareness to online purchasing and repeat engagement. Delivering a funnel diagnostic, social-channel strategy, and a prioritized 3–6 month action roadmap.",
     category: "Digital Marketing",
@@ -1674,6 +1721,7 @@ export const projects: Project[] = [
     slug: "yachting-platform-seo-aio-strategy",
     title: "Yachting Platform SEO & AIO Strategy",
     industry: "Marine / Data Platform SEO",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "A global yachting data and digital-infrastructure company needed stronger organic-search and AI-search visibility for one priority digital property, connecting proprietary data capabilities to customer search intent. Delivering a full SEO/AI-visibility assessment and content roadmap.",
     category: "Digital Marketing",
@@ -1705,6 +1753,7 @@ export const projects: Project[] = [
     slug: "medtech-financial-model-validation",
     title: "Medtech Financial Model Validation",
     industry: "Health Tech / Financial Modeling",
+    sector: "Health & Life Sciences",
     description:
       "A medtech venture's existing financial model needed review and strengthening ahead of funding and investor discussions. Delivering a model review summary covering assumptions, key drivers, sensitivities, and presentation clarity.",
     category: "Finance & Valuation",
@@ -1736,6 +1785,7 @@ export const projects: Project[] = [
     slug: "medtech-three-year-projection-dcf",
     title: "Medtech Three-Year Projection & DCF",
     industry: "Health Tech / Startup Finance",
+    sector: "Health & Life Sciences",
     description:
       "A medtech startup preparing for a seed round needed a structured three-year financial projection and a basic DCF valuation using company-provided assumptions. Delivering a full projection model, scenario-based DCF, and sensitivity analysis.",
     category: "Finance & Valuation",
@@ -1767,6 +1817,7 @@ export const projects: Project[] = [
     slug: "manufacturing-operations-data-assessment",
     title: "Manufacturing Operations & Data Assessment",
     industry: "Manufacturing / Industrial Operations",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "A global industrial manufacturer relied on fragmented systems and manual processes for production forecasting, work-order creation, maintenance reporting, and scheduling. The team interviewed key stakeholders, mapped existing workflows, and identified duplicate data entry and reporting inefficiencies. The engagement delivered a process effectiveness assessment, data framework, KPI recommendations, and a roadmap for future operational dashboards.",
     category: "BI & Dashboards",
@@ -1798,6 +1849,7 @@ export const projects: Project[] = [
     slug: "wildfire-detection-mobile-platform",
     title: "Wildfire Detection Mobile Platform",
     industry: "Wildfire Detection / Environmental Technology",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "An existing hardware-based wildfire-detection prototype needed to become a maintainable, public-facing mobile experience that keeps working when connectivity is limited. Designed a dual-track React Native architecture pairing on-device computer vision with asynchronous content delivery and local caching.",
     category: "Capstone",
@@ -1829,6 +1881,7 @@ export const projects: Project[] = [
     slug: "validation-decision-intelligence-panel",
     title: "Validation Decision Intelligence Panel",
     industry: "Decision Intelligence / AI-Enabled Review",
+    sector: "Technology & Software",
     description:
       "A decision-intelligence platform for reviewers showed outcomes on opportunity records but not the reasoning, confidence, or evidence behind them. Designed a Validation Decision Intelligence Panel that surfaces confidence assessments, supporting evidence, and decision rationale before a reviewer takes final action.",
     category: "Capstone",
@@ -1860,6 +1913,7 @@ export const projects: Project[] = [
     slug: "ai-assisted-video-production-workflow",
     title: "AI-Assisted Video Production Workflow",
     industry: "Video Production / Digital Content",
+    sector: "Media, Events & Entertainment",
     description:
       "A video production workflow relied on significant manual editing, and the open question was whether AI could cut production time without compromising quality, control, or security. Evaluated and hands-on tested AI-assisted video editing tools — including Descript and Quickture — and redesigned the workflow around what held up.",
     category: "Capstone",
@@ -1891,6 +1945,7 @@ export const projects: Project[] = [
     slug: "microgravity-fluid-behavior-simulation",
     title: "Microgravity Fluid Behavior Simulation",
     industry: "Aerospace / Engineering Simulation",
+    sector: "Aerospace, Marine & Industrial",
     description:
       "An aerospace engineering effort needed to understand how water behaves during storage, transfer, docking, and sloshing in microgravity, and to produce usable evidence for future design. Built and validated an OpenFOAM computational simulation to test fluid behavior and document findings.",
     category: "Capstone",
@@ -1922,6 +1977,7 @@ export const projects: Project[] = [
     slug: "document-intelligence-auto-population-engine",
     title: "AI Document Intelligence & Auto-Population Engine",
     industry: "AI Document Intelligence / Pet-Health Administration",
+    sector: "Health & Life Sciences",
     description:
       "A document-intensive process required information to be extracted from photographed receipts and populated into structured records by hand. Built a self-checking OCR pipeline across five Python modules covering image correction, dual OCR, confidence analysis, classification, and structured output.",
     category: "Capstone",
@@ -1953,6 +2009,7 @@ export const projects: Project[] = [
     slug: "automated-loan-screening-platform",
     title: "Automated Loan Screening Platform",
     industry: "Lending / Financial Technology",
+    sector: "Financial Services & Fintech",
     description:
       "A loan origination process was moving from broker-dependent, manual screening toward direct-borrower intake, but preliminary screening took hours and relied on manual review. Built an end-to-end platform combining structured borrower intake, automated rules applied to public county data, and ranked deal evaluation.",
     category: "Capstone",
@@ -1984,6 +2041,7 @@ export const projects: Project[] = [
     slug: "enterprise-broker-digital-experience",
     title: "Enterprise Broker Digital Experience",
     industry: "Financial Services / Mortgage",
+    sector: "Financial Services & Fintech",
     description:
       "VIP enterprise broker accounts at a wholesale mortgage lender experienced the same generic interface as smaller brokers, creating operational friction and an estimated $100–250K/month in unrealized revenue. Delivered user personas, journey maps, and a high-fidelity website and iPhone app prototype.",
     category: "HCD",
@@ -2016,6 +2074,7 @@ export const projects: Project[] = [
     slug: "longevity-performance-dashboard",
     title: "Longevity Performance Dashboard",
     industry: "Digital Health / Consumer Wellness",
+    sector: "Health & Life Sciences",
     description:
       "A digital health startup needed to translate a differentiated longevity concept — converting wearable biometric data into age-normalized performance scores — into a clear, testable digital product. Delivered web and mobile prototypes with a performance dashboard concept.",
     category: "HCD",
@@ -2048,6 +2107,7 @@ export const projects: Project[] = [
     slug: "ai-knowledge-management-platform",
     title: "AI Knowledge Management Platform",
     industry: "Technology / Live Events & Venues",
+    sector: "Technology & Software",
     description:
       "A global venue technology firm needed to democratize AI access across daily heavy users and a large population of occasional users whose full-license provisioning was cost-prohibitive, while reducing confidentiality risk. Delivered an MVP SharePoint-integrated AI knowledge platform with LLM search and governance.",
     category: "AI Engineering",
@@ -2080,6 +2140,7 @@ export const projects: Project[] = [
     slug: "athletic-mental-performance-app",
     title: "Athletic Mental Performance App",
     industry: "Health Tech / Sports Performance",
+    sector: "Health & Life Sciences",
     description:
       "An AI-powered health optimization platform lacked a targeted channel into athletic communities. Designed a freemium digital entry point to collect mental toughness assessment data and generate individual and team-level reports, with high-fidelity web and mobile prototypes.",
     category: "HCD",
@@ -2111,6 +2172,7 @@ export const projects: Project[] = [
     slug: "talent-agency-workflow-digitization",
     title: "Talent Agency Workflow Digitization",
     industry: "Media & Entertainment / Creative Services",
+    sector: "Media, Events & Entertainment",
     description:
       "A commercial talent casting agency specializing in celebrity athletes and beauty talent operated through manual, fragmented workflows for booking and document collection. Delivered a redesigned website concept and workflow automation framework for booking and agent communication.",
     category: "HCD",
@@ -2142,6 +2204,7 @@ export const projects: Project[] = [
     slug: "investorbridge-platform",
     title: "InvestorBridge Platform",
     industry: "Financial Services / Alternative Investments",
+    sector: "Financial Services & Fintech",
     description:
       "An SEC-registered private credit investment manager with $9B+ in securitized assets lacked a differentiated digital investor experience. Designed the InvestorBridge platform concept with investor personas, journey maps, and high-fidelity prototypes delivered to GP leadership.",
     category: "HCD",
@@ -2173,6 +2236,7 @@ export const projects: Project[] = [
     slug: "event-analytics-bi-suite",
     title: "Event Analytics BI Suite — AO 2026",
     industry: "Technology / Sports & Live Events Analytics",
+    sector: "Media, Events & Entertainment",
     description:
       "The same venue technology firm lacked a standardized BI reporting suite for new event clients. Analyzed BigQuery datasets from the Australian Open 2026 — computer vision, LiDAR, ticketing, and crowd movement — delivering Tableau dashboards presented to the VP and Chief AI Officer.",
     category: "BI & Dashboards",
@@ -2204,6 +2268,7 @@ export const projects: Project[] = [
     slug: "food-brand-coordination-platform",
     title: "Food Brand Coordination Platform",
     industry: "Food & Beverage / Consumer Brands",
+    sector: "Food & Beverage",
     description:
       "A specialty food brand pivoting to experience-led fresh concession distribution at schools and events had no digital infrastructure to coordinate event logistics or build recurring consumer relationships. Designed a two-sided coordination platform with mobile and web prototypes.",
     category: "HCD",
@@ -2235,6 +2300,7 @@ export const projects: Project[] = [
     slug: "mobile-dessert-cart-loyalty",
     title: "Mobile Dessert Cart Loyalty App",
     industry: "Food & Beverage / Social Enterprise",
+    sector: "Food & Beverage",
     description:
       "A veteran-owned mobile dessert business employing justice-impacted individuals relied entirely on in-person sales with no digital infrastructure. Designed a cart-locator, loyalty rewards, push notifications, and skip-the-line ordering app with a mission storytelling framework.",
     category: "HCD",

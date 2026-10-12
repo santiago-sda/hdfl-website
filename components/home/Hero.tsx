@@ -1,19 +1,18 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { projects, type Project } from "@/lib/data";
+import { projects, currentCohort, type Project } from "@/lib/data";
 import { MetaStrip } from "@/components/ui/MetaStrip";
 
 const meta: [string, string][] = [
-  ["Established", "2023"],
+  ["Established", "2025"],
   ["Location", "Coral Gables, FL"],
-  ["Program", "ACE Framework"],
-  ["Cohort", projects[0].term],
+  ["Current cohort", currentCohort],
   ["Projects", `${projects.filter((p) => p.status === "Shipped").length} shipped`],
-  ["Partner fee", "USD 0.00"],
+  ["Projects in flight", String(projects.filter((p) => p.status === "In Progress").length)],
 ];
 
 function parseStatSlot(value: string): { num: string; unit: string } {
@@ -37,9 +36,12 @@ const pinnedFeaturedIndex = Math.max(
   projects.findIndex((p) => p.slug === "enterprise-broker-digital-experience"),
 );
 
+const ROTATE_MS = 6000;
+
 export function Hero() {
   const [index, setIndex] = useState(pinnedFeaturedIndex);
   const [direction, setDirection] = useState(1);
+  const [paused, setPaused] = useState(false);
   const total = projects.length;
   const current = projects[index];
   const stat = cardStat(current);
@@ -53,6 +55,16 @@ export function Hero() {
     setDirection(1);
     setIndex((i) => (i + 1) % total);
   }, [total]);
+
+  // Auto-advance the featured card. Keyed on `index`, so a manual Prev/Next
+  // click restarts the countdown. Pauses while the card or its controls are
+  // hovered/focused, and never runs for visitors who prefer reduced motion.
+  useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setTimeout(next, ROTATE_MS);
+    return () => clearTimeout(id);
+  }, [index, paused, next]);
 
   return (
     <section className="relative overflow-hidden">
@@ -75,6 +87,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
             <h1 className="text-[56px] sm:text-[76px] md:text-[88px] lg:text-[108px] font-black tracking-[-0.045em] leading-[0.92] text-um-green">
+              <span className="text-um-orange">Miami</span><br />
               <span className="whitespace-nowrap">Digital&#8209;First</span><br />
               <span className="relative inline-block px-1">
                 <span
@@ -96,7 +109,7 @@ export function Hero() {
             <div className="mt-8 flex items-center gap-3">
               <span className="w-10 h-0.5 bg-um-orange" />
               <span className="font-mono text-[11px] font-semibold tracking-[0.16em] uppercase text-ink">
-                Where digital meets the real world
+                Quality in everything we do
               </span>
             </div>
 
@@ -131,6 +144,10 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocus={() => setPaused(true)}
+            onBlur={() => setPaused(false)}
           >
             {/* Card */}
             <div

@@ -3,16 +3,41 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Project } from "@/lib/data";
+import { Project, sectors } from "@/lib/data";
 import { Ledger, LedgerColumn, LedgerRow } from "@/components/ui/Ledger";
 
-interface FilterOption {
-  key: string;
-  label: string;
-  count: number;
-  match: (p: Project) => boolean;
-  emptyNote?: string;
+const ALL = "all";
+
+// Experience = the capability track a project was delivered under.
+const experiences = [
+  { value: "HCD", label: "HCD & Product Design" },
+  { value: "AI Engineering", label: "AI Engineering" },
+  { value: "BI & Dashboards", label: "BI & Dashboards" },
+  { value: "Finance & Valuation", label: "Finance & Valuation" },
+  { value: "Digital Marketing", label: "Digital Marketing" },
+  { value: "Capstone", label: "Graduate Capstone" },
+];
+
+const seasonOrder: Record<string, number> = { Spring: 1, Summer: 2, Fall: 3 };
+
+// "Fall 2026" -> sortable number, so cohorts list newest first.
+function termRank(term: string) {
+  const [season, year] = term.split(" ");
+  return Number(year) * 10 + (seasonOrder[season] ?? 0);
 }
+
+interface Filters {
+  experience: string;
+  cohort: string;
+  industry: string;
+}
+
+const noFilters: Filters = { experience: ALL, cohort: ALL, industry: ALL };
+
+const matches = (p: Project, f: Filters) =>
+  (f.experience === ALL || p.category === f.experience) &&
+  (f.cohort === ALL || p.term === f.cohort) &&
+  (f.industry === ALL || p.sector === f.industry);
 
 interface ProjectFilterProps {
   projects: Project[];
@@ -28,114 +53,142 @@ const columns: LedgerColumn[] = [
   { key: "read", label: "", width: "70px" },
 ];
 
-export function ProjectFilter({ projects }: ProjectFilterProps) {
-  const [active, setActive] = useState<string>("all");
+interface SelectOption {
+  value: string;
+  label: string;
+  count: number;
+}
 
-  const filters: FilterOption[] = [
-    { key: "all", label: "All", count: projects.length, match: () => true },
-    {
-      key: "hcd",
-      label: "HCD",
-      count: projects.filter((p) => p.category === "HCD").length,
-      match: (p) => p.category === "HCD",
-    },
-    {
-      key: "ai",
-      label: "AI Eng",
-      count: projects.filter((p) => p.category === "AI Engineering").length,
-      match: (p) => p.category === "AI Engineering",
-    },
-    {
-      key: "bi",
-      label: "BI",
-      count: projects.filter((p) => p.category === "BI & Dashboards").length,
-      match: (p) => p.category === "BI & Dashboards",
-    },
-    {
-      key: "finance",
-      label: "Finance",
-      count: projects.filter((p) => p.category === "Finance & Valuation").length,
-      match: (p) => p.category === "Finance & Valuation",
-    },
-    {
-      key: "marketing",
-      label: "Marketing",
-      count: projects.filter((p) => p.category === "Digital Marketing").length,
-      match: (p) => p.category === "Digital Marketing",
-    },
-    {
-      key: "capstone",
-      label: "Capstone",
-      count: projects.filter((p) => p.category === "Capstone").length,
-      match: (p) => p.category === "Capstone",
-    },
-    {
-      key: "f25",
-      label: "Fall 2025",
-      count: projects.filter((p) => p.termShort === "F25").length,
-      match: (p) => p.termShort === "F25",
-    },
-    {
-      key: "s26",
-      label: "Spring 2026",
-      count: projects.filter((p) => p.termShort === "S26").length,
-      match: (p) => p.termShort === "S26",
-    },
-    {
-      key: "su26",
-      label: "Summer 2026",
-      count: projects.filter((p) => p.termShort === "Su26").length,
-      match: (p) => p.termShort === "Su26",
-    },
-    {
-      key: "f26",
-      label: "Fall 2026",
-      count: projects.filter((p) => p.termShort === "F26").length,
-      match: (p) => p.termShort === "F26",
-    },
-    {
-      key: "s27",
-      label: "Spring 2027",
-      count: projects.filter((p) => p.termShort === "S27").length,
-      match: (p) => p.termShort === "S27",
-    },
+interface FilterSelectProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: SelectOption[];
+}
+
+function FilterSelect({ label, value, onChange, options }: FilterSelectProps) {
+  const isActive = value !== ALL;
+
+  return (
+    <label className="flex flex-col gap-1.5 min-w-0">
+      <span className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted">
+        {label}
+      </span>
+      <span className="relative block">
+        <select
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className={`w-full appearance-none bg-card rounded-lg border pl-3.5 pr-9 py-2.5 font-mono text-[12px] font-medium tracking-[0.02em] text-ink cursor-pointer transition-colors focus:outline-none focus:border-ink hover:border-ink/40 ${
+            isActive ? "border-ink" : "border-rule"
+          }`}
+        >
+          {options.map((o) => (
+            <option
+              key={o.value}
+              value={o.value}
+              disabled={o.count === 0 && o.value !== value}
+            >
+              {o.label} · {o.count}
+            </option>
+          ))}
+        </select>
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          width="14"
+          height="14"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted"
+        >
+          <path d="M5 8l5 5 5-5" />
+        </svg>
+      </span>
+    </label>
+  );
+}
+
+export function ProjectFilter({ projects }: ProjectFilterProps) {
+  const [filters, setFilters] = useState<Filters>(noFilters);
+
+  const set = (key: keyof Filters) => (value: string) =>
+    setFilters((prev) => ({ ...prev, [key]: value }));
+
+  const filtered = projects.filter((p) => matches(p, filters));
+  const hasActiveFilters = Object.values(filters).some((v) => v !== ALL);
+
+  // How many projects each option would show, given the OTHER two filters.
+  // Keeps the counts honest and avoids picking a combination with no results.
+  const countFor = (key: keyof Filters, value: string) =>
+    projects.filter((p) => matches(p, { ...filters, [key]: value })).length;
+
+  const buildOptions = (
+    key: keyof Filters,
+    allLabel: string,
+    items: { value: string; label: string }[]
+  ): SelectOption[] => [
+    { value: ALL, label: allLabel, count: countFor(key, ALL) },
+    ...items.map((i) => ({ ...i, count: countFor(key, i.value) })),
   ];
 
-  const activeFilter = filters.find((f) => f.key === active) ?? filters[0];
-  const filtered = projects.filter(activeFilter.match);
+  const cohorts = Array.from(new Set(projects.map((p) => p.term)))
+    .sort((a, b) => termRank(b) - termRank(a))
+    .map((term) => ({ value: term, label: term }));
+
+  const experienceOptions = buildOptions("experience", "All experiences", experiences);
+  const cohortOptions = buildOptions("cohort", "All cohorts", cohorts);
+  const industryOptions = buildOptions(
+    "industry",
+    "All industries",
+    sectors.map((s) => ({ value: s, label: s }))
+  );
 
   return (
     <section className="px-6 md:px-10 pb-24">
       <div className="max-w-[1200px] mx-auto">
-        {/* Filter row */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted mr-1">
-              Filter
-            </span>
-            {filters.map((f) => {
-              const isActive = active === f.key;
-              return (
-                <button
-                  key={f.key}
-                  type="button"
-                  onClick={() => setActive(f.key)}
-                  aria-pressed={isActive}
-                  className={`inline-flex items-center gap-1.5 font-mono text-[11px] font-medium tracking-[0.08em] uppercase rounded-lg px-3 py-2 transition-all duration-200 active:scale-[0.97] ${
-                    isActive
-                      ? "bg-ink text-paper border border-ink"
-                      : "bg-card text-muted border border-rule hover:border-ink/40 hover:text-ink"
-                  }`}
-                >
-                  <span>{f.label}</span>
-                  <span className="tabular-nums opacity-70">· {f.count}</span>
-                </button>
-              );
-            })}
+        {/* Filters */}
+        <div className="mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <FilterSelect
+              label="Experience"
+              value={filters.experience}
+              onChange={set("experience")}
+              options={experienceOptions}
+            />
+            <FilterSelect
+              label="Cohort"
+              value={filters.cohort}
+              onChange={set("cohort")}
+              options={cohortOptions}
+            />
+            <FilterSelect
+              label="Industry"
+              value={filters.industry}
+              onChange={set("industry")}
+              options={industryOptions}
+            />
           </div>
-          <span className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted">
-            Sort ↓ Newest first
-          </span>
+
+          <div className="mt-3 flex items-center justify-between gap-4">
+            <p
+              aria-live="polite"
+              className="font-mono text-[10px] font-semibold tracking-[0.18em] uppercase text-muted"
+            >
+              Showing {filtered.length} of {projects.length} projects · Newest first
+            </p>
+            {hasActiveFilters && (
+              <button
+                type="button"
+                onClick={() => setFilters(noFilters)}
+                className="font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
+              >
+                Clear filters ×
+              </button>
+            )}
+          </div>
         </div>
 
         <Ledger columns={columns}>
@@ -175,19 +228,15 @@ export function ProjectFilter({ projects }: ProjectFilterProps) {
             ))}
           </AnimatePresence>
           {filtered.length === 0 && (
-            <div className="px-6 py-12 flex flex-col items-center gap-2 text-center">
-              {activeFilter.emptyNote ? (
-                <>
-                  <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-um-green bg-um-green/10 rounded px-2 py-1">
-                    New this cohort
-                  </span>
-                  <p className="mt-1 text-sm text-muted max-w-[420px] leading-relaxed">
-                    {activeFilter.emptyNote}
-                  </p>
-                </>
-              ) : (
-                <p className="text-sm text-muted">No projects match this filter yet.</p>
-              )}
+            <div className="px-6 py-12 flex flex-col items-center gap-3 text-center">
+              <p className="text-sm text-muted">No projects match these filters.</p>
+              <button
+                type="button"
+                onClick={() => setFilters(noFilters)}
+                className="font-mono text-[11px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
+              >
+                Clear filters ×
+              </button>
             </div>
           )}
         </Ledger>

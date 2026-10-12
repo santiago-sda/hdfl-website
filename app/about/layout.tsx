@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Method",
+  title: "Experiential Learning",
   description:
     "How Miami Digital-First Lab works: a three-phase model and an annual cycle that takes partner challenges from scoping to delivery to handoff.",
   alternates: { canonical: "/about" },

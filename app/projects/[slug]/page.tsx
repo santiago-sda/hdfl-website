@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 {project.category}
               </span>
             </div>
-            <h1 className="text-[44px] sm:text-[60px] md:text-[72px] lg:text-[76px] font-black tracking-[-0.04em] leading-[0.95] text-ink">
+            <h1 className="text-[40px] sm:text-[54px] md:text-[64px] lg:text-[66px] font-black tracking-[-0.045em] leading-[0.9] text-ink">
               {project.title}
             </h1>
             <p className="mt-7 text-[16px] leading-[1.6] text-ink-soft max-w-[640px]">
