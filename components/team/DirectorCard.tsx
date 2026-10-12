@@ -4,12 +4,10 @@ import { TeamMember } from "@/lib/data";
 
 interface DirectorCardProps {
   member: TeamMember;
-  index: number;
   joined?: string;
 }
 
-export function DirectorCard({ member, index, joined }: DirectorCardProps) {
-  const fileNumber = `FAC-${String(index + 1).padStart(2, "0")}`;
+export function DirectorCard({ member, joined }: DirectorCardProps) {
   const headerLabel = member.leadTitle ?? "Faculty";
   const tenure = member.joined ?? joined ?? "Joined 2021";
 
@@ -17,10 +15,7 @@ export function DirectorCard({ member, index, joined }: DirectorCardProps) {
     <article className="h-full bg-card border border-rule rounded-2xl overflow-hidden transition-colors duration-200 hover:border-ink/20">
       <div className="flex items-center justify-between px-6 py-3 border-b border-rule-soft bg-paper">
         <span className="font-mono text-[10.5px] font-semibold tracking-[0.16em] uppercase text-muted">
-          {headerLabel} · 0{index + 1}
-        </span>
-        <span className="font-mono text-[10.5px] font-bold tabular-nums tracking-[0.06em] text-um-orange-text">
-          №{fileNumber}
+          {headerLabel}
         </span>
       </div>
 
@@ -69,19 +64,38 @@ export function DirectorCard({ member, index, joined }: DirectorCardProps) {
                 {tenure}
               </dd>
             </div>
-            {member.profileUrl && (
-              <div className="pt-2">
-                <Link
-                  href={member.profileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
-                >
-                  Profile · people.miami.edu{" "}
-                  <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    ↗
-                  </span>
-                </Link>
+            {(member.profileUrl || member.linkedinUrl) && (
+              <div className="pt-2 flex flex-wrap items-center gap-x-5 gap-y-2">
+                {member.profileUrl && (
+                  <Link
+                    href={member.profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-um-orange-text hover:text-um-orange-dim transition-colors"
+                  >
+                    Profile · people.miami.edu{" "}
+                    <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </Link>
+                )}
+                {member.linkedinUrl && (
+                  <Link
+                    href={member.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                    className="group inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.14em] normal-case text-um-orange-text hover:text-um-orange-dim transition-colors"
+                  >
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn{" "}
+                    <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </Link>
+                )}
               </div>
             )}
           </dl>

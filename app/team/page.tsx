@@ -78,7 +78,7 @@ export default function TeamPage() {
         titleColor="green"
         title={
           <>
-            The people<br />behind <span className="text-um-orange-text italic font-black">the file.</span>
+            The people<br />behind <span className="text-um-orange-text italic font-black">the lab.</span>
           </>
         }
         subtitle="The Miami Digital-First Lab is led by two faculty directors and supported by a network of executive and student coaches. Every project is matched, by domain and skill, to the right pair of hands before a student team is assembled."
@@ -91,14 +91,14 @@ export default function TeamPage() {
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
             <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
-              Lab directors.
+              Faculty Leaders.
             </h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {directors.map((d, i) => (
               <AnimatedSection key={d.id} variant="fade-up" delay={i * 0.08} className="h-full">
-                <DirectorCard member={d} index={i} />
+                <DirectorCard member={d} />
               </AnimatedSection>
             ))}
           </div>
@@ -110,7 +110,7 @@ export default function TeamPage() {
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
             <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
-              Officers &amp; leads.
+              Student Leaders.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
               Student officers who run the Lab&apos;s operations and coach projects end-to-end alongside the faculty leadership.
@@ -132,7 +132,7 @@ export default function TeamPage() {
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection variant="fade-up" className="mb-8">
             <h2 className="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1] text-ink">
-              Coaches &amp; mentors.
+              Student Coaches.
             </h2>
             <p className="mt-4 text-[15px] leading-[1.6] text-ink-soft max-w-[640px]">
               Each coach is matched to projects by solution area, domain, and skill fit. Together they cover the six DFL tracks.

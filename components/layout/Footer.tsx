@@ -94,9 +94,6 @@ export function Footer() {
           <p className="text-xs text-muted">
             © {year} MDFL · All rights reserved
           </p>
-          <p className="font-mono text-[10.5px] font-medium tracking-[0.14em] uppercase text-muted">
-            v2.0 · Spring 2026 · Coral Gables, FL
-          </p>
         </div>
       </div>
     </footer>

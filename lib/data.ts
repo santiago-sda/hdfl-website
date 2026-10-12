@@ -77,6 +77,7 @@ export interface TeamMember {
   avatarPosition?: string; // CSS object-position; overrides the default top-anchored crop
   bio?: string;
   profileUrl?: string;
+  linkedinUrl?: string;
 }
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
@@ -114,18 +115,20 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/korogodsky.webp",
     bio: "Leads the graduate arm of the Digital-First Lab and the MS in Business Technology program at Miami. Twenty-plus years pairing applied AI with industry — financial services, logistics, sports analytics — and the architect behind the Miami Method of framing complex business problems for execution-ready delivery.",
     profileUrl: "https://people.miami.edu/profile/d745ec0f1424c88ec80310b4b30645ad",
+    linkedinUrl: "https://www.linkedin.com/in/dr-alexander-korogodsky-63776111/",
   },
   {
     id: "director-6",
     name: "Dr. Robert Gregory",
-    title: "Associate Professor",
+    title: "Managing Director, University of Miami AI Institute",
     role: "director",
     domain: "HCD",
     leadTitle: "Leader for HCD & Product Design",
     joined: "Joined 2026",
     avatar: "/team/robert-gregory.png",
-    bio: "Associate Professor at Miami, contributing to the Lab's HCD & Product Design practice.",
+    bio: "Managing Director of the University of Miami AI Institute, contributing to the Lab's HCD & Product Design practice.",
     profileUrl: "https://people.miami.edu/profile/965a1fddc1c93a4a1339e5ac5806a241",
+    linkedinUrl: "https://www.linkedin.com/in/robert-wayne-gregory-533539/",
   },
   {
     id: "director-2",
@@ -138,6 +141,7 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/murphy.webp",
     bio: "Co-directs the Lab and teaches the foundational digital product and HCD coursework at Miami. Background in product design, decision sciences, and bringing data-driven dashboards into healthcare and consumer operations. Mentors student teams from first interview to final executive demo.",
     profileUrl: "https://people.miami.edu/profile/e2e14a2dfa56d4d5e0c9cca2e5000490",
+    linkedinUrl: "https://www.linkedin.com/in/kris-murphy-5477373/",
   },
   {
     id: "director-3",
@@ -145,11 +149,12 @@ export const teamMembers: TeamMember[] = [
     title: "Lecturer, Business Technology",
     role: "director",
     domain: "AI Software Engineering",
-    leadTitle: "Leader for AI experience,",
+    leadTitle: "Leader for AI experience",
     joined: "Joined 2026",
     avatar: "/team/skordilis.webp",
     bio: "Lectures in Business Technology at Miami and leads the Lab's AI software engineering work. Pairs applied machine learning and software systems with student teams, taking models and prototypes from research into production-ready delivery.",
     profileUrl: "https://people.miami.edu/profile/b7be952fb190b6a66372000fc95d769f",
+    linkedinUrl: "https://www.linkedin.com/in/erotokritos-skordilis/",
   },
   {
     id: "director-4",
@@ -174,6 +179,7 @@ export const teamMembers: TeamMember[] = [
     avatar: "/team/Carlos.webp",
     bio: "Lectures at Miami and leads the Lab's digital marketing practice, helping student teams turn shipped work into brand, growth, and go-to-market strategy.",
     profileUrl: "https://people.miami.edu/profile/b2a709b79fc8e1f40eb7ba543995e44c",
+    linkedinUrl: "https://www.linkedin.com/in/carloserban/",
   },
   // Officers (executive board + heads)
   {
