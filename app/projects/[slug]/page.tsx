@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/lib/data";
 import { MetaStrip, MetaStripItem } from "@/components/ui/MetaStrip";
+import { ProjectNav } from "@/components/projects/ProjectNav";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -27,8 +28,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) notFound();
+  const index = projects.findIndex((p) => p.slug === slug);
+  if (index === -1) notFound();
+  const project = projects[index];
+  // Same order as the archive list: "previous" is the row above, "next" the row below.
+  const prev = projects[index - 1];
+  const next = projects[index + 1];
 
   const meta: MetaStripItem[] = [
     ["Section", "Archive / Project"],
@@ -153,7 +158,7 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       {/* Outcome metrics */}
-      <section className="px-6 md:px-10 pb-24">
+      <section className="px-6 md:px-10 pb-12">
         <div className="max-w-[1200px] mx-auto">
           <div className="bg-um-green text-paper rounded-2xl px-6 md:px-10 py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.metrics.map((m, i) => (
@@ -170,6 +175,8 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      <ProjectNav prev={prev} next={next} position={index + 1} total={projects.length} />
     </>
   );
 }

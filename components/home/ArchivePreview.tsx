@@ -14,8 +14,19 @@ const columns: LedgerColumn[] = [
   { key: "delivered", label: "DELIVERED", width: "1.6fr" },
 ];
 
+// Hand-picked projects shown on the home page, in display order
+// (№26-03, №26-07, №26-01, №26-04, №26-09).
+const showcaseSlugs = [
+  "food-brand-coordination-platform",
+  "ai-knowledge-management-platform",
+  "investorbridge-platform",
+  "event-analytics-bi-suite",
+  "enterprise-broker-digital-experience",
+];
+
+const rows = showcaseSlugs.flatMap((slug) => projects.find((p) => p.slug === slug) ?? []);
+
 export function ArchivePreview() {
-  const rows = projects.slice(0, 5);
 
   return (
     <section className="relative px-6 md:px-10 py-16 md:py-20 bg-paper-alt border-y border-rule">
