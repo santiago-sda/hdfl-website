@@ -46,16 +46,19 @@ export interface Project {
 
 export interface CapabilityTrack {
   id: number;
-  name: string;
-  fullName: string;
+  name: string;             // short label, matches the Archive "Experience" filter
+  fullName: string;         // capability title
+  area: string;             // experience area: Digital First, Finance, Marketing, Graduate
   course: string;
   level: string;
-  description: string;
-  deliverables: string[];
-  skills: string[];
+  leadId?: string;          // teamMembers id of the faculty lead
+  leadName?: string;        // name as shown beside the capability
+  overview: string;
+  descriptionLabel?: string; // heading for the bullet list (defaults to "Description")
+  description: string[];
+  sampleProjects: string[];
   shipped: number;
   mostRequested?: boolean;
-  examples?: string[]; // representative engagement types, shown alongside deliverables/skills
 }
 
 export interface PartnerType {
@@ -449,25 +452,25 @@ export const capabilityTracks: CapabilityTrack[] = [
   {
     id: 1,
     name: "HCD & Product Design",
-    fullName: "Digital Product Innovation & CX Design",
+    fullName: "Digital Product Innovation, Customer Experience Design and Prototyping",
+    area: "Digital First",
     course: "BTE 210",
     level: "Undergraduate",
-    description:
-      "Translate ambiguous business ideas into market-ready digital products through human-centered design, rapid prototyping, and business strategy.",
-    deliverables: [
-      "2–3 user personas with empathy and journey maps",
-      "High-fidelity web and mobile prototypes (~25 screens)",
-      "Business Model Canvas",
-      "SWOT analysis and go-to-market strategy",
-      "Executive presentation to client leadership",
+    leadId: "director-1",
+    leadName: "Dr. Korogodsky",
+    overview:
+      "This experience equips learners to turn abstract business ideas into market-ready digital products through strategic business design, human-centered innovation, and rapid prototyping. Participants build skills in market analysis, user experience design, and prototyping to create, test, and refine digital solutions aligned with business strategy, user needs, and technical feasibility.",
+    description: [
+      "Translates ambiguous business ideas into aligned, testable digital products using strategy, human-centered design, and rapid prototyping.",
+      "Develops business models grounded in market analysis, differentiation, SWOT, and value propositions.",
+      "Uses HCD to uncover user needs, define value, and prioritize features.",
+      "Builds high-fidelity web and mobile prototypes to test assumptions and align stakeholders.",
     ],
-    skills: [
-      "Mobile app prototyping",
-      "UX / HCD",
-      "SWOT & value proposition",
-      "High-fidelity Figma",
-      "Market analysis",
-      "Go-to-market strategy",
+    sampleProjects: [
+      "Developing mobile app prototypes for young professionals and remote collaboration tools.",
+      "Designing high-fidelity digital platforms (websites, iPhone apps) to enhance customer and patient experiences.",
+      "Creating user journey maps, personas, and empathy maps across healthcare and financial services.",
+      "Conducting SWOT analyses, business plans, and value-based differentiation strategies for new product launches.",
     ],
     shipped: 6,
     mostRequested: true,
@@ -476,147 +479,137 @@ export const capabilityTracks: CapabilityTrack[] = [
     id: 2,
     name: "AI Engineering",
     fullName: "AI & Data Product Engineering for Industry Solutions",
+    area: "Digital First",
     course: "BTE 440",
     level: "Undergraduate",
-    description:
-      "Design and deploy production-grade AI systems — RAG-first design, agentic workflows, lightweight fine-tuning (LoRA) — with governance, PII filtering, and full-stack delivery.",
-    deliverables: [
-      "MVP AI assistant or automated analytical pipeline",
-      "Architecture documentation and governance framework",
-      "Prompt library and guided workflows",
-      "ROI analysis and cost-transparency model",
-      "Executive demonstration to client AI leadership",
+    leadId: "director-3",
+    leadName: "Dr. Skordilis",
+    overview:
+      "This program equips learners to design and deploy production-grade AI systems for real-world business challenges. Participants build expertise in cost-efficient, latency-aware, and accurate AI, with strong attention to governance and risk mitigation, enabling them to translate complex problems into reliable, auditable AI products that deliver measurable value to industry partners.",
+    description: [
+      "Domain-Grounded Generative AI Systems (RAG-First Design)",
+      "Agentic AI for Complex Analytical Workflows",
+      "Cost-, Latency-, and Performance-Aware AI Engineering",
+      "Model Adaptation via Lightweight Fine-Tuning (LoRA)",
+      "Governance, Guardrails, and Risk Mitigation",
+      "Evaluation-Driven Development",
+      "Full-Stack Delivery & Deployment",
+      "Translation of AI Capability into Business and Educational Value",
     ],
-    skills: [
-      "RAG systems",
-      "Agentic AI",
-      "LoRA fine-tuning",
-      "Governance & guardrails",
-      "Full-stack deployment",
-      "Finance, legal, logistics AI",
+    sampleProjects: [
+      "Build document-grounded AI assistants for finance, legal, and executive decision support.",
+      "Design agent-based and fine-tuned AI systems to automate analysis and generate structured outputs.",
+      "Develop cost-transparent, latency-aware AI products with dashboards for enterprise and education",
+      "Implement governance-compliant, auditable AI tools with strict numeric grounding, PII filtering, and clear provenance.",
     ],
     shipped: 1,
   },
   {
     id: 3,
     name: "BI & Dashboards",
-    fullName: "Data-Driven Decision Support Dashboards",
+    fullName: "Data-Driven Decision-Support Dashboards",
+    area: "Digital First",
     course: "BUS 150",
     level: "Undergraduate",
-    description:
-      "Build interactive executive dashboards in Excel, Power BI, and Tableau that transform financial and operational data into actionable insight.",
-    deliverables: [
-      "Interactive Power BI or Tableau dashboard suite",
-      "KPI scorecards and interactive filters",
-      "Scenario-planning and cash-flow models",
-      "Trend analysis and data-backed recommendations",
-      "Executive presentation with live dashboard demo",
+    leadId: "director-2",
+    leadName: "Dr. Murphy",
+    overview:
+      "This experience equips learners to design decision-support dashboards using Excel, Power BI, and Tableau. Participants transform complex financial and operational data into actionable insights, enabling faster, more informed decisions. Through real-world applications, learners build dashboards that support scenario analysis, performance monitoring, and forward-looking insights for executives and managers.",
+    description: [
+      "Interactive decision-support dashboard tailored to executive needs",
+      "Financial model for budgeting and forecasting with scenario analysis",
+      "Operational efficiency model identifying bottlenecks and improvement levers",
+      "Cash-flow model integrating revenue, costs, and working-capital dynamics",
+      "Mobile-friendly dashboard for on-the-go decision-making",
     ],
-    skills: [
-      "Power BI",
-      "Tableau",
-      "Excel modeling",
-      "Scenario analysis",
-      "Cash-flow dashboards",
-      "Operational KPIs",
+    sampleProjects: [
+      "Build sales, inventory, and performance dashboards for retail, hospitality, and consulting firms.",
+      "Create financial forecasting and cash-flow tools to support budgeting, liquidity, and funding decisions.",
+      "Design operational and scenario-planning dashboards for logistics and healthcare resource allocation.",
+      "Develop investment and risk monitoring dashboards with mobile access for executives and clients.",
     ],
     shipped: 2,
   },
   {
     id: 4,
     name: "Finance & Valuation",
-    fullName: "Applied Finance, Valuation & Market Strategy",
+    fullName: "Applied Financial Decision Analysis",
+    area: "Finance",
     course: "FIN 302",
     level: "Undergraduate",
-    description:
-      "Step into the role of financial analysts to value companies, assets, and investment decisions — applying financial-statement analysis, valuation modeling, portfolio theory, and capital-structure strategy to produce evidence-based recommendations for managers, investors, lenders, and boards.",
-    deliverables: [
-      "Financial-statement & ratio analysis with peer benchmarking",
-      "NPV / DCF investment case with forecasted cash flows",
-      "Optimal portfolio & efficient-frontier construction",
-      "Bond and options valuation & strategy modeling",
-      "Corporate valuation and capital-structure recommendation",
+    leadId: "director-4",
+    leadName: "Dr. Pinto-Campillo",
+    overview:
+      "This experience equips learners to apply foundational finance concepts to real-world corporate, investment, and capital-market decisions. Using Excel, financial statements, market data, and structured assumptions, participants analyze financial performance, forecast cash flows, value investments, and evaluate whether business decisions create or destroy value. Through real-world applications, learners develop financial modeling, analytical judgment, and the ability to communicate evidence-based recommendations to managers, investors, and lenders.",
+    description: [
+      "Financial statement and ratio analysis assessing profitability, liquidity, leverage, operating performance, and cash-flow strength",
+      "Time-value-of-money models incorporating present value, future value, annuities, compounding, and interest-rate conversions",
+      "Capital-budgeting and NPV models evaluating investments, projects, and financing decisions",
+      "Bond valuation and interest-rate-risk analysis incorporating yield, maturity, and risk-return trade-offs",
+      "Excel-based financial models with assumptions, cash-flow forecasts, sensitivity analysis, and executive recommendations",
     ],
-    skills: [
-      "Financial-statement analysis",
-      "DCF & corporate valuation",
-      "Capital budgeting / NPV",
-      "Portfolio theory (MPT / CAPM)",
-      "Bond & options modeling",
-      "WACC & capital structure",
-      "Excel financial modeling",
+    sampleProjects: [
+      "Analyze the financial health and performance of a public company against industry peers",
+      "Evaluate a major capital investment, technology upgrade, expansion, or new-product launch using NPV and projected cash flows",
+      "Develop buy-versus-lease or financing models for major corporate assets",
+      "Analyze corporate bonds, debt obligations, interest-rate exposure, and financing structure",
+      "Develop valuation models for public companies, real estate, facilities, or other investment opportunities",
     ],
     shipped: 0,
   },
   {
     id: 5,
+    name: "Digital Marketing",
+    fullName: "Digital Marketing, SEO & AI Search Strategy",
+    area: "Marketing",
+    course: "MKT 387",
+    level: "Undergraduate",
+    leadId: "director-5",
+    leadName: "Carlos Erban",
+    overview:
+      "This experience equips learners to analyze and improve an organization's digital visibility, competitive positioning, and content strategy. Using tools such as Semrush and course-approved AI platforms, participants evaluate organic search performance, competitor positioning, keyword opportunities, customer search intent, and emerging AI-search visibility. Learners translate those insights into practical digital-marketing strategies, content recommendations, and implementation priorities that support customer acquisition, engagement, and business growth.",
+    description: [
+      "SEO current-state assessment covering organic visibility, keyword rankings, ranking pages, on-page factors, and content performance",
+      "Competitive and keyword-gap analysis identifying where competitors outperform the organization and where new opportunities exist",
+      "Customer search-intent, positioning, and content analysis connecting digital capabilities to meaningful customer value",
+      "AI-search visibility assessment examining how brands, products, and expertise appear in AI-generated search and answer environments",
+      "Digital content strategy defining priority audiences, keyword clusters, content themes, landing pages, and messaging",
+      "Content development and implementation briefs for SEO, marketing, website, and email teams",
+    ],
+    sampleProjects: [
+      "Conduct an SEO and competitive-positioning audit for a company website or digital platform",
+      "Identify high-value keyword gaps and develop a prioritized organic-search growth strategy",
+      "Assess a company's visibility in AI-driven search and recommend ways to improve AI discoverability",
+      "Develop an integrated SEO and content roadmap including new pages, articles, guides, and landing pages",
+      "Rewrite website messaging to better communicate customer value and competitive differentiation",
+      "Create content briefs, SEO titles, meta descriptions, internal-linking recommendations, and implementation plans for marketing and web teams",
+      "Extend priority digital content into targeted email campaigns or nurture communications",
+    ],
+    shipped: 0,
+  },
+  {
+    id: 6,
     name: "Graduate Capstone",
     fullName: "Client-Centered Capstone Framing, Value Engineering & Execution Readiness",
+    area: "Graduate",
     course: "BTE Adv.",
     level: "Graduate (MS)",
-    description:
+    overview:
       "MS in Business Technology students apply the Miami Method to frame complex business problems, align stakeholders, and design execution-ready solutions integrating data, AI, cybersecurity, and fintech.",
-    deliverables: [
+    descriptionLabel: "Typical deliverables",
+    description: [
       "Problem framing and stakeholder alignment report",
       "Execution-ready proposal with implementation roadmap",
       "Data + AI + digital integration architecture",
       "KPI framework and measurement plan",
       "Final presentation to executive leadership",
     ],
-    skills: [
-      "Miami Method",
-      "Stakeholder alignment",
-      "Execution-ready proposals",
-      "AI + data + digital",
-      "Supply chain AI",
-      "Sports analytics",
-      "KPI frameworks",
-    ],
+    sampleProjects: [],
     shipped: 7,
   },
-  {
-    id: 6,
-    name: "Digital Marketing",
-    fullName: "Digital Marketing Strategy and SEO/SEM Optimization Experience",
-    course: "MKT 387",
-    level: "Undergraduate",
-    description:
-      "Students work directly with a company on a real digital marketing challenge — assessing its digital presence, audience, and competitive position, using tools like Semrush to analyze SEO and AI/search visibility, and developing an actionable strategy backed by campaign concepts, content recommendations, and measurable KPIs.",
-    deliverables: [
-      "Audience and positioning framework (segments, personas, value proposition, messaging)",
-      "Digital audit — website, SEO, competitors, social, and AI/search visibility",
-      "Content strategy and campaign concepts with sample assets",
-      "Customer journey mapping and measurement/KPI framework",
-      "Prioritized 3–6 month implementation roadmap",
-    ],
-    skills: [
-      "SEO / SEM & Semrush",
-      "Competitive & market analysis",
-      "Audience segmentation",
-      "Content & campaign strategy",
-      "Customer journey mapping",
-      "Marketing analytics & KPIs",
-    ],
-    shipped: 0,
-    examples: [
-      "Market research and opportunity analysis",
-      "Competitive and industry analysis",
-      "Customer research and audience segmentation",
-      "Go-to-market strategy development",
-      "Marketing strategy and campaign planning",
-      "Brand positioning and messaging strategy",
-      "Customer acquisition and retention strategy",
-      "Product or service positioning",
-      "New market or geographic expansion analysis",
-      "Digital marketing and channel strategy",
-      "Customer journey and engagement analysis",
-      "Marketing performance analysis and recommendations",
-      "Growth strategy and opportunity prioritization",
-      "New product or service launch strategy",
-      "Strategic recommendations to address a defined marketing or business challenge",
-    ],
-  },
 ];
+
+
 
 // ─── Project Phases ──────────────────────────────────────────────────────────
 
