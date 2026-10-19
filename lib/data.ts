@@ -104,6 +104,7 @@ export const navLinks = [
   { href: "/tracks", label: "Solutions" },
   { href: "/projects", label: "Archive" },
   { href: "/team", label: "People" },
+  { href: "/industry-coaches", label: "Industry Coaches" },
   { href: "/about", label: "Experiential Learning" },
 ];
 
@@ -2319,3 +2320,78 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+// ─── Industry coaches & partners ─────────────────────────────────────────────
+
+export interface IndustryCoach {
+  id: string;
+  name: string;
+  title?: string;        // only set when verified against an official source
+  organization?: string; // only set when verified against an official source
+  bio: string;
+  expertise: string[];
+  profileUrl?: string;   // official firm profile, where available
+  image?: string;        // official headshot; omit to render the initials placeholder
+}
+
+export const industryCoaches: IndustryCoach[] = [
+  {
+    id: "rohan-agarwal",
+    name: "Rohan Agarwal",
+    // Title and employer intentionally omitted: his resume lists a different current firm
+    // and no official Citrin Cooperman profile could be found. Confirm before publishing.
+    bio: "Rohan brings more than 15 years of strategy and transformation experience to MDFL's student teams. He has advised senior executives and private equity sponsors on enterprise transformation and performance improvement, commercial strategy, operating models, and value creation, including post-merger integration. His work spans mid-market to multibillion-dollar organizations, with deep experience in consumer goods and retail. As an industry coach, he helps students structure complex problems and turn analysis into practical recommendations.",
+    expertise: [
+      "Enterprise transformation",
+      "Commercial strategy & operating models",
+      "Post-merger integration",
+      "Consumer goods & retail",
+    ],
+    image: "/coaches/rohan-agarwal.jpg",
+  },
+  {
+    id: "kenneth-segal",
+    name: "Kenneth “Ken” Segal",
+    organization: "Citrin Cooperman",
+    // Title omitted: the supplied bio sheet says Managing Director, Management Consulting, while the
+    // firm's web profile appears to list a different title. Confirm before adding.
+    bio: "Ken has more than three decades of experience in capital markets and investment banking. His work centers on credit, lending, and structured finance, and on strategic financial advisory that helps businesses grow and prepare for lenders, investors, and strategic partners. He has worked across manufacturing, real estate, financial services, hospitality, and other sectors, with a hands-on approach that immerses his team in the client's business. As an industry coach, he shares deep financial-markets experience in practical terms.",
+    expertise: [
+      "Capital markets & investment banking",
+      "Credit, lending & structured finance",
+      "Strategic financial advisory",
+      "Lender & investor readiness",
+    ],
+    profileUrl: "https://www.citrincooperman.com/Specialists/Kenneth-Segal",
+    image: "/coaches/kenneth-segal.jpg",
+  },
+  {
+    id: "arber-cufe",
+    name: "Arber Cufe",
+    title: "Director",
+    organization: "Citrin Cooperman Advisors LLC",
+    bio: "Arber brings nearly 15 years of financial and business advisory experience. He advises owners and management teams on business transformation, strategic growth, and financial and operational decisions, with particular depth in valuation, transaction advisory, and M&A. His work includes financial modeling, forecasting, capital strategy, and operational improvement for middle-market and owner-operated companies. As an industry coach, he helps students connect rigorous financial analysis to the decisions business leaders actually face.",
+    expertise: [
+      "Valuation & transaction advisory",
+      "M&A strategy",
+      "Financial modeling & forecasting",
+      "Business transformation",
+    ],
+    profileUrl: "https://www.citrincooperman.com/Specialists/Arber-Cufe",
+    image: "/coaches/arber-cufe.jpg",
+  },
+];
+
+export const citrinPartnership = {
+  slug: "citrin-cooperman-partnership",
+  title: "MDFL Announces Its First Industry Partnership with Citrin Cooperman",
+  summary:
+    "Citrin Cooperman joins the Miami Digital-First Lab as its first industry partner, connecting academic learning with industry expertise and introducing three industry coaches for MDFL's student teams.",
+  logo: "/partners/citrin-cooperman.webp",
+  contact: {
+    name: "Jonathan Hughes",
+    title: "Partner, Practice Leader, Management Consulting",
+    organization: "Citrin Cooperman",
+    profileUrl: "https://www.citrincooperman.com/Specialists/Jonathan-Hughes",
+  },
+};
